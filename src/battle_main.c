@@ -2637,9 +2637,20 @@ u32 sub_80397C4(u32 setId, u32 tableId)
 
 void SpriteCb_WildMon(struct Sprite *sprite)
 {
-    sprite->callback = SpriteCb_MoveWildMonToRight;
-    StartSpriteAnimIfDifferent(sprite, 0);
-    BeginNormalPaletteFade(0x20000, 0, 10, 10, RGB(8, 8, 8));
+    if (gSaveBlock2Ptr->optionsTransitionSpeed == OPTIONS_TRANSITION_INSTANT)
+    {
+        sprite->pos2.x = 0;
+        sub_8076918(sprite->sBattler);
+        SetHealthboxSpriteVisible(gHealthboxSpriteIds[sprite->sBattler]);
+        sprite->callback = SpriteCb_WildMonAnimate;
+        StartSpriteAnimIfDifferent(sprite, 0);
+    }
+    else
+    {
+        sprite->callback = SpriteCb_MoveWildMonToRight;
+        StartSpriteAnimIfDifferent(sprite, 0);
+        BeginNormalPaletteFade(0x20000, 0, 10, 10, RGB(8, 8, 8));
+    }
 }
 
 static void SpriteCb_MoveWildMonToRight(struct Sprite *sprite)
