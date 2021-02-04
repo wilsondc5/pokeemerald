@@ -149,16 +149,14 @@ MAKEFLAGS += --no-print-directory
 # Secondary expansion is required for dependency variables in object rules.
 .SECONDEXPANSION:
 
-.PHONY: all rom clean compare tidy tools mostlyclean clean-tools $(TOOLDIRS) berry_fix libagbsyscall modern
+.PHONY: all rom clean compare tidy tools mostlyclean clean-tools $(TOOLDIRS) berry_fix libagbsyscall modern debugging debugging_modern
 
 infoshell = $(foreach line, $(shell $1 | sed "s/ /__SPACE__/g"), $(info $(subst __SPACE__, ,$(line))))
 
 # Build tools when building the rom
 # Disable dependency scanning for clean/tidy/tools
-# Use a separate minimal makefile for speed
-# Since we don't need to reload most of this makefile
-ifeq (,$(filter-out all rom compare modern libagbsyscall syms,$(MAKECMDGOALS)))
-$(call infoshell, $(MAKE) -f make_tools.mk)
+ifeq (,$(filter-out all rom compare modern debugging debugging_modern berry_fix libagbsyscall,$(MAKECMDGOALS)))
+$(call infoshell, $(MAKE) tools)
 else
 NODEP ?= 1
 endif
@@ -303,21 +301,10 @@ ifeq ($(DINFO),1)
 override CFLAGS += -g
 endif
 
-# The dep rules have to be explicit or else missing files won't be reported.
-# As a side effect, they're evaluated immediately instead of when the rule is invoked.
-# It doesn't look like $(shell) can be deferred so there might not be a better way.
-
-ifeq ($(SCAN_DEPS),1)
-ifeq ($(NODEP),1)
-$(C_BUILDDIR)/%.o: $(C_SUBDIR)/%.c
-ifeq (,$(KEEP_TEMPS))
-	@echo "$(CC1) <flags> -o $@ $<"
-	@$(CPP) $(CPPFLAGS) $< | $(PREPROC) $< charmap.txt -i | $(CC1) $(CFLAGS) -o - - | cat - <(echo -e ".text\n\t.align\t2, 0") | $(AS) $(ASFLAGS) -o $@ -
-else
-# DebugMenu
-ifeq ($(DDEBUG),1)
-override ASFLAGS += --defsym DEBUG=1
-override CPPFLAGS += -D DEBUG=1
+# Debug menu
+ifeq ($(DDEBUGGING),1)
+override ASFLAGS += --defsym DEBUGGING=1
+override CPPFLAGS += -D DEBUGGING=1
 endif
 
 $(C_BUILDDIR)/%.o : $(C_SUBDIR)/%.c $$(c_dep)
@@ -439,3 +426,7 @@ libagbsyscall:
 
 libagbsyscall:
 	@$(MAKE) -C libagbsyscall TOOLCHAIN=$(TOOLCHAIN)
+
+# Debug menu
+debugging: ; @$(MAKE) DDEBUGGING=1 DINFO=1
+debugging_modern: ; @$(MAKE) MODERN=1 DDEBUGGING=1 DINFO=1
