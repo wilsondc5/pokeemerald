@@ -157,7 +157,7 @@ void BagMenu_CancelToss(u8 taskId);
 void BagMenu_ConfirmSell(u8 taskId);
 void BagMenu_CancelSell(u8 taskId);
 
-// tx_registered_item_wheel_icons
+// tx_registered_items_wheel_icons
 static void ItemMenu_Register_Up(u8 taskId);
 static void ItemMenu_Register_Right(u8 taskId);
 static void ItemMenu_Register_Down(u8 taskId);
@@ -2519,7 +2519,7 @@ void PrintTMHMMoveData(u16 itemId)
 
 
 
-// tx_registered_item_wheel_icons
+// tx_registered_items_wheel_icons
 static bool8 Register_IsItemInList(u16 itemId)
 {
     u8 i;
