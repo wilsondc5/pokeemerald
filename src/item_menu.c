@@ -156,7 +156,8 @@ void BagMenu_ConfirmToss(u8 taskId);
 void BagMenu_CancelToss(u8 taskId);
 void BagMenu_ConfirmSell(u8 taskId);
 void BagMenu_CancelSell(u8 taskId);
-//
+
+// tx_registered_item_wheel_icons
 static void ItemMenu_Register_Up(u8 taskId);
 static void ItemMenu_Register_Right(u8 taskId);
 static void ItemMenu_Register_Down(u8 taskId);
@@ -165,7 +166,6 @@ static void ItemMenu_Deselect(u8 taskId);
 static bool8 Register_IsItemInList(u16 itemId);
 static u8 Register_GetItemListPosition(u16 itemId);
 static void ShowItemIconSprite(u16 item, bool8 firstTime, bool8 flash);
-// static void DestroyItemIconSprites(void);
 
 // .rodata
 
@@ -1891,25 +1891,6 @@ void Task_ActuallyToss(u8 taskId)
     }
 }
 
-/*
-void ItemMenu_Register(u8 taskId)
-{
-    s16* data = gTasks[taskId].data;
-    u16* scrollPos = &gBagPositionStruct.scrollPosition[gBagPositionStruct.pocket];
-    u16* cursorPos = &gBagPositionStruct.cursorPosition[gBagPositionStruct.pocket];
-
-    if (gSaveBlock1Ptr->registeredItemSelect == gSpecialVar_ItemId)
-        gSaveBlock1Ptr->registeredItemSelect = 0;
-    else
-        gSaveBlock1Ptr->registeredItemSelect = gSpecialVar_ItemId;
-    DestroyListMenuTask(data[0], scrollPos, cursorPos);
-    LoadBagItemListBuffers(gBagPositionStruct.pocket);
-    data[0] = ListMenuInit(&gMultiuseListMenuTemplate, *scrollPos, *cursorPos);
-    ScheduleBgCopyTilemapToVram(0);
-    ItemMenu_Cancel(taskId);
-}
-*/
-
 void ItemMenu_Give(u8 taskId)
 {
     BagMenu_RemoveSomeWindow();
@@ -2019,42 +2000,6 @@ void Task_ItemContext_ItemPC_2(u8 taskId)
     else
         BagMenu_PrintItemCantBeHeld(taskId);
 }
-
-/*
-#define tUsingRegisteredKeyItem data[3]
-
-bool8 UseRegisteredKeyItemOnField(void)
-{
-    u8 taskId;
-
-    if (InUnionRoom() == TRUE || InBattlePyramid() || InBattlePike() || InMultiPartnerRoom() == TRUE)
-        return FALSE;
-    HideMapNamePopUpWindow();
-    ChangeBgY_ScreenOff(0, 0, 0);
-    if (gSaveBlock1Ptr->registeredItemSelect != ITEM_NONE)
-    {
-        if (CheckBagHasItem(gSaveBlock1Ptr->registeredItemSelect, 1) == TRUE)
-        {
-            ScriptContext2_Enable();
-            FreezeObjectEvents();
-            sub_808B864();
-            sub_808BCF4();
-            gSpecialVar_ItemId = gSaveBlock1Ptr->registeredItemSelect;
-            taskId = CreateTask(ItemId_GetFieldFunc(gSaveBlock1Ptr->registeredItemSelect), 8);
-            gTasks[taskId].tUsingRegisteredKeyItem = TRUE;
-            return TRUE;
-        }
-        else
-        {
-            gSaveBlock1Ptr->registeredItemSelect = ITEM_NONE;
-        }
-    }
-    ScriptContext1_SetupScript(EventScript_SelectWithoutRegisteredItem);
-    return TRUE;
-}
-
-#undef tUsingRegisteredKeyItem
-*/
 
 void Task_ItemContext_Sell(u8 taskId)
 {
@@ -2572,6 +2517,9 @@ void PrintTMHMMoveData(u16 itemId)
     }
 }
 
+
+
+// tx_registered_item_wheel_icons
 static bool8 Register_IsItemInList(u16 itemId)
 {
     u8 i;
@@ -2717,16 +2665,9 @@ bool8 UseRegisteredKeyItemOnField(u8 button)
 
 #undef tUsingRegisteredKeyItem
 
-
-#define ITEM_ICON_X 26
-#define ITEM_ICON_Y 24
+// code for the icons
 void DrawRegisteredQuickAcces(void)
 {
-    // struct WindowTemplate template;
-    // u16 item = gSpecialVar_0x8006;
-    // u8 headerType = gSpecialVar_0x8009;
-    // u8 textY;
-    // u8 *dst;
     bool8 handleFlash = FALSE;
     u8 i;
     u16 itemId;
@@ -2746,52 +2687,9 @@ void DrawRegisteredQuickAcces(void)
         if (itemId != ITEM_NONE)
             ShowItemIconSprite(itemId, i, handleFlash);
     }
-    
-    
-    // if (headerType == 1)
-    //     dst = gStringVar3;
-    // else
-    //     dst = gStringVar1;
-    
-    // if (GetSetItemObtained(item, FLAG_GET_OBTAINED))
-    // {
-    //     ShowItemIconSprite(item, FALSE, handleFlash);
-    //     return; //no box if item obtained previously
-    // }
-    
-    // SetWindowTemplateFields(&template, 0, 1, 1, 28, 3, 15, 8);
-    // sHeaderBoxWindowId = AddWindow(&template);
-    // FillWindowPixelBuffer(sHeaderBoxWindowId, PIXEL_FILL(0));
-    // PutWindowTilemap(sHeaderBoxWindowId);
-    // CopyWindowToVram(sHeaderBoxWindowId, 3);
-    // DrawStdFrameWithCustomTileAndPalette(sHeaderBoxWindowId, FALSE, 0x214, 14);
-    
-    // if (ReformatItemDescription(item, dst) == 1)
-    //     textY = 4;
-    // else
-    //     textY = 0;
-    
-    
-    // ShowItemIconSprite(item, TRUE, handleFlash);
-    // AddTextPrinterParameterized(sHeaderBoxWindowId, 0, dst, ITEM_ICON_X + 2, textY, 0, NULL);
-}
-
-void HideHeaderBox(void)
-{
-    // DestroyItemIconSprites();
-    
-    // if (!GetSetItemObtained(gSpecialVar_0x8006, FLAG_GET_OBTAINED))
-    // {
-    //     //header box only exists if haven't seen item before
-    //     GetSetItemObtained(gSpecialVar_0x8006, FLAG_SET_OBTAINED);
-    //     ClearStdWindowAndFrameToTransparent(sHeaderBoxWindowId, FALSE);
-    //     CopyWindowToVram(sHeaderBoxWindowId, 3);
-    //     RemoveWindow(sHeaderBoxWindowId);
-    // }
 }
 
 #include "gpu_regs.h"
-
 #define ITEM_TAG 0x2722 //same as money label
 static void ShowItemIconSprite(u16 item, u8 position, bool8 flash)
 {
