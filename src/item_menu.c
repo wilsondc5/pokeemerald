@@ -2805,28 +2805,28 @@ static void ShowItemIconSprite(u16 item, u8 position, bool8 flash)
         SetGpuRegBits(REG_OFFSET_WINOUT, WINOUT_WINOBJ_OBJ);
     }
     
-    iconSpriteId = AddItemIconSprite(ITEM_TAG + position, ITEM_TAG + position, item);
+    iconSpriteId = AddItemIconSprite(ITEM_TAG + position*16, ITEM_TAG + position*16, item);
     if (flash)
-        spriteId2 = AddItemIconSprite(ITEM_TAG + position, ITEM_TAG + position, item);
+        spriteId2 = AddItemIconSprite(ITEM_TAG + position*16, ITEM_TAG + position*16, item);
     
 	if (iconSpriteId != MAX_SPRITES)
 	{        
         switch (position)
         {
         case 0:
-			x = 120;
-			y = 60;
+			x = 124;
+			y = 55;
             break;
         case 1:
-			x = 145;
+			x = 148;
 			y = 80;
             break;
         case 2:
-            x = 120;
+            x = 122;
             y = 105;
             break;
         case 3:
-            x = 110;
+            x = 100;
             y = 80;
             break;
         }
