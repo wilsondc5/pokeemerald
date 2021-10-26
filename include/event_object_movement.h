@@ -72,7 +72,7 @@ extern const u8 gReflectionEffectPaletteMap[];
 
 extern const u16 *const gBerryTreeObjectEventGraphicsIdTablePointers[];
 extern const struct SpriteFrameImage *const gBerryTreePicTablePointers[];
-extern const u8 *const gBerryTreePaletteSlotTablePointers[];
+extern const u16 *const gBerryTreePaletteSlotTablePointers[];
 
 void ResetObjectEvents(void);
 u8 GetMoveDirectionAnimNum(u8);
