@@ -278,6 +278,7 @@ void FieldCB_DefaultWarpExit(void)
     Overworld_PlaySpecialMapMusic();
     WarpFadeInScreen();
     SetUpWarpExitTask();
+    POF_FollowMe_WarpSetEnd(); // pokemon_overworld_follower
     ScriptContext2_Enable();
 }
 
