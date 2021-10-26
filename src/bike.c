@@ -9,6 +9,7 @@
 #include "sound.h"
 #include "constants/map_types.h"
 #include "constants/songs.h"
+#include "tx_pokemon_follower.h"
 
 // this file's functions
 static void MovePlayerOnMachBike(u8, u16, u16);
@@ -978,6 +979,11 @@ void GetOnOffBike(u8 transitionFlags)
         SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ON_FOOT);
         Overworld_ClearSavedMusic();
         Overworld_PlaySpecialMapMusic();
+        if(POF_PlayerHasFollower()) //tx_pokemon_follower
+        {
+            POF_FollowerUnhide();
+            CB2_ReturnToField();
+        }
     }
     else
     {
