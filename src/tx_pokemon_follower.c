@@ -1189,11 +1189,19 @@ void POF_CreateMonFromPartySlotId(void)
     if(gSaveBlock2Ptr->pokemonFollower.partySlotId == 0)
         return;
 
-    if (species > 251)
-        species = gSpeciesLookUpTable[species];
+    if (species == SPECIES_UNOWN)
+    {
+        u32 personalityValue = GetMonData(&gPlayerParty[slotId], MON_DATA_PERSONALITY);
+        u16 unownForm = GET_UNOWN_LETTER(personalityValue);
+        gfx_id = OBJ_EVENT_GFX_POKEMON_201_FORMS + unownForm;
+    }
+    else
+    {
+        if (species > 251)
+            species = gSpeciesLookUpTable[species];
 
-
-    gfx_id = NUM_REGULAR_OBJ_EVENT_GFX + species - 1;
+        gfx_id = NUM_REGULAR_OBJ_EVENT_GFX + species - 1;
+    }
 
     for (eventObjId = 0; eventObjId < OBJECT_EVENTS_COUNT; eventObjId++) //For each NPC on the map
     {

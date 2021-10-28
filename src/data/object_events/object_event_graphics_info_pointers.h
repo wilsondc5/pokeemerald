@@ -633,7 +633,35 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_38
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_384;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_385;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_386;
-
+//Unown
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_0;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_1;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_2;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_3;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_4;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_5;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_6;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_7;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_8;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_9;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_10;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_11;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_12;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_13;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_14;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_15;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_16;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_17;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_18;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_19;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_20;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_21;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_22;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_23;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_24;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_25;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_26;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_201_27;
 
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
@@ -1264,6 +1292,35 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_POKEMON_384] =        &gObjectEventGraphicsInfo_Pokemon_Species_384,
     [OBJ_EVENT_GFX_POKEMON_385] =        &gObjectEventGraphicsInfo_Pokemon_Species_385,
     [OBJ_EVENT_GFX_POKEMON_386] =        &gObjectEventGraphicsInfo_Pokemon_Species_386,
+    //Unown
+    [OBJ_EVENT_GFX_POKEMON_201_0]  =     &gObjectEventGraphicsInfo_Pokemon_Species_201_0,
+    [OBJ_EVENT_GFX_POKEMON_201_1]  =     &gObjectEventGraphicsInfo_Pokemon_Species_201_1,
+    [OBJ_EVENT_GFX_POKEMON_201_2]  =     &gObjectEventGraphicsInfo_Pokemon_Species_201_2,
+    [OBJ_EVENT_GFX_POKEMON_201_3]  =     &gObjectEventGraphicsInfo_Pokemon_Species_201_3,
+    [OBJ_EVENT_GFX_POKEMON_201_4]  =     &gObjectEventGraphicsInfo_Pokemon_Species_201_4,
+    [OBJ_EVENT_GFX_POKEMON_201_5]  =     &gObjectEventGraphicsInfo_Pokemon_Species_201_5,
+    [OBJ_EVENT_GFX_POKEMON_201_6]  =     &gObjectEventGraphicsInfo_Pokemon_Species_201_6,
+    [OBJ_EVENT_GFX_POKEMON_201_7]  =     &gObjectEventGraphicsInfo_Pokemon_Species_201_7,
+    [OBJ_EVENT_GFX_POKEMON_201_8]  =     &gObjectEventGraphicsInfo_Pokemon_Species_201_8,
+    [OBJ_EVENT_GFX_POKEMON_201_9]  =     &gObjectEventGraphicsInfo_Pokemon_Species_201_9,
+    [OBJ_EVENT_GFX_POKEMON_201_10] =     &gObjectEventGraphicsInfo_Pokemon_Species_201_10,
+    [OBJ_EVENT_GFX_POKEMON_201_11] =     &gObjectEventGraphicsInfo_Pokemon_Species_201_11,
+    [OBJ_EVENT_GFX_POKEMON_201_12] =     &gObjectEventGraphicsInfo_Pokemon_Species_201_12,
+    [OBJ_EVENT_GFX_POKEMON_201_13] =     &gObjectEventGraphicsInfo_Pokemon_Species_201_13,
+    [OBJ_EVENT_GFX_POKEMON_201_14] =     &gObjectEventGraphicsInfo_Pokemon_Species_201_14,
+    [OBJ_EVENT_GFX_POKEMON_201_15] =     &gObjectEventGraphicsInfo_Pokemon_Species_201_15,
+    [OBJ_EVENT_GFX_POKEMON_201_16] =     &gObjectEventGraphicsInfo_Pokemon_Species_201_16,
+    [OBJ_EVENT_GFX_POKEMON_201_17] =     &gObjectEventGraphicsInfo_Pokemon_Species_201_17,
+    [OBJ_EVENT_GFX_POKEMON_201_18] =     &gObjectEventGraphicsInfo_Pokemon_Species_201_18,
+    [OBJ_EVENT_GFX_POKEMON_201_19] =     &gObjectEventGraphicsInfo_Pokemon_Species_201_19,
+    [OBJ_EVENT_GFX_POKEMON_201_20] =     &gObjectEventGraphicsInfo_Pokemon_Species_201_20,
+    [OBJ_EVENT_GFX_POKEMON_201_21] =     &gObjectEventGraphicsInfo_Pokemon_Species_201_21,
+    [OBJ_EVENT_GFX_POKEMON_201_22] =     &gObjectEventGraphicsInfo_Pokemon_Species_201_22,
+    [OBJ_EVENT_GFX_POKEMON_201_23] =     &gObjectEventGraphicsInfo_Pokemon_Species_201_23,
+    [OBJ_EVENT_GFX_POKEMON_201_24] =     &gObjectEventGraphicsInfo_Pokemon_Species_201_24,
+    [OBJ_EVENT_GFX_POKEMON_201_25] =     &gObjectEventGraphicsInfo_Pokemon_Species_201_25,
+    [OBJ_EVENT_GFX_POKEMON_201_26] =     &gObjectEventGraphicsInfo_Pokemon_Species_201_26,
+    [OBJ_EVENT_GFX_POKEMON_201_27] =     &gObjectEventGraphicsInfo_Pokemon_Species_201_27,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
