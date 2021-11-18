@@ -306,7 +306,7 @@ static void PrintNumPlayersWaitingForMsg(u8 windowId, u8 capacityCode, u8 string
         break;
     }
 
-    CopyWindowToVram(windowId, 2);
+    CopyWindowToVram(windowId, COPYWIN_GFX);
 }
 
 static void PrintPlayerNameAndIdOnWindow(u8 windowId)
@@ -434,7 +434,7 @@ static void Task_TryBecomeLinkLeader(u8 taskId)
         FillWindowPixelBuffer(data->bButtonCancelWindowId, PIXEL_FILL(2));
         PrintUnionRoomText(data->bButtonCancelWindowId, 0, sText_BButtonCancel, 8, 1, UR_COLOR_CANCEL);
         PutWindowTilemap(data->bButtonCancelWindowId);
-        CopyWindowToVram(data->bButtonCancelWindowId, 2);
+        CopyWindowToVram(data->bButtonCancelWindowId, COPYWIN_GFX);
 
         DrawStdWindowFrame(data->listWindowId, FALSE);
         gMultiuseListMenuTemplate = sListMenuTemplate_PossibleGroupMembers;
@@ -443,7 +443,7 @@ static void Task_TryBecomeLinkLeader(u8 taskId)
 
         DrawStdWindowFrame(data->nPlayerModeWindowId, FALSE);
         PutWindowTilemap(data->nPlayerModeWindowId);
-        CopyWindowToVram(data->nPlayerModeWindowId, 2);
+        CopyWindowToVram(data->nPlayerModeWindowId, COPYWIN_GFX);
 
         CopyBgTilemapBufferToVram(0);
         data->playerCount = 1;
@@ -1014,7 +1014,7 @@ static void Task_TryJoinLinkGroup(u8 taskId)
         FillWindowPixelBuffer(data->bButtonCancelWindowId, PIXEL_FILL(2));
         PrintUnionRoomText(data->bButtonCancelWindowId, 0, sText_ChooseJoinCancel, 8, 1, UR_COLOR_CANCEL);
         PutWindowTilemap(data->bButtonCancelWindowId);
-        CopyWindowToVram(data->bButtonCancelWindowId, 2);
+        CopyWindowToVram(data->bButtonCancelWindowId, COPYWIN_GFX);
 
         DrawStdWindowFrame(data->listWindowId, FALSE);
         gMultiuseListMenuTemplate = sListMenuTemplate_UnionRoomGroups;
@@ -1024,7 +1024,7 @@ static void Task_TryJoinLinkGroup(u8 taskId)
         DrawStdWindowFrame(data->playerNameAndIdWindowId, FALSE);
         PutWindowTilemap(data->playerNameAndIdWindowId);
         PrintPlayerNameAndIdOnWindow(data->playerNameAndIdWindowId);
-        CopyWindowToVram(data->playerNameAndIdWindowId, 2);
+        CopyWindowToVram(data->playerNameAndIdWindowId, COPYWIN_GFX);
 
         CopyBgTilemapBufferToVram(0);
         data->leaderId = 0;
@@ -1495,14 +1495,14 @@ static void Task_StartUnionRoomTrade(u8 taskId)
         }
         break;
     case 2:
-        memcpy(gBlockSendBuffer, gSaveBlock1Ptr->mail, sizeof(struct MailStruct) * PARTY_SIZE + 4);
-        if (SendBlock(0, gBlockSendBuffer, sizeof(struct MailStruct) * PARTY_SIZE + 4))
+        memcpy(gBlockSendBuffer, gSaveBlock1Ptr->mail, sizeof(struct Mail) * PARTY_SIZE + 4);
+        if (SendBlock(0, gBlockSendBuffer, sizeof(struct Mail) * PARTY_SIZE + 4))
             gTasks[taskId].data[0]++;
         break;
     case 3:
         if (GetBlockReceivedStatus() == 3)
         {
-            memcpy(gTradeMail, gBlockRecvBuffer[GetMultiplayerId() ^ 1], sizeof(struct MailStruct) * PARTY_SIZE);
+            memcpy(gTradeMail, gBlockRecvBuffer[GetMultiplayerId() ^ 1], sizeof(struct Mail) * PARTY_SIZE);
             ResetBlockReceivedFlags();
             gSelectedTradeMonPositions[TRADE_PLAYER] = monId;
             gSelectedTradeMonPositions[TRADE_PARTNER] = PARTY_SIZE;
@@ -2131,7 +2131,7 @@ static void Task_CardOrNewsWithFriend(u8 taskId)
         FillWindowPixelBuffer(data->playerNameAndIdWindowId, PIXEL_FILL(1));
         PutWindowTilemap(data->playerNameAndIdWindowId);
         PrintPlayerNameAndIdOnWindow(data->playerNameAndIdWindowId);
-        CopyWindowToVram(data->playerNameAndIdWindowId, 2);
+        CopyWindowToVram(data->playerNameAndIdWindowId, COPYWIN_GFX);
 
         CopyBgTilemapBufferToVram(0);
         data->leaderId = 0;
@@ -3637,7 +3637,7 @@ static s8 UnionRoomHandleYesNo(u8 *state, bool32 noDraw)
     case 1:
         if (noDraw)
         {
-            sub_8198C78();
+            EraseYesNoWindow();
             *state = 0;
             return -3;
         }
@@ -3658,7 +3658,7 @@ static u8 CreateTradeBoardWindow(const struct WindowTemplate * template)
     DrawStdWindowFrame(windowId, FALSE);
     FillWindowPixelBuffer(windowId, PIXEL_FILL(15));
     PrintUnionRoomText(windowId, 1, sText_NameWantedOfferLv, 8, 1, UR_COLOR_TRADE_BOARD_OTHER);
-    CopyWindowToVram(windowId, 2);
+    CopyWindowToVram(windowId, COPYWIN_GFX);
     PutWindowTilemap(windowId);
     return windowId;
 }
@@ -3689,7 +3689,7 @@ static s32 ListMenuHandler_AllItemsAvailable(u8 *state, u8 *windowId, u8 *listMe
         gMultiuseListMenuTemplate = *menuTemplate;
         gMultiuseListMenuTemplate.windowId = *windowId;
         *listMenuId = ListMenuInit(&gMultiuseListMenuTemplate, 0, 0);
-        CopyWindowToVram(*windowId, TRUE);
+        CopyWindowToVram(*windowId, COPYWIN_MAP);
         (*state)++;
         break;
     case 1:
@@ -3736,7 +3736,7 @@ static s32 TradeBoardMenuHandler(u8 *state, u8 *mainWindowId, u8 *listMenuId, u8
         (*state)++;
         break;
     case 1:
-        CopyWindowToVram(*mainWindowId, TRUE);
+        CopyWindowToVram(*mainWindowId, COPYWIN_MAP);
         (*state)++;
         break;
     case 2:
@@ -3852,7 +3852,7 @@ static void PrintUnionRoomText(u8 windowId, u8 fontId, const u8 *str, u8 x, u8 y
         break;
     }
 
-    AddTextPrinter(&printerTemplate, TEXT_SPEED_FF, NULL);
+    AddTextPrinter(&printerTemplate, TEXT_SKIP_DRAW, NULL);
 }
 
 static void ClearRfuPlayerList(struct RfuPlayer *players, u8 count)
@@ -3982,7 +3982,7 @@ static void PrintGroupMemberOnWindow(u8 windowId, u8 x, u8 y, struct RfuPlayer *
         ConvertIntToDecimalStringN(trainerId, player->rfu.data.compatibility.playerTrainerId[0] | (player->rfu.data.compatibility.playerTrainerId[1] << 8), STR_CONV_MODE_LEADING_ZEROS, 5);
         StringCopy(gStringVar4, sText_ID);
         StringAppend(gStringVar4, trainerId);
-        PrintUnionRoomText(windowId, 1, gStringVar4, GetStringRightAlignXOffset(1, gStringVar4, 0x88), y, colorIdx);
+        PrintUnionRoomText(windowId, 1, gStringVar4, GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x88), y, colorIdx);
     }
 }
 
@@ -3997,7 +3997,7 @@ static void PrintGroupCandidateOnWindow(u8 windowId, u8 x, u8 y, struct RfuPlaye
         ConvertIntToDecimalStringN(trainerId, player->rfu.data.compatibility.playerTrainerId[0] | (player->rfu.data.compatibility.playerTrainerId[1] << 8), STR_CONV_MODE_LEADING_ZEROS, 5);
         StringCopy(gStringVar4, sText_ID);
         StringAppend(gStringVar4, trainerId);
-        PrintUnionRoomText(windowId, 1, gStringVar4, GetStringRightAlignXOffset(1, gStringVar4, 0x68), y, colorIdx);
+        PrintUnionRoomText(windowId, 1, gStringVar4, GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x68), y, colorIdx);
     }
 }
 

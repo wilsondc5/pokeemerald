@@ -56,7 +56,7 @@ const s32 gMaxFlashLevel = ARRAY_COUNT(sFlashLevelPixelRadii) - 1;
 
 const struct ScanlineEffectParams sFlashEffectParams =
 {
-    (void *)REG_ADDR_WIN0H,
+    &REG_WIN0H,
     ((DMA_ENABLE | DMA_START_HBLANK | DMA_REPEAT | DMA_DEST_RELOAD) << 16) | 1,
     1
 };
@@ -235,9 +235,7 @@ void Task_ReturnToFieldRecordMixing(u8 taskId)
         break;
     case 1:
         if (IsLinkTaskFinished())
-        {
             task->tState++;
-        }
         break;
     case 2:
         StartSendingKeysToLink();
@@ -1155,7 +1153,7 @@ static void Task_OrbEffect(u8 taskId)
         tState = 1;
         break;
     case 1:
-        sub_8199DF0(0, PIXEL_FILL(1), 0, 1);
+        BgDmaFill(0, PIXEL_FILL(1), 0, 1);
         LoadOrbEffectPalette(tBlueOrb);
         StartUpdateOrbFlashEffect(tCenterX, tCenterY, 1, 160, 1, 2);
         tState = 2;
@@ -1200,7 +1198,7 @@ static void Task_OrbEffect(u8 taskId)
             if (UpdateOrbEffectBlend(tShakeDir) == TRUE)
             {
                 tState = 5;
-                sub_8199DF0(0, PIXEL_FILL(0), 0, 1);
+                BgDmaFill(0, PIXEL_FILL(0), 0, 1);
             }
         }
         break;

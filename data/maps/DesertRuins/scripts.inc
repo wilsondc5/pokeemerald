@@ -40,9 +40,7 @@ DesertRuins_EventScript_ShowRegirock::
 DesertRuins_EventScript_CaveEntranceMiddle::
 	lockall
 	goto_if_set FLAG_SYS_REGIROCK_PUZZLE_COMPLETED, DesertRuins_EventScript_BigHoleInWall
-	braillemessage DesertRuins_Braille_UseRockSmash
-	waitbuttonpress
-	closebraillemessage
+	braillemsgbox DesertRuins_Braille_UseRockSmash
 	releaseall
 	end
 
@@ -53,9 +51,7 @@ DesertRuins_EventScript_BigHoleInWall::
 
 DesertRuins_EventScript_CaveEntranceSide::
 	lockall
-	braillemessage DesertRuins_Braille_UseRockSmash
-	waitbuttonpress
-	closebraillemessage
+	braillemsgbox DesertRuins_Braille_UseRockSmash
 	releaseall
 	end
 
@@ -63,7 +59,7 @@ DesertRuins_EventScript_Regirock::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_REGIROCK, 2
+	playmoncry SPECIES_REGIROCK, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
 	setwildbattle SPECIES_REGIROCK, 40, ITEM_NONE

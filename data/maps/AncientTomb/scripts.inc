@@ -40,9 +40,7 @@ AncientTomb_EventScript_HideRegiEntrance::
 AncientTomb_EventScript_CaveEntranceMiddle::
 	lockall
 	goto_if_set FLAG_SYS_REGISTEEL_PUZZLE_COMPLETED, AncientTomb_EventScript_BigHoleInWall
-	braillemessage AncientTomb_Braille_ShineInTheMiddle
-	waitbuttonpress
-	closebraillemessage
+	braillemsgbox AncientTomb_Braille_ShineInTheMiddle
 	releaseall
 	end
 
@@ -53,9 +51,7 @@ AncientTomb_EventScript_BigHoleInWall::
 
 AncientTomb_EventScript_CaveEntranceSide::
 	lockall
-	braillemessage AncientTomb_Braille_ShineInTheMiddle
-	waitbuttonpress
-	closebraillemessage
+	braillemsgbox AncientTomb_Braille_ShineInTheMiddle
 	releaseall
 	end
 
@@ -63,7 +59,7 @@ AncientTomb_EventScript_Registeel::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_REGISTEEL, 2
+	playmoncry SPECIES_REGISTEEL, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
 	setwildbattle SPECIES_REGISTEEL, 40, ITEM_NONE

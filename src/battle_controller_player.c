@@ -1500,7 +1500,7 @@ static void MoveSelectionDisplayMoveType(void)
 
     txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfaceType);
     *(txtPtr)++ = EXT_CTRL_CODE_BEGIN;
-    *(txtPtr)++ = EXT_CTRL_CODE_SIZE;
+    *(txtPtr)++ = EXT_CTRL_CODE_FONT;
     *(txtPtr)++ = 1;
 
     StringCopy(txtPtr, gTypeNames[gBattleMoves[moveInfo->moves[gMoveSelectionCursor[gActiveBattler]]].type]);
@@ -2205,7 +2205,7 @@ static void StartSendOutAnim(u8 battlerId, bool8 dontClearSubstituteBit)
 
     gBattlerSpriteIds[battlerId] = CreateSprite(
       &gMultiuseSpriteTemplate,
-      GetBattlerSpriteCoord(battlerId, 2),
+      GetBattlerSpriteCoord(battlerId, BATTLER_COORD_X_2),
       GetBattlerSpriteDefault_Y(battlerId),
       GetBattlerSpriteSubpriority(battlerId));
 
@@ -2926,7 +2926,7 @@ static void PlayerHandleFaintingCry(void)
 {
     u16 species = GetMonData(&gPlayerParty[gBattlerPartyIndexes[gActiveBattler]], MON_DATA_SPECIES);
 
-    PlayCry3(species, -25, 5);
+    PlayCry_ByMode(species, -25, CRY_MODE_FAINT);
     PlayerBufferExecCompleted();
 }
 

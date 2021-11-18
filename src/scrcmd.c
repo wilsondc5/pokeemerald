@@ -49,6 +49,7 @@
 #include "tv.h"
 #include "window.h"
 #include "constants/event_objects.h"
+#include "constants/maps.h"
 
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(void);
@@ -790,7 +791,7 @@ bool8 ScrCmd_warphole(struct ScriptContext *ctx)
     u16 y;
 
     PlayerGetDestCoords(&x, &y);
-    if (mapGroup == 0xFF && mapNum == 0xFF)
+    if (mapGroup == MAP_GROUP(UNDEFINED) && mapNum == MAP_NUM(UNDEFINED))
         SetWarpDestinationToFixedHoleWarp(x - MAP_OFFSET, y - MAP_OFFSET);
     else
         SetWarpDestination(mapGroup, mapNum, -1, x - MAP_OFFSET, y - MAP_OFFSET);
@@ -1207,7 +1208,7 @@ bool8 ScrCmd_turnvobject(struct ScriptContext *ctx)
 // The player is frozen after waiting for their current movement to finish.
 bool8 ScrCmd_lockall(struct ScriptContext *ctx)
 {
-    if (IsUpdateLinkStateCBActive())
+    if (IsOverworldLinkActive())
     {
         return FALSE;
     }
@@ -1223,7 +1224,7 @@ bool8 ScrCmd_lockall(struct ScriptContext *ctx)
 // The player and selected object are frozen after waiting for their current movement to finish.
 bool8 ScrCmd_lock(struct ScriptContext *ctx)
 {
-    if (IsUpdateLinkStateCBActive())
+    if (IsOverworldLinkActive())
     {
         return FALSE;
     }
@@ -1310,7 +1311,7 @@ bool8 ScrCmd_messageinstant(struct ScriptContext *ctx)
         msg = (const u8 *)ctx->data[0];
     LoadMessageBoxAndBorderGfx();
     DrawDialogueFrame(0, 1);
-    AddTextPrinterParameterized(0, 1, msg, 0, 1, 0, 0);
+    AddTextPrinterParameterized(0, FONT_NORMAL, msg, 0, 1, 0, 0);
     return FALSE;
 }
 
@@ -1497,7 +1498,7 @@ bool8 ScrCmd_braillemessage(struct ScriptContext *ctx)
     // in Emerald they are unused and position is calculated below instead
     StringExpandPlaceholders(gStringVar4, ptr + 6);
 
-    width = GetStringWidth(6, gStringVar4, -1) / 8u;
+    width = GetStringWidth(FONT_BRAILLE, gStringVar4, -1) / 8u;
 
     if (width > 28)
         width = 28;
@@ -1532,8 +1533,8 @@ bool8 ScrCmd_braillemessage(struct ScriptContext *ctx)
     DrawStdWindowFrame(gBrailleWindowId, 0);
     PutWindowTilemap(gBrailleWindowId);
     FillWindowPixelBuffer(gBrailleWindowId, PIXEL_FILL(1));
-    AddTextPrinterParameterized(gBrailleWindowId, 6, gStringVar4, xText, yText, 0xFF, 0x0);
-    CopyWindowToVram(gBrailleWindowId, 3);
+    AddTextPrinterParameterized(gBrailleWindowId, FONT_BRAILLE, gStringVar4, xText, yText, TEXT_SKIP_DRAW, NULL);
+    CopyWindowToVram(gBrailleWindowId, COPYWIN_FULL);
     return FALSE;
 }
 
@@ -2026,7 +2027,7 @@ bool8 ScrCmd_playmoncry(struct ScriptContext *ctx)
     u16 species = VarGet(ScriptReadHalfword(ctx));
     u16 mode = VarGet(ScriptReadHalfword(ctx));
 
-    PlayCry5(species, mode);
+    PlayCry_Script(species, mode);
     return FALSE;
 }
 
@@ -2196,7 +2197,7 @@ bool8 ScrCmd_selectapproachingtrainer(struct ScriptContext *ctx)
 
 bool8 ScrCmd_lockfortrainer(struct ScriptContext *ctx)
 {
-    if (IsUpdateLinkStateCBActive())
+    if (IsOverworldLinkActive())
     {
         return FALSE;
     }
