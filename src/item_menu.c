@@ -1240,9 +1240,10 @@ static void Task_BagMenu_HandleInput(u8 taskId)
                 
                 PlaySE(SE_SELECT);
                 BagDestroyPocketScrollArrowPair();
-                BagMenu_PrintCursor_(data[0], 2);
+                BagMenu_PrintCursor(tListTaskId, COLORID_GRAY_CURSOR);
                 ListMenuGetScrollAndRow(data[0], scrollPos, cursorPos);
                 gTasks[taskId].func = Task_LoadBagSortOptions;
+                return;
             }
             else
             {
@@ -3143,17 +3144,20 @@ static void AddBagSortSubMenu(void)
     BagMenu_Print(1, 1, gStringVar4, 3, 1, 0, 0, 0, 0);
     
     if (gBagMenu->contextMenuNumItems == 2)
-        sub_81ACAF8(BagMenu_AddWindow(1));
+        PrintContextMenuItems(BagMenu_AddWindow(ITEMWIN_1x2));
     else if (gBagMenu->contextMenuNumItems == 4)
-        sub_81ACB54(BagMenu_AddWindow(2), 2, 2);
+        PrintContextMenuItemGrid(BagMenu_AddWindow(ITEMWIN_2x2), 2, 2);
     else
-        sub_81ACB54(BagMenu_AddWindow(3), 2, 3);
+        PrintContextMenuItemGrid(BagMenu_AddWindow(ITEMWIN_2x3), 2, 3);
 }
 
 static void Task_LoadBagSortOptions(u8 taskId)
 {
     AddBagSortSubMenu();
-    gTasks[taskId].func = Task_HandleOutOfBattleItemMenuInput;
+    if (gBagMenu->contextMenuNumItems <= 2)
+        gTasks[taskId].func = Task_ItemContext_SingleRow;
+    else
+        gTasks[taskId].func = Task_ItemContext_MultipleRows;
 }
 
 #define tSortType data[2]
