@@ -11087,13 +11087,13 @@ const struct PokedexEntryForms gPokedexEntriesForms[] =
     {
         .height = 98,
         .weight = 4300,
-        .description = gKyogrePrimalMegaPokedexText,
+        .description = gKyogrePrimalPokedexText,
     },
     [SPECIES_GROUDON_PRIMAL] =
     {
         .height = 50,
         .weight = 9997,
-        .description = gGroudonPrimalMegaPokedexText,
+        .description = gGroudonPrimalPokedexText,
     },
 
     // Alolan Forms
