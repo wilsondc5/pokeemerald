@@ -4251,7 +4251,7 @@ u16 GetPokedexHeightWeight(u16 dexNum, u8 data)
 
 u16 GetSpeciesHeightWeight(u16 species, u8 data)
 {
-    if (species >= SPECIES_RATTATA_ALOLAN && species <= SPECIES_STUNFISK_GALARIAN) // Todo: change after adding Megas, etc
+    if (species >= SPECIES_VENUSAUR_MEGA && species <= SPECIES_STUNFISK_GALARIAN) // Todo: change after adding Megas, etc
     {
         switch (data)
         {

@@ -10792,6 +10792,310 @@ const struct PokedexEntry gPokedexEntries[] =
 
 const struct PokedexEntryForms gPokedexEntriesForms[] =
 {
+    // Mega Forms
+    [SPECIES_VENUSAUR_MEGA] = 
+    {
+        .height = 24,
+        .weight = 1555,
+        .description = gVenusaurMegaPokedexText,
+    },
+    [SPECIES_CHARIZARD_MEGA_X] = 
+    {
+        .height = 17,
+        .weight = 1105,
+        .description = gCharizardMegaXPokedexText,
+    },
+    [SPECIES_CHARIZARD_MEGA_Y] = 
+    {
+        .height = 17,
+        .weight = 1005,
+        .description = gCharizardMegaYPokedexText,
+    },
+    [SPECIES_BLASTOISE_MEGA] = 
+    {
+        .height = 16,
+        .weight = 1011,
+        .description = gBlastoiseMegaPokedexText,
+    },
+    [SPECIES_BEEDRILL_MEGA] = 
+    {
+        .height = 14,
+        .weight = 405,
+        .description = gBeedrillMegaPokedexText,
+    },
+    [SPECIES_PIDGEOT_MEGA] = 
+    {
+        .height = 22,
+        .weight = 505,
+        .description = gPidgeotMegaPokedexText,
+    },
+    [SPECIES_ALAKAZAM_MEGA] = 
+    {
+        .height = 12,
+        .weight = 480,
+        .description = gAlakazamMegaPokedexText,
+    },
+    [SPECIES_SLOWBRO_MEGA] = 
+    {
+        .height = 20,
+        .weight = 1200,
+        .description = gSlowbroMegaPokedexText,
+    },
+    [SPECIES_GENGAR_MEGA] = 
+    {
+        .height = 14,
+        .weight = 405,
+        .description = gGengarMegaPokedexText,
+    },
+    [SPECIES_KANGASKHAN_MEGA] = 
+    {
+        .height = 22,
+        .weight = 1000,
+        .description = gKangaskhanMegaPokedexText,
+    },
+    [SPECIES_PINSIR_MEGA] = 
+    {
+        .height = 17,
+        .weight = 590,
+        .description = gPinsirMegaPokedexText,
+    },
+    [SPECIES_GYARADOS_MEGA] = 
+    {
+        .height = 65,
+        .weight = 3050,
+        .description = gGyaradosMegaPokedexText,
+    },
+    [SPECIES_AERODACTYL_MEGA] = 
+    {
+        .height = 21,
+        .weight = 790,
+        .description = gAerodactylMegaPokedexText,
+    },
+    [SPECIES_MEWTWO_MEGA_X] = 
+    {
+        .height = 23,
+        .weight = 1270,
+        .description = gMewtwoMegaXPokedexText,
+    },
+    [SPECIES_MEWTWO_MEGA_Y] = 
+    {
+        .height = 15,
+        .weight = 330,
+        .description = gMewtwoMegaYPokedexText,
+    },
+    [SPECIES_AMPHAROS_MEGA] = 
+    {
+        .height = 14,
+        .weight = 615,
+        .description = gAmpharosMegaPokedexText,
+    },
+    [SPECIES_STEELIX_MEGA] = 
+    {
+        .height = 105,
+        .weight = 7400,
+        .description = gSteelixMegaPokedexText,
+    },
+    [SPECIES_SCIZOR_MEGA] = 
+    {
+        .height = 20,
+        .weight = 1250,
+        .description = gScizorMegaPokedexText,
+    },
+    [SPECIES_HERACROSS_MEGA] = 
+    {
+        .height = 17,
+        .weight = 625,
+        .description = gHeracrossMegaPokedexText,
+    },
+    [SPECIES_HOUNDOOM_MEGA] = 
+    {
+        .height = 19,
+        .weight = 495,
+        .description = gHoundoomMegaPokedexText,
+    },
+    [SPECIES_TYRANITAR_MEGA] = 
+    {
+        .height = 25,
+        .weight = 2550,
+        .description = gTyranitarMegaPokedexText,
+    },
+    [SPECIES_SCEPTILE_MEGA] = 
+    {
+        .height = 19,
+        .weight = 552,
+        .description = gSceptileMegaPokedexText,
+    },
+    [SPECIES_BLAZIKEN_MEGA] = 
+    {
+        .height = 19,
+        .weight = 520,
+        .description = gBlazikenMegaPokedexText,
+    },
+    [SPECIES_SWAMPERT_MEGA] = 
+    {
+        .height = 19,
+        .weight = 1020,
+        .description = gSwampertMegaPokedexText,
+    },
+    [SPECIES_GARDEVOIR_MEGA] = 
+    {
+        .height = 16,
+        .weight = 484,
+        .description = gGardevoirMegaPokedexText,
+    },
+    [SPECIES_SABLEYE_MEGA] = 
+    {
+        .height = 05,
+        .weight = 1610,
+        .description = gSableyeMegaPokedexText,
+    },
+    [SPECIES_MAWILE_MEGA] = 
+    {
+        .height = 10,
+        .weight = 235,
+        .description = gMawileMegaPokedexText,
+    },
+    [SPECIES_AGGRON_MEGA] = 
+    {
+        .height = 22,
+        .weight = 3950,
+        .description = gAggronMegaPokedexText,
+    },
+    [SPECIES_MEDICHAM_MEGA] = 
+    {
+        .height = 13,
+        .weight = 315,
+        .description = gMedichamMegaPokedexText,
+    },
+    [SPECIES_MANECTRIC_MEGA] = 
+    {
+        .height = 18,
+        .weight = 440,
+        .description = gManectricMegaPokedexText,
+    },
+    [SPECIES_SHARPEDO_MEGA] = 
+    {
+        .height = 25,
+        .weight = 1303,
+        .description = gSharpedoMegaPokedexText,
+    },
+    [SPECIES_CAMERUPT_MEGA] = 
+    {
+        .height = 25,
+        .weight = 3205,
+        .description = gCameruptMegaPokedexText,
+    },
+    [SPECIES_ALTARIA_MEGA] = 
+    {
+        .height = 15,
+        .weight = 206,
+        .description = gAltariaMegaPokedexText,
+    },
+    [SPECIES_BANETTE_MEGA] = 
+    {
+        .height = 12,
+        .weight = 130,
+        .description = gBanetteMegaPokedexText,
+    },
+    [SPECIES_ABSOL_MEGA] = 
+    {
+        .height = 12,
+        .weight = 490,
+        .description = gAbsolMegaPokedexText,
+    },
+    [SPECIES_GLALIE_MEGA] = 
+    {
+        .height = 21,
+        .weight = 3502,
+        .description = gGlalieMegaPokedexText,
+    },
+    [SPECIES_SALAMENCE_MEGA] = 
+    {
+        .height = 18,
+        .weight = 1126,
+        .description = gSalamenceMegaPokedexText,
+    },
+    [SPECIES_METAGROSS_MEGA] = 
+    {
+        .height = 25,
+        .weight = 9429,
+        .description = gMetagrossMegaPokedexText,
+    },
+    [SPECIES_LATIAS_MEGA] = 
+    {
+        .height = 18,
+        .weight = 520,
+        .description = gLatiasMegaPokedexText,
+    },
+    [SPECIES_LATIOS_MEGA] = 
+    {
+        .height = 23,
+        .weight = 700,
+        .description = gLatiosMegaPokedexText,
+    },
+    [SPECIES_LOPUNNY_MEGA] = 
+    {
+        .height = 13,
+        .weight = 283,
+        .description = gLopunnyMegaPokedexText,
+    },
+    [SPECIES_GARCHOMP_MEGA] = 
+    {
+        .height = 19,
+        .weight = 950,
+        .description = gGarchompMegaPokedexText,
+    },
+    [SPECIES_LUCARIO_MEGA] = 
+    {
+        .height = 13,
+        .weight = 575,
+        .description = gLucarioMegaPokedexText,
+    },
+    [SPECIES_ABOMASNOW_MEGA] = 
+    {
+        .height = 27,
+        .weight = 1850,
+        .description = gAbomasnowMegaPokedexText,
+    },
+    [SPECIES_GALLADE_MEGA] = 
+    {
+        .height = 16,
+        .weight = 564,
+        .description = gGalladeMegaPokedexText,
+    },
+    [SPECIES_AUDINO_MEGA] = 
+    {
+        .height = 15,
+        .weight = 320,
+        .description = gAudinoMegaPokedexText,
+    },
+    [SPECIES_DIANCIE_MEGA] = 
+    {
+        .height = 11,
+        .weight = 278,
+        .description = gDiancieMegaPokedexText,
+    },
+
+    // Special Mega + Primals
+    [SPECIES_RAYQUAZA_MEGA] = 
+    {
+        .height = 108,
+        .weight = 3920,
+        .description = gRayquazaMegaPokedexText,
+    },
+    [SPECIES_KYOGRE_PRIMAL] =
+    {
+        .height = 98,
+        .weight = 4300,
+        .description = gKyogrePrimalMegaPokedexText,
+    },
+    [SPECIES_GROUDON_PRIMAL] =
+    {
+        .height = 50,
+        .weight = 9997,
+        .description = gGroudonPrimalMegaPokedexText,
+    },
+
     // Alolan Forms
     [SPECIES_RATTATA_ALOLAN] =
     {

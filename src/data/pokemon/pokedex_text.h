@@ -5364,8 +5364,8 @@ const u8 gKangaskhanMegaPokedexText[] = _("");
 const u8 gPinsirMegaPokedexText[] = _("");
 const u8 gGyaradosMegaPokedexText[] = _("");
 const u8 gAerodactylMegaPokedexText[] = _("");
-const u8 gMewtwoMega_xPokedexText[] = _("");
-const u8 gMewtwoMega_yPokedexText[] = _("");
+const u8 gMewtwoMegaXPokedexText[] = _("");
+const u8 gMewtwoMegaYPokedexText[] = _("");
 const u8 gAmpharosMegaPokedexText[] = _("");
 const u8 gSteelixMegaPokedexText[] = _("");
 const u8 gScizorMegaPokedexText[] = _("");
@@ -5401,8 +5401,8 @@ const u8 gDiancieMegaPokedexText[] = _("");
 
 // Special mega + primals
 const u8 gRayquazaMegaPokedexText[] = _(""); 
-const u8 gKyogre_primalPokedexText[] = _("");
-const u8 gGroudon_primalPokedexText[] = _("");
+const u8 gKyogrePrimalPokedexText[] = _("");
+const u8 gGroudonPrimalPokedexText[] = _("");
 
 // Alolan forms
 const u8 gRattataAlolanPokedexText[] = _("");
