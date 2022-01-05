@@ -4264,7 +4264,9 @@ u16 GetSpeciesHeightWeight(u16 species, u8 data)
         }
     }
     else
+    {
         return GetPokedexHeightWeight(SpeciesToNationalPokedexNum(species), data);
+    }
 }
 
 s8 GetSetPokedexFlag(u16 nationalDexNo, u8 caseID)
