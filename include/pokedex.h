@@ -35,8 +35,16 @@ struct PokedexEntry
     /*0x1C*/ u16 trainerOffset;
 };  /*size = 0x20*/
 
+struct PokedexEntryForms
+{
+    u16 height; //in decimeters
+    u16 weight; //in hectograms
+    const u8 *description;
+};
+
 void ResetPokedex(void);
 u16 GetPokedexHeightWeight(u16 dexNum, u8 data);
+u16 GetSpeciesHeightWeight(u16 species, u8 data);
 u16 GetNationalPokedexCount(u8);
 u16 GetHoennPokedexCount(u8);
 u8 DisplayCaughtMonDexPage(u16 dexNum, u32 otId, u32 personality);

@@ -4249,6 +4249,24 @@ u16 GetPokedexHeightWeight(u16 dexNum, u8 data)
     }
 }
 
+u16 GetSpeciesHeightWeight(u16 species, u8 data)
+{
+    if (species >= SPECIES_RATTATA_ALOLAN && species <= SPECIES_STUNFISK_GALARIAN) // Todo: change after adding Megas, etc
+    {
+        switch (data)
+        {
+        case 0:  // height
+            return gPokedexEntriesForms[species].height;
+        case 1:  // weight
+            return gPokedexEntriesForms[species].weight;
+        default:
+            return 1;
+        }
+    }
+    else
+        return GetPokedexHeightWeight(SpeciesToNationalPokedexNum(species), data);
+}
+
 s8 GetSetPokedexFlag(u16 nationalDexNo, u8 caseID)
 {
     u32 index, bit, mask;

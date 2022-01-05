@@ -10788,3 +10788,234 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 0,
     },
 };
+
+
+const struct PokedexEntryForms gPokedexEntriesForms[] =
+{
+    // Alolan Forms
+    [SPECIES_RATTATA_ALOLAN] =
+    {
+        .height = 3,
+        .weight = 38,
+        .description = gRattataAlolanPokedexText,
+    }, 
+    [SPECIES_RATICATE_ALOLAN] =
+    {
+        .height = 7,
+        .weight = 255,
+        .description = gRaticateAlolanPokedexText,
+    }, 
+    [SPECIES_RAICHU_ALOLAN] =
+    {
+        .height = 7,
+        .weight = 210,
+        .description = gRaichuAlolanPokedexText,
+    }, 
+    [SPECIES_SANDSHREW_ALOLAN] =
+    {
+        .height = 7,
+        .weight = 400,
+        .description = gSandshrewAlolanPokedexText,
+    }, 
+    [SPECIES_SANDSLASH_ALOLAN] =
+    {
+        .height = 12,
+        .weight = 550,
+        .description = gSandslashAlolanPokedexText,
+    }, 
+    [SPECIES_VULPIX_ALOLAN] =
+    {
+        .height = 6,
+        .weight = 99,
+        .description = gVulpixAlolanPokedexText,
+    }, 
+    [SPECIES_NINETALES_ALOLAN] =
+    {
+        .height = 11,
+        .weight = 199,
+        .description = gNinetalesAlolanPokedexText,
+    }, 
+    [SPECIES_DIGLETT_ALOLAN] =
+    {
+        .height = 2,
+        .weight = 10,
+        .description = gDiglettAlolanPokedexText,
+    }, 
+    [SPECIES_DUGTRIO_ALOLAN] =
+    {
+        .height = 7,
+        .weight = 666,
+        .description = gDugtrioAlolanPokedexText,
+    }, 
+    [SPECIES_MEOWTH_ALOLAN] =
+    {
+        .height = 4,
+        .weight = 42,
+        .description = gMeowthAlolanPokedexText,
+    }, 
+    [SPECIES_PERSIAN_ALOLAN] =
+    {
+        .height = 11,
+        .weight = 330,
+        .description = gPersianAlolanPokedexText,
+    }, 
+    [SPECIES_GEODUDE_ALOLAN] =
+    {
+        .height = 4,
+        .weight = 203,
+        .description = gGeodudeAlolanPokedexText,
+    }, 
+    [SPECIES_GRAVELER_ALOLAN] =
+    {
+        .height = 10,
+        .weight = 1100,
+        .description = gGravelerAlolanPokedexText,
+    }, 
+    [SPECIES_GOLEM_ALOLAN] =
+    {
+        .height = 17,
+        .weight = 3160,
+        .description = gGolemAlolanPokedexText,
+    }, 
+    [SPECIES_GRIMER_ALOLAN] =
+    {
+        .height = 7,
+        .weight = 420,
+        .description = gGrimerAlolanPokedexText,
+    }, 
+    [SPECIES_MUK_ALOLAN] =
+    {
+        .height = 10,
+        .weight = 520,
+        .description = gMukAlolanPokedexText,
+    }, 
+    [SPECIES_EXEGGUTOR_ALOLAN] =
+    {
+        .height = 109,
+        .weight = 4156,
+        .description = gExeggutorAlolanPokedexText,
+    }, 
+    [SPECIES_MAROWAK_ALOLAN] =
+    {
+        .height = 10,
+        .weight = 340,
+        .description = gMarowakAlolanPokedexText,
+    }, 
+
+    // Galarian Forms
+    [SPECIES_MEOWTH_GALARIAN] =
+    {
+        .height = 4,
+        .weight = 75,
+        .description = gMeowthGalarianPokedexText,
+    }, 
+    [SPECIES_PONYTA_GALARIAN] =
+    {
+        .height = 8,
+        .weight = 240,
+        .description = gPonytaGalarianPokedexText,
+    }, 
+    [SPECIES_RAPIDASH_GALARIAN] =
+    {
+        .height = 17,
+        .weight = 80,
+        .description = gRapidashGalarianPokedexText,
+    }, 
+    [SPECIES_SLOWPOKE_GALARIAN] =
+    {
+        .height = 12,
+        .weight = 360,
+        .description = gSlowpokeGalarianPokedexText,
+    }, 
+    [SPECIES_SLOWBRO_GALARIAN] =
+    {
+        .height = 16,
+        .weight = 705,
+        .description = gSlowbroGalarianPokedexText,
+    }, 
+    [SPECIES_FARFETCHD_GALARIAN] =
+    {
+        .height = 8,
+        .weight = 420,
+        .description = gFarfetchdGalarianPokedexText,
+    }, 
+    [SPECIES_WEEZING_GALARIAN] =
+    {
+        .height = 30,
+        .weight = 160,
+        .description = gWeezingGalarianPokedexText,
+    }, 
+    [SPECIES_MR_MIME_GALARIAN] =
+    {
+        .height = 14,
+        .weight = 568,
+        .description = gMrMimeGalarianPokedexText,
+    }, 
+    [SPECIES_ARTICUNO_GALARIAN] =
+    {
+        .height = 17,
+        .weight = 509,
+        .description = gArticunoGalarianPokedexText,
+    }, 
+    [SPECIES_ZAPDOS_GALARIAN] =
+    {
+        .height = 16,
+        .weight = 582,
+        .description = gZapdosGalarianPokedexText,
+    }, 
+    [SPECIES_MOLTRES_GALARIAN] =
+    {
+        .height = 20,
+        .weight = 660,
+        .description = gMoltresGalarianPokedexText,
+    }, 
+    [SPECIES_SLOWKING_GALARIAN] =
+    {
+        .height = 18,
+        .weight = 795,
+        .description = gSlowkingGalarianPokedexText,
+    }, 
+    [SPECIES_CORSOLA_GALARIAN] =
+    {
+        .height = 6,
+        .weight = 5,
+        .description = gCorsolaGalarianPokedexText,
+    }, 
+    [SPECIES_ZIGZAGOON_GALARIAN] =
+    {
+        .height = 4,
+        .weight = 175,
+        .description = gZigzagoonGalarianPokedexText,
+    }, 
+    [SPECIES_LINOONE_GALARIAN] =
+    {
+        .height = 5,
+        .weight = 325,
+        .description = gLinooneGalarianPokedexText,
+    }, 
+    [SPECIES_DARUMAKA_GALARIAN] =
+    {
+        .height = 7,
+        .weight = 400,
+        .description = gDarumakaGalarianPokedexText,
+    }, 
+    [SPECIES_DARMANITAN_GALARIAN] =
+    {
+        .height = 17,
+        .weight = 1200,
+        .description = gDarmanitanGalarianPokedexText,
+    }, 
+    [SPECIES_YAMASK_GALARIAN] =
+    {
+        .height = 5,
+        .weight = 15,
+        .description = gYamaskGalarianPokedexText,
+    }, 
+    [SPECIES_STUNFISK_GALARIAN] =
+    {
+        .height = 7,
+        .weight = 205,
+        .description = gStunfiskGalarianPokedexText,
+    }, 
+
+};

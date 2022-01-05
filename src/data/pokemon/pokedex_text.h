@@ -5348,3 +5348,117 @@ const u8 gCalyrexPokedexText[] = _(
     "providing healing and blessings. It\n"
     "reigned over the Galar region in times\n"
     "of yore.");
+
+// Forms
+// Megas
+const u8 gVenusaurMegaPokedexText[] = _("");
+const u8 gCharizardMegaXPokedexText[] = _(""); 
+const u8 gCharizardMegaYPokedexText[] = _(""); 
+const u8 gBlastoiseMegaPokedexText[] = _("");
+const u8 gBeedrillMegaPokedexText[] = _("");
+const u8 gPidgeotMegaPokedexText[] = _("");
+const u8 gAlakazamMegaPokedexText[] = _("");
+const u8 gSlowbroMegaPokedexText[] = _("");
+const u8 gGengarMegaPokedexText[] = _("");
+const u8 gKangaskhanMegaPokedexText[] = _("");
+const u8 gPinsirMegaPokedexText[] = _("");
+const u8 gGyaradosMegaPokedexText[] = _("");
+const u8 gAerodactylMegaPokedexText[] = _("");
+const u8 gMewtwoMega_xPokedexText[] = _("");
+const u8 gMewtwoMega_yPokedexText[] = _("");
+const u8 gAmpharosMegaPokedexText[] = _("");
+const u8 gSteelixMegaPokedexText[] = _("");
+const u8 gScizorMegaPokedexText[] = _("");
+const u8 gHeracrossMegaPokedexText[] = _("");
+const u8 gHoundoomMegaPokedexText[] = _("");
+const u8 gTyranitarMegaPokedexText[] = _("");
+const u8 gSceptileMegaPokedexText[] = _("");
+const u8 gBlazikenMegaPokedexText[] = _("");
+const u8 gSwampertMegaPokedexText[] = _("");
+const u8 gGardevoirMegaPokedexText[] = _("");
+const u8 gSableyeMegaPokedexText[] = _("");
+const u8 gMawileMegaPokedexText[] = _("");
+const u8 gAggronMegaPokedexText[] = _("");
+const u8 gMedichamMegaPokedexText[] = _("");
+const u8 gManectricMegaPokedexText[] = _("");
+const u8 gSharpedoMegaPokedexText[] = _("");
+const u8 gCameruptMegaPokedexText[] = _("");
+const u8 gAltariaMegaPokedexText[] = _("");
+const u8 gBanetteMegaPokedexText[] = _("");
+const u8 gAbsolMegaPokedexText[] = _("");
+const u8 gGlalieMegaPokedexText[] = _("");
+const u8 gSalamenceMegaPokedexText[] = _("");
+const u8 gMetagrossMegaPokedexText[] = _("");
+const u8 gLatiasMegaPokedexText[] = _("");
+const u8 gLatiosMegaPokedexText[] = _("");
+const u8 gLopunnyMegaPokedexText[] = _("");
+const u8 gGarchompMegaPokedexText[] = _("");
+const u8 gLucarioMegaPokedexText[] = _("");
+const u8 gAbomasnowMegaPokedexText[] = _("");
+const u8 gGalladeMegaPokedexText[] = _("");
+const u8 gAudinoMegaPokedexText[] = _("");
+const u8 gDiancieMegaPokedexText[] = _("");
+
+// Special mega + primals
+const u8 gRayquazaMegaPokedexText[] = _(""); 
+const u8 gKyogre_primalPokedexText[] = _("");
+const u8 gGroudon_primalPokedexText[] = _("");
+
+// Alolan forms
+const u8 gRattataAlolanPokedexText[] = _("");
+const u8 gRaticateAlolanPokedexText[] = _("");
+const u8 gRaichuAlolanPokedexText[] = _("");
+const u8 gSandshrewAlolanPokedexText[] = _("");
+const u8 gSandslashAlolanPokedexText[] = _("");
+const u8 gVulpixAlolanPokedexText[] = _("");
+const u8 gNinetalesAlolanPokedexText[] = _("");
+const u8 gDiglettAlolanPokedexText[] = _("");
+const u8 gDugtrioAlolanPokedexText[] = _("");
+const u8 gMeowthAlolanPokedexText[] = _("");
+const u8 gPersianAlolanPokedexText[] = _("");
+const u8 gGeodudeAlolanPokedexText[] = _("");
+const u8 gGravelerAlolanPokedexText[] = _("");
+const u8 gGolemAlolanPokedexText[] = _("");
+const u8 gGrimerAlolanPokedexText[] = _("");
+const u8 gMukAlolanPokedexText[] = _("");
+const u8 gExeggutorAlolanPokedexText[] = _("");
+const u8 gMarowakAlolanPokedexText[] = _("");
+
+// Galarian forms
+const u8 gMeowthGalarianPokedexText[] = _(""); 
+const u8 gPonytaGalarianPokedexText[] = _(""); 
+const u8 gRapidashGalarianPokedexText[] = _(""); 
+const u8 gSlowpokeGalarianPokedexText[] = _(""); 
+const u8 gSlowbroGalarianPokedexText[] = _(""); 
+const u8 gFarfetchdGalarianPokedexText[] = _(""); 
+const u8 gWeezingGalarianPokedexText[] = _(""); 
+const u8 gMrMimeGalarianPokedexText[] = _("");
+const u8 gArticunoGalarianPokedexText[] = _(""); 
+const u8 gZapdosGalarianPokedexText[] = _(""); 
+const u8 gMoltresGalarianPokedexText[] = _(""); 
+const u8 gSlowkingGalarianPokedexText[] = _(""); 
+const u8 gCorsolaGalarianPokedexText[] = _(""); 
+const u8 gZigzagoonGalarianPokedexText[] = _(""); 
+const u8 gLinooneGalarianPokedexText[] = _(""); 
+const u8 gDarumakaGalarianPokedexText[] = _(""); 
+const u8 gDarmanitanGalarianPokedexText[] = _(""); 
+const u8 gYamaskGalarianPokedexText[] = _(""); 
+const u8 gStunfiskGalarianPokedexText[] = _(""); 
+
+// Misc forms
+// Cosplay pikachu
+const u8 gPikachuCosplayPokedexText[] = _(""); 
+const u8 gPikachuRockStarPokedexText[] = _("");
+const u8 gPikachuBellePokedexText[] = _(""); 
+const u8 gPikachuPopStarPokedexText[] = _("");
+const u8 gPikachuPhdPokedexText[] = _("");
+const u8 gPikachuLibrePokedexText[] = _(""); 
+// Cap pikachu
+const u8 gPikachuOriginalCapPokedexText[] = _("");
+const u8 gPikachuHoennCapPokedexText[] = _("");
+const u8 gPikachuSinnohCapPokedexText[] = _("");
+const u8 gPikachuUnovaCapPokedexText[] = _("");
+const u8 gPikachuKalosCapPokedexText[] = _("");
+const u8 gPikachuAlolaCapPokedexText[] = _("");
+const u8 gPikachuPartnerCapPokedexText[] = _("");
+const u8 gPikachuWorldCapPokedexText[] = _("");
