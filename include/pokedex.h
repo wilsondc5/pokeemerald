@@ -37,6 +37,7 @@ struct PokedexEntry
 
 struct PokedexEntryForms
 {
+    u8 categoryName[13];
     u16 height; //in decimeters
     u16 weight; //in hectograms
     const u8 *description;
