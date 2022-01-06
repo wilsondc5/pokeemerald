@@ -4255,14 +4255,24 @@ u16 GetSpeciesHeightWeight(u16 species, u8 data)
     {
         return GetPokedexHeightWeight(SpeciesToNationalPokedexNum(species), data);
     }
-    else if (species >= SPECIES_VENUSAUR_MEGA && species < NUM_SPECIES)
+    else if (species >= (FORMS_START + 1) && species < NUM_SPECIES)
     {
+        // if 0 is returned, use base form data
+        u16 weight, height;
         switch (data)
         {
         case 0:  // height
-            return gPokedexEntriesForms[species].height;
+            height = gPokedexEntriesForms[species].height;
+            if (height > 0)
+            {
+                return height;
+            }
         case 1:  // weight
-            return gPokedexEntriesForms[species].weight;
+            weight = gPokedexEntriesForms[species].weight;
+            if (weight > 0)
+            {
+                return weight;
+            }
         default:
             return 1;
         }

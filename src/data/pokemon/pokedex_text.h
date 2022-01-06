@@ -5521,12 +5521,12 @@ const u8 gLycanrocDuskPokedexText[] = _("");
 // Wishiwashi
 const u8 gWishiwashiSchoolPokedexText[] = _("");
 // Silvally
-const u8 gSilvallyFightinconstPokedexText[] = _("");
-const u8 gSilvallyFlyinconstPokedexText[] = _("");
+const u8 gSilvallyFightingPokedexText[] = _("");
+const u8 gSilvallyFlyingPokedexText[] = _("");
 const u8 gSilvallyPoisonPokedexText[] = _("");
 const u8 gSilvallyGroundPokedexText[] = _("");
 const u8 gSilvallyRockPokedexText[] = _("");
-const u8 gSilvallyBuconstPokedexText[] = _("");
+const u8 gSilvallyBugPokedexText[] = _("");
 const u8 gSilvallyGhostPokedexText[] = _("");
 const u8 gSilvallySteelPokedexText[] = _("");
 const u8 gSilvallyFirePokedexText[] = _("");
@@ -5561,8 +5561,8 @@ const u8 gNecrozmaUltraPokedexText[] = _("");
 // Magearna
 const u8 gMagearnaOriginalColorPokedexText[] = _("");
 // Cramorant
-const u8 gCramorantGulpinconstPokedexText[] = _("");
-const u8 gCramorantGorginconstPokedexText[] = _("");
+const u8 gCramorantGulpingPokedexText[] = _("");
+const u8 gCramorantGorgingPokedexText[] = _("");
 // Toxtricity
 const u8 gToxtricityLowKeyPokedexText[] = _("");
 // Sinistea
