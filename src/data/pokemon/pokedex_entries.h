@@ -10945,7 +10945,7 @@ const struct PokedexEntryForms gPokedexEntriesForms[] =
     },
     [SPECIES_SABLEYE_MEGA] = 
     {
-        .height = 05,
+        .height = 5,
         .weight = 1610,
         .description = gSableyeMegaPokedexText,
     },
@@ -11320,6 +11320,833 @@ const struct PokedexEntryForms gPokedexEntriesForms[] =
         .height = 7,
         .weight = 205,
         .description = gStunfiskGalarianPokedexText,
-    }, 
+    },
 
+    // Cap Pikachu
+    [SPECIES_PIKACHU_ORIGINAL_CAP] = 
+    { 
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_PIKACHU_ORIGINAL_CAP)].height, 
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_PIKACHU_ORIGINAL_CAP)].weight, 
+        .description =  PikachuOriginalCapPokedexText,
+    },
+    [SPECIES_PIKACHU_HOENN_CAP] = 
+    { 
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_PIKACHU_HOENN_CAP)].height, 
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_PIKACHU_HOENN_CAP)].weight, 
+        .description =  PikachuHoennCapPokedexText,
+    },
+    [SPECIES_PIKACHU_SINNOH_CAP] = 
+    { 
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_PIKACHU_SINNOH_CAP)].height, 
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_PIKACHU_SINNOH_CAP)].weight, 
+        .description =  PikachuSinnohCapPokedexText,
+    },
+    [SPECIES_PIKACHU_UNOVA_CAP] = 
+    { 
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_PIKACHU_UNOVA_CAP)].height, 
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_PIKACHU_UNOVA_CAP)].weight, 
+        .description =  PikachuUnovaCapPokedexText,
+    },
+    [SPECIES_PIKACHU_KALOS_CAP] = 
+    { 
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_PIKACHU_KALOS_CAP)].height, 
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_PIKACHU_KALOS_CAP)].weight, 
+        .description =  PikachuKalosCapPokedexText,
+    },
+    [SPECIES_PIKACHU_ALOLA_CAP] = 
+    { 
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_PIKACHU_ALOLA_CAP)].height, 
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_PIKACHU_ALOLA_CAP)].weight, 
+        .description =  PikachuAlolaCapPokedexText,
+    },
+    [SPECIES_PIKACHU_PARTNER_CAP] = 
+    { 
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_PIKACHU_PARTNER_CAP)].height, 
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_PIKACHU_PARTNER_CAP)].weight, 
+        .description =  PikachuPartnerCapPokedexText,
+    },
+    [SPECIES_PIKACHU_WORLD_CAP] = 
+    { 
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_PIKACHU_WORLD_CAP)].height, 
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_PIKACHU_WORLD_CAP)].weight, 
+        .description =  PikachuWorldCapPokedexText,
+    },
+
+    // Castform
+    [SPECIES_CASTFORM_SUNNY] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_CASTFORM_SUNNY)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_CASTFORM_SUNNY)].weight,
+        .description =  gCastformSunnyPokedexText,
+    },
+    [SPECIES_CASTFORM_RAINY] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_CASTFORM_RAINY)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_CASTFORM_RAINY)].weight,
+        .description =  gCastformRainyPokedexText,
+    },
+    [SPECIES_CASTFORM_SNOWY] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_CASTFORM_SNOWY)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_CASTFORM_SNOWY)].weight,
+        .description =  gCastformSnowyPokedexText,
+    },
+    // Cherrim          
+    [SPECIES_CHERRIM_SUNSHINE] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_CHERRIM_SUNSHINE)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_CHERRIM_SUNSHINE)].weight,
+        .description =  gCherrimSunshinePokedexText,
+    },
+    // Shellos          
+    [SPECIES_SHELLOS_EAST_SEA] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SHELLOS_EAST_SEA)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SHELLOS_EAST_SEA)].weight,
+        .description =  gShellosEastSeaPokedexText,
+    },
+    // Gastrodon          
+    [SPECIES_GASTRODON_EAST_SEA] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_GASTRODON_EAST_SEA)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_GASTRODON_EAST_SEA)].weight,
+        .description =  gGastrodonEastSeaPokedexText,
+    },
+    // Rotom          
+    [SPECIES_ROTOM_HEAT] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ROTOM_HEAT)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ROTOM_HEAT)].weight,
+        .description =  gRotomHeatPokedexText,
+    },
+    [SPECIES_ROTOM_WASH] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ROTOM_WASH)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ROTOM_WASH)].weight,
+        .description =  gRotomWashPokedexText,
+    },
+    [SPECIES_ROTOM_FROST] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ROTOM_FROST)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ROTOM_FROST)].weight,
+        .description =  gRotomFrostPokedexText,
+    },
+    [SPECIES_ROTOM_FAN] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ROTOM_FAN)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ROTOM_FAN)].weight,
+        .description =  gRotomFanPokedexText,
+    },
+    [SPECIES_ROTOM_MOW] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ROTOM_MOW)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ROTOM_MOW)].weight,
+        .description =  gRotomMowPokedexText,
+    },
+    // Giratina          
+    [SPECIES_GIRATINA_ORIGIN] = 
+    {
+        .height =  69 ,
+        .weight =  6500 ,
+        .description =  gGiratinaOriginPokedexText,
+    },
+    // Shaymin          
+    [SPECIES_SHAYMIN_SKY] = 
+    {
+        .height =  4 ,
+        .weight =  52 ,
+        .description =  gShayminSkyPokedexText,
+    },
+    // Basculin          
+    [SPECIES_BASCULIN_BLUE_STRIPED] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_BASCULIN_BLUE_STRIPED)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_BASCULIN_BLUE_STRIPED)].weight,
+        .description =  gBasculinBlueStripedPokedexText,
+    },
+    // Darmanitan          
+    [SPECIES_DARMANITAN_ZEN_MODE] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_DARMANITAN_ZEN_MODE)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_DARMANITAN_ZEN_MODE)].weight,
+        .description =  gDarmanitanZenModePokedexText,
+    },
+    [SPECIES_DARMANITAN_ZEN_MODE_GALARIAN] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_DARMANITAN_ZEN_MODE_GALARIAN)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_DARMANITAN_ZEN_MODE_GALARIAN)].weight,
+        .description =  gDarmanitanZenModeGalarianPokedexText,
+    },
+    // Therian Forms          
+    [SPECIES_TORNADUS_THERIAN] = 
+    {
+        .height =  14 ,
+        .weight =  630 ,
+        .description =  gTornadusTherianPokedexText,
+    },
+    [SPECIES_THUNDURUS_THERIAN] = 
+    {
+        .height =  30  ,
+        .weight =  610 ,
+        .description =  gThundurusTherianPokedexText,
+    },
+    [SPECIES_LANDORUS_THERIAN] = 
+    {
+        .height =  13 ,
+        .weight =  680 ,
+        .description =  gLandorusTherianPokedexText,
+    },
+    // Kyurem          
+    [SPECIES_KYUREM_WHITE] = 
+    {
+        .height =  36 ,
+        .weight =  3250 ,
+        .description =  gKyuremWhitePokedexText,
+    },
+    [SPECIES_KYUREM_BLACK] = 
+    {
+        .height =  33 ,
+        .weight =  3250 ,
+        .description =  gKyuremBlackPokedexText,
+    },
+    // Keldeo          
+    [SPECIES_KELDEO_RESOLUTE] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_KELDEO_RESOLUTE)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_KELDEO_RESOLUTE)].weight,
+        .description =  gKeldeoResolutePokedexText,
+    },
+    // Meowstic          
+    [SPECIES_MEOWSTIC_FEMALE] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_MEOWSTIC_FEMALE)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_MEOWSTIC_FEMALE)].weight,
+        .description =  gMeowsticFemalePokedexText,
+    },
+    // Aegislash          
+    [SPECIES_AEGISLASH_BLADE] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_AEGISLASH_BLADE)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_AEGISLASH_BLADE)].weight,
+        .description =  gAegislashBladePokedexText,
+    },
+    // Pumpkaboo          
+    [SPECIES_PUMPKABOO_SMALL] = 
+    {
+        .height =  3 ,
+        .weight =  35 ,
+        .description =  gPumpkabooSmallPokedexText,
+    },
+    [SPECIES_PUMPKABOO_LARGE] = 
+    {
+        .height =  5 ,
+        .weight =  75 ,
+        .description =  gPumpkabooLargePokedexText,
+    },
+    [SPECIES_PUMPKABOO_SUPER] = 
+    {
+        .height =  8 ,
+        .weight =  150 ,
+        .description =  gPumpkabooSuperPokedexText,
+    },
+    // Gourgeist          
+    [SPECIES_GOURGEIST_SMALL] = 
+    {
+        .height =  7 ,
+        .weight =  95 ,
+        .description =  gGourgeistSmallPokedexText,
+    },
+    [SPECIES_GOURGEIST_LARGE] = 
+    {
+        .height =  11 ,
+        .weight =  140 ,
+        .description =  gGourgeistLargePokedexText,
+    },
+    [SPECIES_GOURGEIST_SUPER] = 
+    {
+        .height =  17 ,
+        .weight =  390 ,
+        .description =  gGourgeistSuperPokedexText,
+    },
+    // Zygarde          
+    [SPECIES_ZYGARDE_10] = 
+    {
+        .height =  12 ,
+        .weight =  335 ,
+        .description =  gZygarde10PokedexText,
+    },
+    [SPECIES_ZYGARDE_10_POWER_CONSTRUCT] = 
+    {
+        .height =  12 ,
+        .weight =  335 ,
+        .description =  gZygarde10PowerConstructPokedexText,
+    },
+    [SPECIES_ZYGARDE_50_POWER_CONSTRUCT] = 
+    {
+        .height =  50 ,
+        .weight =  3050 ,
+        .description =  gZygarde50PowerConstructPokedexText,
+    },
+    [SPECIES_ZYGARDE_COMPLETE] = 
+    {
+        .height =  45 ,
+        .weight =  6100 ,
+        .description =  gZygardeCompletePokedexText,
+    },
+    // Hoopa          
+    [SPECIES_HOOPA_UNBOUND] = 
+    {
+        .height =  65 ,
+        .weight =  4900 ,
+        .description =  gHoopaUnboundPokedexText,
+    },
+    // Oricorio          
+    [SPECIES_ORICORIO_POM_POM] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ORICORIO_POM_POM)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ORICORIO_POM_POM)].weight,
+        .description =  gOricorioPomPomPokedexText,
+    },
+    [SPECIES_ORICORIO_PAU] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ORICORIO_PAU)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ORICORIO_PAU)].weight,
+        .description =  gOricorioPauPokedexText,
+    },
+    [SPECIES_ORICORIO_SENSU] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ORICORIO_SENSU)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ORICORIO_SENSU)].weight,
+        .description =  gOricorioSensuPokedexText,
+    },
+    // Rockruff          
+    [SPECIES_ROCKRUFF_OWN_TEMPO] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ROCKRUFF_OWN_TEMPO)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ROCKRUFF_OWN_TEMPO)].weight,
+        .description =  gRockruffOwnTempoPokedexText,
+    },
+    // Lycanroc          
+    [SPECIES_LYCANROC_MIDNIGHT] = 
+    {
+        .height =  11 ,
+        .weight =  250 ,
+        .description =  gLycanrocMidnightPokedexText,
+    },
+    [SPECIES_LYCANROC_DUSK] = 
+    {
+        .height =  8 ,
+        .weight =  250 ,
+        .description =  gLycanrocDuskPokedexText,
+    },
+    // Wishiwashi          
+    [SPECIES_WISHIWASHI_SCHOOL] = 
+    {
+        .height =  82 ,
+        .weight =  786 ,
+        .description =  gWishiwashiSchoolPokedexText,
+    },
+    // Silvally          
+    [SPECIES_SILVALLY_FIGHTING] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_FIGHTING)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_FIGHTING)].weight,
+        .description =  gSilvallyFightingPokedexText,
+    },
+    [SPECIES_SILVALLY_FLYING] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_FLYING)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_FLYING)].weight,
+        .description =  gSilvallyFlyingPokedexText,
+    },
+    [SPECIES_SILVALLY_POISON] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_POISON)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_POISON)].weight,
+        .description =  gSilvallyPoisonPokedexText,
+    },
+    [SPECIES_SILVALLY_GROUND] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_GROUND)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_GROUND)].weight,
+        .description =  gSilvallyGroundPokedexText,
+    },
+    [SPECIES_SILVALLY_ROCK] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_ROCK)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_ROCK)].weight,
+        .description =  gSilvallyRockPokedexText,
+    },
+    [SPECIES_SILVALLY_BUG] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_BUG)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_BUG)].weight,
+        .description =  gSilvallyBugPokedexText,
+    },
+    [SPECIES_SILVALLY_GHOST] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_GHOST)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_GHOST)].weight,
+        .description =  gSilvallyGhostPokedexText,
+    },
+    [SPECIES_SILVALLY_STEEL] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_STEEL)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_STEEL)].weight,
+        .description =  gSilvallySteelPokedexText,
+    },
+    [SPECIES_SILVALLY_FIRE] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_FIRE)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_FIRE)].weight,
+        .description =  gSilvallyFirePokedexText,
+    },
+    [SPECIES_SILVALLY_WATER] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_WATER)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_WATER)].weight,
+        .description =  gSilvallyWaterPokedexText,
+    },
+    [SPECIES_SILVALLY_GRASS] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_GRASS)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_GRASS)].weight,
+        .description =  gSilvallyGrassPokedexText,
+    },
+    [SPECIES_SILVALLY_ELECTRIC] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_ELECTRIC)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_ELECTRIC)].weight,
+        .description =  gSilvallyElectricPokedexText,
+    },
+    [SPECIES_SILVALLY_PSYCHIC] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_PSYCHIC)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_PSYCHIC)].weight,
+        .description =  gSilvallyPsychicPokedexText,
+    },
+    [SPECIES_SILVALLY_ICE] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_ICE)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_ICE)].weight,
+        .description =  gSilvallyIcePokedexText,
+    },
+    [SPECIES_SILVALLY_DRAGON] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_DRAGON)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_DRAGON)].weight,
+        .description =  gSilvallyDragonPokedexText,
+    },
+    [SPECIES_SILVALLY_DARK] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_DARK)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_DARK)].weight,
+        .description =  gSilvallyDarkPokedexText,
+    },
+    [SPECIES_SILVALLY_FAIRY] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_FAIRY)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SILVALLY_FAIRY)].weight,
+        .description =  gSilvallyFairyPokedexText,
+    },
+    // Minior          
+    [SPECIES_MINIOR_METEOR_ORANGE] = 
+    {
+        .height =  3 ,
+        .weight =  400 ,
+        .description =  gMiniorMeteorOrangePokedexText,
+    },
+    [SPECIES_MINIOR_METEOR_YELLOW] = 
+    {
+        .height =  3 ,
+        .weight =  400 ,
+        .description =  gMiniorMeteorYellowPokedexText,
+    },
+    [SPECIES_MINIOR_METEOR_GREEN] = 
+    {
+        .height =  3 ,
+        .weight =  400 ,
+        .description =  gMiniorMeteorGreenPokedexText,
+    },
+    [SPECIES_MINIOR_METEOR_BLUE] = 
+    {
+        .height =  3 ,
+        .weight =  400 ,
+        .description =  gMiniorMeteorBluePokedexText,
+    },
+    [SPECIES_MINIOR_METEOR_INDIGO] = 
+    {
+        .height =  3 ,
+        .weight =  400 ,
+        .description =  gMiniorMeteorIndigoPokedexText,
+    },
+    [SPECIES_MINIOR_METEOR_VIOLET] = 
+    {
+        .height =  3 ,
+        .weight =  400 ,
+        .description =  gMiniorMeteorVioletPokedexText,
+    },
+    [SPECIES_MINIOR_CORE_RED] = 
+    {
+        .height =  3 ,
+        .weight =  3 ,
+        .description =  gMiniorCoreRedPokedexText,
+    },
+    [SPECIES_MINIOR_CORE_ORANGE] = 
+    {
+        .height =  3 ,
+        .weight =  3 ,
+        .description =  gMiniorCoreOrangePokedexText,
+    },
+    [SPECIES_MINIOR_CORE_YELLOW] = 
+    {
+        .height =  3 ,
+        .weight =  3 ,
+        .description =  gMiniorCoreYellowPokedexText,
+    },
+    [SPECIES_MINIOR_CORE_GREEN] = 
+    {
+        .height =  3 ,
+        .weight =  3 ,
+        .description =  gMiniorCoreGreenPokedexText,
+    },
+    [SPECIES_MINIOR_CORE_BLUE] = 
+    {
+        .height =  3 ,
+        .weight =  3 ,
+        .description =  gMiniorCoreBluePokedexText,
+    },
+    [SPECIES_MINIOR_CORE_INDIGO] = 
+    {
+        .height =  3 ,
+        .weight =  3 ,
+        .description =  gMiniorCoreIndigoPokedexText,
+    },
+    [SPECIES_MINIOR_CORE_VIOLET] = 
+    {
+        .height =  3 ,
+        .weight =  3 ,
+        .description =  gMiniorCoreVioletPokedexText,
+    },
+    // Mimikyu          
+    [SPECIES_MIMIKYU_BUSTED] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_MIMIKYU_BUSTED)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_MIMIKYU_BUSTED)].weight,
+        .description =  gMimikyuBustedPokedexText,
+    },
+    // Necrozma          
+    [SPECIES_NECROZMA_DUSK_MANE] = 
+    {
+        .height =  38 ,
+        .weight =  4600 ,
+        .description =  gNecrozmaDuskManePokedexText,
+    },
+    [SPECIES_NECROZMA_DAWN_WINGS] = 
+    {
+        .height =  42 ,
+        .weight =  3500 ,
+        .description =  gNecrozmaDawnWingsPokedexText,
+    },
+    [SPECIES_NECROZMA_ULTRA] = 
+    {
+        .height =  75 ,
+        .weight =  2300 ,
+        .description =  gNecrozmaUltraPokedexText,
+    },
+    // Magearna          
+    [SPECIES_MAGEARNA_ORIGINAL_COLOR] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_MAGEARNA_ORIGINAL_COLOR)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_MAGEARNA_ORIGINAL_COLOR)].weight,
+        .description =  gMagearnaOriginalColorPokedexText,
+    },
+    // Cramorant          
+    [SPECIES_CRAMORANT_GULPING] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_CRAMORANT_GULPING)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_CRAMORANT_GULPING)].weight,
+        .description =  gCramorantGulpingPokedexText,
+    },
+    [SPECIES_CRAMORANT_GORGING] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_CRAMORANT_GORGING)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_CRAMORANT_GORGING)].weight,
+        .description =  gCramorantGorgingPokedexText,
+    },
+    // Toxtricity          
+    [SPECIES_TOXTRICITY_LOW_KEY] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_TOXTRICITY_LOW_KEY)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_TOXTRICITY_LOW_KEY)].weight,
+        .description =  gToxtricityLowKeyPokedexText,
+    },
+    // Sinistea          
+    [SPECIES_SINISTEA_ANTIQUE] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SINISTEA_ANTIQUE)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_SINISTEA_ANTIQUE)].weight,
+        .description =  gSinisteaAntiquePokedexText,
+    },
+    // Polteageist          
+    [SPECIES_POLTEAGEIST_ANTIQUE] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_POLTEAGEIST_ANTIQUE)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_POLTEAGEIST_ANTIQUE)].weight,
+        .description =  gPolteageistAntiquePokedexText,
+    },
+    // Alcremie          
+    [SPECIES_ALCREMIE_RUBY_CREAM] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ALCREMIE_RUBY_CREAM)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ALCREMIE_RUBY_CREAM)].weight,
+        .description =  gAlcremieRubyCreamPokedexText,
+    },
+    [SPECIES_ALCREMIE_MATCHA_CREAM] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ALCREMIE_MATCHA_CREAM)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ALCREMIE_MATCHA_CREAM)].weight,
+        .description =  gAlcremieMatchaCreamPokedexText,
+    },
+    [SPECIES_ALCREMIE_MINT_CREAM] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ALCREMIE_MINT_CREAM)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ALCREMIE_MINT_CREAM)].weight,
+        .description =  gAlcremieMintCreamPokedexText,
+    },
+    [SPECIES_ALCREMIE_LEMON_CREAM] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ALCREMIE_LEMON_CREAM)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ALCREMIE_LEMON_CREAM)].weight,
+        .description =  gAlcremieLemonCreamPokedexText,
+    },
+    [SPECIES_ALCREMIE_SALTED_CREAM] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ALCREMIE_SALTED_CREAM)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ALCREMIE_SALTED_CREAM)].weight,
+        .description =  gAlcremieSaltedCreamPokedexText,
+    },
+    [SPECIES_ALCREMIE_RUBY_SWIRL] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ALCREMIE_RUBY_SWIRL)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ALCREMIE_RUBY_SWIRL)].weight,
+        .description =  gAlcremieRubySwirlPokedexText,
+    },
+    [SPECIES_ALCREMIE_CARAMEL_SWIRL] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ALCREMIE_CARAMEL_SWIRL)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ALCREMIE_CARAMEL_SWIRL)].weight,
+        .description =  gAlcremieCaramelSwirlPokedexText,
+    },
+    [SPECIES_ALCREMIE_RAINBOW_SWIRL] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ALCREMIE_RAINBOW_SWIRL)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ALCREMIE_RAINBOW_SWIRL)].weight,
+        .description =  gAlcremieRainbowSwirlPokedexText,
+    },
+    // Eiscue          
+    [SPECIES_EISCUE_NOICE_FACE] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_EISCUE_NOICE_FACE)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_EISCUE_NOICE_FACE)].weight,
+        .description =  gEiscueNoiceFacePokedexText,
+    },
+    // Indeedee          
+    [SPECIES_INDEEDEE_FEMALE] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_INDEEDEE_FEMALE)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_INDEEDEE_FEMALE)].weight,
+        .description =  gIndeedeeFemalePokedexText,
+    },
+    // Morpeko          
+    [SPECIES_MORPEKO_HANGRY] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_MORPEKO_HANGRY)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_MORPEKO_HANGRY)].weight,
+        .description =  gMorpekoHangryPokedexText,
+    },
+    // Zacian          
+    [SPECIES_ZACIAN_CROWNED_SWORD] = 
+    {
+        .height =  28 ,
+        .weight =  3550 ,
+        .description =  gZacianCrownedSwordPokedexText,
+    },
+    // Zamazenta          
+    [SPECIES_ZAMAZENTA_CROWNED_SHIELD] = 
+    {
+        .height =  29 ,
+        .weight =  7850 ,
+        .description =  gZamazentaCrownedShieldPokedexText,
+    },
+    // Eternatus          
+    [SPECIES_ETERNATUS_ETERNAMAX] = 
+    {
+        .height =  100 ,
+        .weight =  10000 ,
+        .description =  gEternatusEternamaxPokedexText,
+    },
+    // Urshifu          
+    [SPECIES_URSHIFU_RAPID_STRIKE_STYLE] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_URSHIFU_RAPID_STRIKE_STYLE)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_URSHIFU_RAPID_STRIKE_STYLE)].weight,
+        .description =  gUrshifuRapidStrikeStylePokedexText,
+    },
+    // Zarude          
+    [SPECIES_ZARUDE_DADA] = 
+    {
+        .height =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ZARUDE_DADA)].height,
+        .weight =  gPokedexEntries[SpeciesToNationalPokedexNum(SPECIES_ZARUDE_DADA)].weight,
+        .description =  gZarudeDadaPokedexText,
+    },
+    // Calyrex          
+    [SPECIES_CALYREX_ICE_RIDER] = 
+    {
+        .height =  24 ,
+        .weight =  8091 ,
+        .description =  gCalyrexIceRiderPokedexText,
+    },
+    [SPECIES_CALYREX_SHADOW_RIDER] = 
+    {
+        .height =  24 ,
+        .weight =  536 ,
+        .description =  gCalyrexShadowRiderPokedexText,
+    },
+};
+
+const bool8 PokedexEntryFormSkip[NUM_SPECIES] = 
+{
+
+    // Cosplay Pikachu
+    [SPECIES_PIKACHU_COSPLAY] = TRUE,
+    [SPECIES_PIKACHU_ROCK_STAR] = TRUE,
+    [SPECIES_PIKACHU_BELLE] = TRUE,
+    [SPECIES_PIKACHU_POP_STAR ] = TRUE,
+    [SPECIES_PIKACHU_PH_D] = TRUE,
+    [SPECIES_PIKACHU_LIBRE] = TRUE,
+    // Pichu
+    [SPECIES_PICHU_SPIKY_EARED] = TRUE,
+    // Unown
+    [SPECIES_UNOWN_B] = TRUE,
+    [SPECIES_UNOWN_C] = TRUE,
+    [SPECIES_UNOWN_D] = TRUE,
+    [SPECIES_UNOWN_E] = TRUE,
+    [SPECIES_UNOWN_F] = TRUE,
+    [SPECIES_UNOWN_G] = TRUE,
+    [SPECIES_UNOWN_H] = TRUE,
+    [SPECIES_UNOWN_I] = TRUE,
+    [SPECIES_UNOWN_J] = TRUE,
+    [SPECIES_UNOWN_K] = TRUE,
+    [SPECIES_UNOWN_L] = TRUE,
+    [SPECIES_UNOWN_M] = TRUE,
+    [SPECIES_UNOWN_N] = TRUE,
+    [SPECIES_UNOWN_O] = TRUE,
+    [SPECIES_UNOWN_P] = TRUE,
+    [SPECIES_UNOWN_Q] = TRUE,
+    [SPECIES_UNOWN_R] = TRUE,
+    [SPECIES_UNOWN_S] = TRUE,
+    [SPECIES_UNOWN_T] = TRUE,
+    [SPECIES_UNOWN_U] = TRUE,
+    [SPECIES_UNOWN_V] = TRUE,
+    [SPECIES_UNOWN_W] = TRUE,
+    [SPECIES_UNOWN_X] = TRUE,
+    [SPECIES_UNOWN_Y] = TRUE,
+    [SPECIES_UNOWN_Z] = TRUE,
+    [SPECIES_UNOWN_EMARK] = TRUE,
+    [SPECIES_UNOWN_QMARK] = TRUE,
+    // Deoxys
+    [SPECIES_DEOXYS_ATTACK] = TRUE,
+    [SPECIES_DEOXYS_DEFENSE] = TRUE,
+    [SPECIES_DEOXYS_SPEED] = TRUE,
+    // Burmy
+    [SPECIES_BURMY_SANDY_CLOAK] = TRUE,
+    [SPECIES_BURMY_TRASH_CLOAK] = TRUE,
+    // Wormadam
+    [SPECIES_WORMADAM_SANDY_CLOAK] = TRUE,
+    [SPECIES_WORMADAM_TRASH_CLOAK] = TRUE,
+    // Arceus
+    [SPECIES_ARCEUS_FIGHTING] = TRUE,
+    [SPECIES_ARCEUS_FLYING] = TRUE,
+    [SPECIES_ARCEUS_POISON] = TRUE,
+    [SPECIES_ARCEUS_GROUND] = TRUE,
+    [SPECIES_ARCEUS_ROCK] = TRUE,
+    [SPECIES_ARCEUS_BUG] = TRUE,
+    [SPECIES_ARCEUS_GHOST] = TRUE,
+    [SPECIES_ARCEUS_STEEL] = TRUE,
+    [SPECIES_ARCEUS_FIRE] = TRUE,
+    [SPECIES_ARCEUS_WATER] = TRUE,
+    [SPECIES_ARCEUS_GRASS] = TRUE,
+    [SPECIES_ARCEUS_ELECTRIC] = TRUE,
+    [SPECIES_ARCEUS_PSYCHIC] = TRUE,
+    [SPECIES_ARCEUS_ICE] = TRUE,
+    [SPECIES_ARCEUS_DRAGON] = TRUE,
+    [SPECIES_ARCEUS_DARK] = TRUE,
+    [SPECIES_ARCEUS_FAIRY] = TRUE,
+    // Deerling
+    [SPECIES_DEERLING_SUMMER] = TRUE,
+    [SPECIES_DEERLING_AUTUMN] = TRUE,
+    [SPECIES_DEERLING_WINTER] = TRUE,
+    // Sawsbuck
+    [SPECIES_SAWSBUCK_SUMMER] = TRUE,
+    [SPECIES_SAWSBUCK_AUTUMN] = TRUE,
+    [SPECIES_SAWSBUCK_WINTER] = TRUE,
+    // Meloetta
+    [SPECIES_MELOETTA_PIROUETTE] = TRUE,
+    // Genesect
+    [SPECIES_GENESECT_DOUSE_DRIVE] = TRUE,
+    [SPECIES_GENESECT_SHOCK_DRIVE] = TRUE,
+    [SPECIES_GENESECT_BURN_DRIVE] = TRUE,
+    [SPECIES_GENESECT_CHILL_DRIVE] = TRUE,
+    // Greninja
+    [SPECIES_GRENINJA_BATTLE_BOND] = TRUE,
+    [SPECIES_GRENINJA_ASH] = TRUE,
+    // Vivillon
+    [SPECIES_VIVILLON_POLAR] = TRUE,
+    [SPECIES_VIVILLON_TUNDRA] = TRUE,
+    [SPECIES_VIVILLON_CONTINENTAL] = TRUE,
+    [SPECIES_VIVILLON_GARDEN] = TRUE,
+    [SPECIES_VIVILLON_ELEGANT] = TRUE,
+    [SPECIES_VIVILLON_MEADOW] = TRUE,
+    [SPECIES_VIVILLON_MODERN] = TRUE,
+    [SPECIES_VIVILLON_MARINE] = TRUE,
+    [SPECIES_VIVILLON_ARCHIPELAGO] = TRUE,
+    [SPECIES_VIVILLON_HIGH_PLAINS] = TRUE,
+    [SPECIES_VIVILLON_SANDSTORM] = TRUE,
+    [SPECIES_VIVILLON_RIVER] = TRUE,
+    [SPECIES_VIVILLON_MONSOON] = TRUE,
+    [SPECIES_VIVILLON_SAVANNA] = TRUE,
+    [SPECIES_VIVILLON_SUN] = TRUE,
+    [SPECIES_VIVILLON_OCEAN] = TRUE,
+    [SPECIES_VIVILLON_JUNGLE] = TRUE,
+    [SPECIES_VIVILLON_FANCY] = TRUE,
+    [SPECIES_VIVILLON_POKE_BALL] = TRUE,
+    // Flabébé
+    [SPECIES_FLABEBE_YELLOW_FLOWER] = TRUE,
+    [SPECIES_FLABEBE_ORANGE_FLOWER] = TRUE,
+    [SPECIES_FLABEBE_BLUE_FLOWER] = TRUE,
+    [SPECIES_FLABEBE_WHITE_FLOWER] = TRUE,
+    // Floette
+    [SPECIES_FLOETTE_YELLOW_FLOWER] = TRUE,
+    [SPECIES_FLOETTE_ORANGE_FLOWER] = TRUE,
+    [SPECIES_FLOETTE_BLUE_FLOWER] = TRUE,
+    [SPECIES_FLOETTE_WHITE_FLOWER] = TRUE,
+    [SPECIES_FLOETTE_ETERNAL_FLOWER] = TRUE,
+    // Florges
+    [SPECIES_FLORGES_YELLOW_FLOWER] = TRUE,
+    [SPECIES_FLORGES_ORANGE_FLOWER] = TRUE,
+    [SPECIES_FLORGES_BLUE_FLOWER] = TRUE,
+    [SPECIES_FLORGES_WHITE_FLOWER] = TRUE,
+    // Furfrou
+    [SPECIES_FURFROU_HEART_TRIM] = TRUE,
+    [SPECIES_FURFROU_STAR_TRIM] = TRUE,
+    [SPECIES_FURFROU_DIAMOND_TRIM] = TRUE,
+    [SPECIES_FURFROU_DEBUTANTE_TRIM] = TRUE,
+    [SPECIES_FURFROU_MATRON_TRIM] = TRUE,
+    [SPECIES_FURFROU_DANDY_TRIM] = TRUE,
+    [SPECIES_FURFROU_LA_REINE_TRIM] = TRUE,
+    [SPECIES_FURFROU_KABUKI_TRIM] = TRUE,
+    [SPECIES_FURFROU_PHARAOH_TRIM] = TRUE,
+    // Xerneas
+    [SPECIES_XERNEAS_ACTIVE] = TRUE,
 };

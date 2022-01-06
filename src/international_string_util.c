@@ -10,6 +10,7 @@
 
 extern const struct PokedexEntry gPokedexEntries[];
 extern const struct PokedexEntryForms gPokedexEntriesForms[];
+extern const bool8 PokedexEntryFormSkip[NUM_SPECIES];
 
 int GetStringCenterAlignXOffset(int fontId, const u8 *str, int totalWidth)
 {

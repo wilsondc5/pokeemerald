@@ -5446,13 +5446,6 @@ const u8 gYamaskGalarianPokedexText[] = _("");
 const u8 gStunfiskGalarianPokedexText[] = _(""); 
 
 // Misc forms
-// Cosplay pikachu
-const u8 gPikachuCosplayPokedexText[] = _(""); 
-const u8 gPikachuRockStarPokedexText[] = _("");
-const u8 gPikachuBellePokedexText[] = _(""); 
-const u8 gPikachuPopStarPokedexText[] = _("");
-const u8 gPikachuPhdPokedexText[] = _("");
-const u8 gPikachuLibrePokedexText[] = _(""); 
 // Cap pikachu
 const u8 gPikachuOriginalCapPokedexText[] = _("");
 const u8 gPikachuHoennCapPokedexText[] = _("");
@@ -5462,3 +5455,145 @@ const u8 gPikachuKalosCapPokedexText[] = _("");
 const u8 gPikachuAlolaCapPokedexText[] = _("");
 const u8 gPikachuPartnerCapPokedexText[] = _("");
 const u8 gPikachuWorldCapPokedexText[] = _("");
+
+// Castform
+const u8 gCastformSunnyPokedexText[] = _("");
+const u8 gCastformRainyPokedexText[] = _("");
+const u8 gCastformSnowyPokedexText[] = _("");
+// Cherrim
+const u8 gCherrimSunshinePokedexText[] = _("");
+// Shellos
+const u8 gShellosEastSeaPokedexText[] = _("");
+// Gastrodon
+const u8 gGastrodonEastSeaPokedexText[] = _("");
+// Rotom
+const u8 gRotomHeatPokedexText[] = _("");
+const u8 gRotomWashPokedexText[] = _("");
+const u8 gRotomFrostPokedexText[] = _("");
+const u8 gRotomFanPokedexText[] = _("");
+const u8 gRotomMowPokedexText[] = _("");
+// Giratina
+const u8 gGiratinaOriginPokedexText[] = _("");
+// Shaymin
+const u8 gShayminSkyPokedexText[] = _("");
+// Basculin
+const u8 gBasculinBlueStripedPokedexText[] = _("");
+// Darmanitan
+const u8 gDarmanitanZenModePokedexText[] = _("");
+const u8 gDarmanitanZenModeGalarianPokedexText[] = _("");
+// Therian Forms
+const u8 gTornadusTherianPokedexText[] = _("");
+const u8 gThundurusTherianPokedexText[] = _("");
+const u8 gLandorusTherianPokedexText[] = _("");
+// Kyurem
+const u8 gKyuremWhitePokedexText[] = _("");
+const u8 gKyuremBlackPokedexText[] = _("");
+// Keldeo
+const u8 gKeldeoResolutePokedexText[] = _("");
+// Meowstic
+const u8 gMeowsticFemalePokedexText[] = _("");
+// Aegislash
+const u8 gAegislashBladePokedexText[] = _("");
+// Pumpkaboo
+const u8 gPumpkabooSmallPokedexText[] = _("");
+const u8 gPumpkabooLargePokedexText[] = _("");
+const u8 gPumpkabooSuperPokedexText[] = _("");
+// Gourgeist
+const u8 gGourgeistSmallPokedexText[] = _("");
+const u8 gGourgeistLargePokedexText[] = _("");
+const u8 gGourgeistSuperPokedexText[] = _("");
+// Zygarde
+const u8 gZygarde10PokedexText[] = _("");
+const u8 gZygarde10PowerConstructPokedexText[] = _("");
+const u8 gZygarde50PowerConstructPokedexText[] = _("");
+const u8 gZygardeCompletePokedexText[] = _("");
+// Hoopa
+const u8 gHoopaUnboundPokedexText[] = _("");
+// Oricorio
+const u8 gOricorioPomPomPokedexText[] = _("");
+const u8 gOricorioPauPokedexText[] = _("");
+const u8 gOricorioSensuPokedexText[] = _("");
+// Rockruff
+const u8 gRockruffOwnTempoPokedexText[] = _("");
+// Lycanroc
+const u8 gLycanrocMidnightPokedexText[] = _("");
+const u8 gLycanrocDuskPokedexText[] = _("");
+// Wishiwashi
+const u8 gWishiwashiSchoolPokedexText[] = _("");
+// Silvally
+const u8 gSilvallyFightinconstPokedexText[] = _("");
+const u8 gSilvallyFlyinconstPokedexText[] = _("");
+const u8 gSilvallyPoisonPokedexText[] = _("");
+const u8 gSilvallyGroundPokedexText[] = _("");
+const u8 gSilvallyRockPokedexText[] = _("");
+const u8 gSilvallyBuconstPokedexText[] = _("");
+const u8 gSilvallyGhostPokedexText[] = _("");
+const u8 gSilvallySteelPokedexText[] = _("");
+const u8 gSilvallyFirePokedexText[] = _("");
+const u8 gSilvallyWaterPokedexText[] = _("");
+const u8 gSilvallyGrassPokedexText[] = _("");
+const u8 gSilvallyElectricPokedexText[] = _("");
+const u8 gSilvallyPsychicPokedexText[] = _("");
+const u8 gSilvallyIcePokedexText[] = _("");
+const u8 gSilvallyDragonPokedexText[] = _("");
+const u8 gSilvallyDarkPokedexText[] = _("");
+const u8 gSilvallyFairyPokedexText[] = _("");
+// Minior
+const u8 gMiniorMeteorOrangePokedexText[] = _("");
+const u8 gMiniorMeteorYellowPokedexText[] = _("");
+const u8 gMiniorMeteorGreenPokedexText[] = _("");
+const u8 gMiniorMeteorBluePokedexText[] = _("");
+const u8 gMiniorMeteorIndigoPokedexText[] = _("");
+const u8 gMiniorMeteorVioletPokedexText[] = _("");
+const u8 gMiniorCoreRedPokedexText[] = _("");
+const u8 gMiniorCoreOrangePokedexText[] = _("");
+const u8 gMiniorCoreYellowPokedexText[] = _("");
+const u8 gMiniorCoreGreenPokedexText[] = _("");
+const u8 gMiniorCoreBluePokedexText[] = _("");
+const u8 gMiniorCoreIndigoPokedexText[] = _("");
+const u8 gMiniorCoreVioletPokedexText[] = _("");
+// Mimikyu
+const u8 gMimikyuBustedPokedexText[] = _("");
+// Necrozma
+const u8 gNecrozmaDuskManePokedexText[] = _("");
+const u8 gNecrozmaDawnWingsPokedexText[] = _("");
+const u8 gNecrozmaUltraPokedexText[] = _("");
+// Magearna
+const u8 gMagearnaOriginalColorPokedexText[] = _("");
+// Cramorant
+const u8 gCramorantGulpinconstPokedexText[] = _("");
+const u8 gCramorantGorginconstPokedexText[] = _("");
+// Toxtricity
+const u8 gToxtricityLowKeyPokedexText[] = _("");
+// Sinistea
+const u8 gSinisteaAntiquePokedexText[] = _("");
+// Polteageist
+const u8 gPolteageistAntiquePokedexText[] = _("");
+// Alcremie
+const u8 gAlcremieRubyCreamPokedexText[] = _("");
+const u8 gAlcremieMatchaCreamPokedexText[] = _("");
+const u8 gAlcremieMintCreamPokedexText[] = _("");
+const u8 gAlcremieLemonCreamPokedexText[] = _("");
+const u8 gAlcremieSaltedCreamPokedexText[] = _("");
+const u8 gAlcremieRubySwirlPokedexText[] = _("");
+const u8 gAlcremieCaramelSwirlPokedexText[] = _("");
+const u8 gAlcremieRainbowSwirlPokedexText[] = _("");
+// Eiscue
+const u8 gEiscueNoiceFacePokedexText[] = _("");
+// Indeedee
+const u8 gIndeedeeFemalePokedexText[] = _("");
+// Morpeko
+const u8 gMorpekoHangryPokedexText[] = _("");
+// Zacian
+const u8 gZacianCrownedSwordPokedexText[] = _("");
+// Zamazenta
+const u8 gZamazentaCrownedShieldPokedexText[] = _("");
+// Eternatus
+const u8 gEternatusEternamaxPokedexText[] = _("");
+// Urshifu
+const u8 gUrshifuRapidStrikeStylePokedexText[] = _("");
+// Zarude
+const u8 gZarudeDadaPokedexText[] = _("");
+// Calyrex
+const u8 gCalyrexIceRiderPokedexText[] = _("");
+const u8 gCalyrexShadowRiderPokedexText[] = _("");

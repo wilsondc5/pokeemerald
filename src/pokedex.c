@@ -4251,7 +4251,11 @@ u16 GetPokedexHeightWeight(u16 dexNum, u8 data)
 
 u16 GetSpeciesHeightWeight(u16 species, u8 data)
 {
-    if (species >= SPECIES_VENUSAUR_MEGA && species <= SPECIES_STUNFISK_GALARIAN) // Todo: change after adding Megas, etc
+    if (PokedexEntryFormSkip[species])
+    {
+        return GetPokedexHeightWeight(SpeciesToNationalPokedexNum(species), data);
+    }
+    else if (species >= SPECIES_VENUSAUR_MEGA && species < NUM_SPECIES)
     {
         switch (data)
         {
@@ -4263,10 +4267,8 @@ u16 GetSpeciesHeightWeight(u16 species, u8 data)
             return 1;
         }
     }
-    else
-    {
-        return GetPokedexHeightWeight(SpeciesToNationalPokedexNum(species), data);
-    }
+    
+    return GetPokedexHeightWeight(SpeciesToNationalPokedexNum(species), data);
 }
 
 s8 GetSetPokedexFlag(u16 nationalDexNo, u8 caseID)
