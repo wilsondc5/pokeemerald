@@ -10790,7 +10790,7 @@ const struct PokedexEntry gPokedexEntries[] =
 };
 
 
-const struct PokedexEntryForms gPokedexEntriesForms[] =
+const struct PokedexEntryForms gPokedexEntriesForms[] = //returns 0 for forms with the height/weight same height as the base form
 {
     // Mega Forms
     [SPECIES_VENUSAUR_MEGA] = 
