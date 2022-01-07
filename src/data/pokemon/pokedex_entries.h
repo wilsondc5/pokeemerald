@@ -11291,7 +11291,7 @@ const struct PokedexEntryForms gPokedexEntriesForms[] =
     {
         .categoryName = _("Unique Horn"),
         .height = 17,
-        .weight = 80,
+        .weight = 800,
         .description = gRapidashGalarianPokedexText,
         .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT | FLAG_FORM_CATEGORY,
     },
