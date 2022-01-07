@@ -41,7 +41,13 @@ struct PokedexEntryForms
     u16 height; //in decimeters
     u16 weight; //in hectograms
     const u8 *description;
+    u8 flags;
 };
+
+// PokedexEntryForms flags
+#define FLAG_FORM_DESCRIPTION   (1 << 0)
+#define FLAG_FORM_WEIGHT_HEIGHT (1 << 1)
+#define FLAG_FORM_CATEGORY      (1 << 2)
 
 void ResetPokedex(void);
 u16 GetPokedexHeightWeight(u16 dexNum, u8 data);

@@ -10790,497 +10790,494 @@ const struct PokedexEntry gPokedexEntries[] =
 };
 
 
-const struct PokedexEntryForms gPokedexEntriesForms[] = //returns 0 for forms with the height/weight same height as the base form
+const struct PokedexEntryForms gPokedexEntriesForms[] =
 {
-    // Megas
+    // Megas   
     [SPECIES_VENUSAUR_MEGA] =
     {
-        .categoryName = _(""),
         .height = 24,
         .weight = 1555,
         .description = gVenusaurMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_CHARIZARD_MEGA_X] =
     {
-        .categoryName = _(""),
         .height = 17,
         .weight = 1105,
         .description = gCharizardMegaXPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_CHARIZARD_MEGA_Y] =
     {
-        .categoryName = _(""),
         .height = 17,
         .weight = 1005,
         .description = gCharizardMegaYPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_BLASTOISE_MEGA] =
     {
-        .categoryName = _(""),
         .height = 16,
         .weight = 1011,
         .description = gBlastoiseMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_BEEDRILL_MEGA] =
     {
-        .categoryName = _(""),
         .height = 14,
         .weight = 405,
         .description = gBeedrillMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_PIDGEOT_MEGA] =
     {
-        .categoryName = _(""),
         .height = 22,
         .weight = 505,
         .description = gPidgeotMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_ALAKAZAM_MEGA] =
     {
-        .categoryName = _(""),
         .height = 12,
         .weight = 480,
         .description = gAlakazamMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_SLOWBRO_MEGA] =
     {
-        .categoryName = _(""),
         .height = 20,
         .weight = 1200,
         .description = gSlowbroMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_GENGAR_MEGA] =
     {
-        .categoryName = _(""),
         .height = 14,
         .weight = 405,
         .description = gGengarMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_KANGASKHAN_MEGA] =
     {
-        .categoryName = _(""),
         .height = 22,
         .weight = 1000,
         .description = gKangaskhanMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_PINSIR_MEGA] =
     {
-        .categoryName = _(""),
         .height = 17,
         .weight = 590,
         .description = gPinsirMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_GYARADOS_MEGA] =
     {
-        .categoryName = _(""),
         .height = 65,
         .weight = 3050,
         .description = gGyaradosMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_AERODACTYL_MEGA] =
     {
-        .categoryName = _(""),
         .height = 21,
         .weight = 790,
         .description = gAerodactylMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_MEWTWO_MEGA_X] =
     {
-        .categoryName = _(""),
         .height = 23,
         .weight = 1270,
         .description = gMewtwoMegaXPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_MEWTWO_MEGA_Y] =
     {
-        .categoryName = _(""),
         .height = 15,
         .weight = 330,
         .description = gMewtwoMegaYPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_AMPHAROS_MEGA] =
     {
-        .categoryName = _(""),
         .height = 14,
         .weight = 615,
         .description = gAmpharosMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_STEELIX_MEGA] =
     {
-        .categoryName = _(""),
         .height = 105,
         .weight = 7400,
         .description = gSteelixMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_SCIZOR_MEGA] =
     {
-        .categoryName = _(""),
         .height = 20,
         .weight = 1250,
         .description = gScizorMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_HERACROSS_MEGA] =
     {
-        .categoryName = _(""),
         .height = 17,
         .weight = 625,
         .description = gHeracrossMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_HOUNDOOM_MEGA] =
     {
-        .categoryName = _(""),
         .height = 19,
         .weight = 495,
         .description = gHoundoomMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_TYRANITAR_MEGA] =
     {
-        .categoryName = _(""),
         .height = 25,
         .weight = 2550,
         .description = gTyranitarMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_SCEPTILE_MEGA] =
     {
-        .categoryName = _(""),
         .height = 19,
         .weight = 552,
         .description = gSceptileMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_BLAZIKEN_MEGA] =
     {
-        .categoryName = _(""),
         .height = 19,
         .weight = 520,
         .description = gBlazikenMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_SWAMPERT_MEGA] =
     {
-        .categoryName = _(""),
         .height = 19,
         .weight = 1020,
         .description = gSwampertMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_GARDEVOIR_MEGA] =
     {
-        .categoryName = _(""),
         .height = 16,
         .weight = 484,
         .description = gGardevoirMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_SABLEYE_MEGA] =
     {
-        .categoryName = _(""),
         .height = 5,
         .weight = 1610,
         .description = gSableyeMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_MAWILE_MEGA] =
     {
-        .categoryName = _(""),
         .height = 10,
         .weight = 235,
         .description = gMawileMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_AGGRON_MEGA] =
     {
-        .categoryName = _(""),
         .height = 22,
         .weight = 3950,
         .description = gAggronMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_MEDICHAM_MEGA] =
     {
-        .categoryName = _(""),
         .height = 13,
         .weight = 315,
         .description = gMedichamMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_MANECTRIC_MEGA] =
     {
-        .categoryName = _(""),
         .height = 18,
         .weight = 440,
         .description = gManectricMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_SHARPEDO_MEGA] =
     {
-        .categoryName = _(""),
         .height = 25,
         .weight = 1303,
         .description = gSharpedoMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_CAMERUPT_MEGA] =
     {
-        .categoryName = _(""),
         .height = 25,
         .weight = 3205,
         .description = gCameruptMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_ALTARIA_MEGA] =
     {
-        .categoryName = _(""),
         .height = 15,
         .weight = 206,
         .description = gAltariaMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_BANETTE_MEGA] =
     {
-        .categoryName = _(""),
         .height = 12,
         .weight = 130,
         .description = gBanetteMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_ABSOL_MEGA] =
     {
-        .categoryName = _(""),
         .height = 12,
         .weight = 490,
         .description = gAbsolMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_GLALIE_MEGA] =
     {
-        .categoryName = _(""),
         .height = 21,
         .weight = 3502,
         .description = gGlalieMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_SALAMENCE_MEGA] =
     {
-        .categoryName = _(""),
         .height = 18,
         .weight = 1126,
         .description = gSalamenceMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_METAGROSS_MEGA] =
     {
-        .categoryName = _(""),
         .height = 25,
         .weight = 9429,
         .description = gMetagrossMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_LATIAS_MEGA] =
     {
-        .categoryName = _(""),
         .height = 18,
         .weight = 520,
         .description = gLatiasMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_LATIOS_MEGA] =
     {
-        .categoryName = _(""),
         .height = 23,
         .weight = 700,
         .description = gLatiosMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_LOPUNNY_MEGA] =
     {
-        .categoryName = _(""),
         .height = 13,
         .weight = 283,
         .description = gLopunnyMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_GARCHOMP_MEGA] =
     {
-        .categoryName = _(""),
         .height = 19,
         .weight = 950,
         .description = gGarchompMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_LUCARIO_MEGA] =
     {
-        .categoryName = _(""),
         .height = 13,
         .weight = 575,
         .description = gLucarioMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_ABOMASNOW_MEGA] =
     {
-        .categoryName = _(""),
         .height = 27,
         .weight = 1850,
         .description = gAbomasnowMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_GALLADE_MEGA] =
     {
-        .categoryName = _(""),
         .height = 16,
         .weight = 564,
         .description = gGalladeMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_AUDINO_MEGA] =
     {
-        .categoryName = _(""),
         .height = 15,
         .weight = 320,
         .description = gAudinoMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_DIANCIE_MEGA] =
     {
-        .categoryName = _(""),
         .height = 11,
         .weight = 278,
         .description = gDiancieMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
- 
-    // Special Mega + Primals
+    // Special Mega + Primals   
     [SPECIES_RAYQUAZA_MEGA] =
     {
-        .categoryName = _(""),
         .height = 108,
         .weight = 3920,
         .description = gRayquazaMegaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_KYOGRE_PRIMAL] =
     {
-        .categoryName = _(""),
         .height = 98,
         .weight = 4300,
         .description = gKyogrePrimalPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_GROUDON_PRIMAL] =
     {
-        .categoryName = _(""),
         .height = 50,
         .weight = 9997,
         .description = gGroudonPrimalPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
- 
-    // Alolan Forms
+    // Alolan Forms   
     [SPECIES_RATTATA_ALOLAN] =
     {
-        .categoryName = _(""),
         .height = 3,
         .weight = 38,
         .description = gRattataAlolanPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_RATICATE_ALOLAN] =
     {
-        .categoryName = _(""),
         .height = 7,
         .weight = 255,
         .description = gRaticateAlolanPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_RAICHU_ALOLAN] =
     {
-        .categoryName = _(""),
         .height = 7,
         .weight = 210,
         .description = gRaichuAlolanPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_SANDSHREW_ALOLAN] =
     {
-        .categoryName = _(""),
         .height = 7,
         .weight = 400,
         .description = gSandshrewAlolanPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_SANDSLASH_ALOLAN] =
     {
-        .categoryName = _(""),
         .height = 12,
         .weight = 550,
         .description = gSandslashAlolanPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_VULPIX_ALOLAN] =
     {
-        .categoryName = _(""),
         .height = 6,
         .weight = 99,
         .description = gVulpixAlolanPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_NINETALES_ALOLAN] =
     {
-        .categoryName = _(""),
         .height = 11,
         .weight = 199,
         .description = gNinetalesAlolanPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_DIGLETT_ALOLAN] =
     {
-        .categoryName = _(""),
         .height = 2,
         .weight = 10,
         .description = gDiglettAlolanPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_DUGTRIO_ALOLAN] =
     {
-        .categoryName = _(""),
         .height = 7,
         .weight = 666,
         .description = gDugtrioAlolanPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_MEOWTH_ALOLAN] =
     {
-        .categoryName = _(""),
         .height = 4,
         .weight = 42,
         .description = gMeowthAlolanPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_PERSIAN_ALOLAN] =
     {
-        .categoryName = _(""),
         .height = 11,
         .weight = 330,
         .description = gPersianAlolanPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_GEODUDE_ALOLAN] =
     {
-        .categoryName = _(""),
         .height = 4,
         .weight = 203,
         .description = gGeodudeAlolanPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_GRAVELER_ALOLAN] =
     {
-        .categoryName = _(""),
         .height = 10,
         .weight = 1100,
         .description = gGravelerAlolanPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_GOLEM_ALOLAN] =
     {
-        .categoryName = _(""),
         .height = 17,
         .weight = 3160,
         .description = gGolemAlolanPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_GRIMER_ALOLAN] =
     {
-        .categoryName = _(""),
         .height = 7,
         .weight = 420,
         .description = gGrimerAlolanPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_MUK_ALOLAN] =
     {
-        .categoryName = _(""),
         .height = 10,
         .weight = 520,
         .description = gMukAlolanPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_EXEGGUTOR_ALOLAN] =
     {
-        .categoryName = _(""),
         .height = 109,
         .weight = 4156,
         .description = gExeggutorAlolanPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_MAROWAK_ALOLAN] =
     {
-        .categoryName = _(""),
         .height = 10,
         .weight = 340,
         .description = gMarowakAlolanPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
- 
-    // Galarian Forms
+    // Galarian Forms   
     [SPECIES_MEOWTH_GALARIAN] =
     {
-        .categoryName = _(""),
         .height = 4,
         .weight = 75,
         .description = gMeowthGalarianPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_PONYTA_GALARIAN] =
     {
@@ -11288,6 +11285,7 @@ const struct PokedexEntryForms gPokedexEntriesForms[] = //returns 0 for forms wi
         .height = 8,
         .weight = 240,
         .description = gPonytaGalarianPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT | FLAG_FORM_CATEGORY,
     },
     [SPECIES_RAPIDASH_GALARIAN] =
     {
@@ -11295,34 +11293,35 @@ const struct PokedexEntryForms gPokedexEntriesForms[] = //returns 0 for forms wi
         .height = 17,
         .weight = 80,
         .description = gRapidashGalarianPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT | FLAG_FORM_CATEGORY,
     },
     [SPECIES_SLOWPOKE_GALARIAN] =
     {
-        .categoryName = _(""),
         .height = 12,
         .weight = 360,
         .description = gSlowpokeGalarianPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_SLOWBRO_GALARIAN] =
     {
-        .categoryName = _(""),
         .height = 16,
         .weight = 705,
         .description = gSlowbroGalarianPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_FARFETCHD_GALARIAN] =
     {
-        .categoryName = _(""),
         .height = 8,
         .weight = 420,
         .description = gFarfetchdGalarianPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_WEEZING_GALARIAN] =
     {
-        .categoryName = _(""),
         .height = 30,
         .weight = 160,
         .description = gWeezingGalarianPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_MR_MIME_GALARIAN] =
     {
@@ -11330,6 +11329,7 @@ const struct PokedexEntryForms gPokedexEntriesForms[] = //returns 0 for forms wi
         .height = 14,
         .weight = 568,
         .description = gMrMimeGalarianPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT | FLAG_FORM_CATEGORY,
     },
     [SPECIES_ARTICUNO_GALARIAN] =
     {
@@ -11337,6 +11337,7 @@ const struct PokedexEntryForms gPokedexEntriesForms[] = //returns 0 for forms wi
         .height = 17,
         .weight = 509,
         .description = gArticunoGalarianPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT | FLAG_FORM_CATEGORY,
     },
     [SPECIES_ZAPDOS_GALARIAN] =
     {
@@ -11344,6 +11345,7 @@ const struct PokedexEntryForms gPokedexEntriesForms[] = //returns 0 for forms wi
         .height = 16,
         .weight = 582,
         .description = gZapdosGalarianPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT | FLAG_FORM_CATEGORY,
     },
     [SPECIES_MOLTRES_GALARIAN] =
     {
@@ -11351,6 +11353,7 @@ const struct PokedexEntryForms gPokedexEntriesForms[] = //returns 0 for forms wi
         .height = 20,
         .weight = 660,
         .description = gMoltresGalarianPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT | FLAG_FORM_CATEGORY,
     },
     [SPECIES_SLOWKING_GALARIAN] =
     {
@@ -11358,34 +11361,35 @@ const struct PokedexEntryForms gPokedexEntriesForms[] = //returns 0 for forms wi
         .height = 18,
         .weight = 795,
         .description = gSlowkingGalarianPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT | FLAG_FORM_CATEGORY,
     },
     [SPECIES_CORSOLA_GALARIAN] =
     {
-        .categoryName = _(""),
         .height = 6,
         .weight = 5,
         .description = gCorsolaGalarianPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_ZIGZAGOON_GALARIAN] =
     {
-        .categoryName = _(""),
         .height = 4,
         .weight = 175,
         .description = gZigzagoonGalarianPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_LINOONE_GALARIAN] =
     {
-        .categoryName = _(""),
         .height = 5,
         .weight = 325,
         .description = gLinooneGalarianPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_DARUMAKA_GALARIAN] =
     {
-        .categoryName = _(""),
         .height = 7,
         .weight = 400,
         .description = gDarumakaGalarianPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_DARMANITAN_GALARIAN] =
     {
@@ -11393,812 +11397,684 @@ const struct PokedexEntryForms gPokedexEntriesForms[] = //returns 0 for forms wi
         .height = 17,
         .weight = 1200,
         .description = gDarmanitanGalarianPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT | FLAG_FORM_CATEGORY,
     },
     [SPECIES_YAMASK_GALARIAN] =
     {
-        .categoryName = _(""),
         .height = 5,
         .weight = 15,
         .description = gYamaskGalarianPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_STUNFISK_GALARIAN] =
     {
-        .categoryName = _(""),
         .height = 7,
         .weight = 205,
         .description = gStunfiskGalarianPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
- 
-    // Cap Pikachu
+    // Cap Pikachu   
     [SPECIES_PIKACHU_ORIGINAL_CAP] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gPikachuOriginalCapPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_PIKACHU_HOENN_CAP] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gPikachuHoennCapPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_PIKACHU_SINNOH_CAP] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gPikachuSinnohCapPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_PIKACHU_UNOVA_CAP] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gPikachuUnovaCapPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_PIKACHU_KALOS_CAP] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gPikachuKalosCapPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_PIKACHU_ALOLA_CAP] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gPikachuAlolaCapPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_PIKACHU_PARTNER_CAP] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gPikachuPartnerCapPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_PIKACHU_WORLD_CAP] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gPikachuWorldCapPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Castform
+    // Castform   
     [SPECIES_CASTFORM_SUNNY] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gCastformSunnyPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_CASTFORM_RAINY] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gCastformRainyPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_CASTFORM_SNOWY] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gCastformSnowyPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Cherrim
+    // Cherrim   
     [SPECIES_CHERRIM_SUNSHINE] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gCherrimSunshinePokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Shellos
+    // Shellos   
     [SPECIES_SHELLOS_EAST_SEA] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gShellosEastSeaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Gastrodon, 
+    // Gastrodon,   
     [SPECIES_GASTRODON_EAST_SEA] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gGastrodonEastSeaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Rotom
+    // Rotom   
     [SPECIES_ROTOM_HEAT] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gRotomHeatPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_ROTOM_WASH] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gRotomWashPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_ROTOM_FROST] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gRotomFrostPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_ROTOM_FAN] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gRotomFanPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_ROTOM_MOW] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gRotomMowPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Giratina
+    // Giratina   
     [SPECIES_GIRATINA_ORIGIN] =
     {
-        .categoryName = _(""),
         .height = 69,
         .weight = 6500,
         .description = gGiratinaOriginPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
-    // Shaymin
+    // Shaymin   
     [SPECIES_SHAYMIN_SKY] =
     {
-        .categoryName = _(""),
         .height = 4,
         .weight = 52,
         .description = gShayminSkyPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
-    // Basculin
+    // Basculin   
     [SPECIES_BASCULIN_BLUE_STRIPED] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gBasculinBlueStripedPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Darmanitan
+    // Darmanitan   
     [SPECIES_DARMANITAN_ZEN_MODE] =
     {
-        .categoryName = _("Zen Charm"),
-        .height = 0,
-        .weight = 0,
+        .categoryName = _("Zen Charm"), 
         .description = gDarmanitanZenModePokedexText,
+        .flags = FLAG_FORM_DESCRIPTION  | FLAG_FORM_CATEGORY,
     },
     [SPECIES_DARMANITAN_ZEN_MODE_GALARIAN] =
     {
-        .categoryName = _("Zen Charm"),
-        .height = 0,
-        .weight = 0,
+        .categoryName = _("Zen Charm"), 
         .description = gDarmanitanZenModeGalarianPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION  | FLAG_FORM_CATEGORY,
     },
-    // Therian Forms
+    // Therian Forms   
     [SPECIES_TORNADUS_THERIAN] =
     {
-        .categoryName = _(""),
         .height = 14,
         .weight = 630,
         .description = gTornadusTherianPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_THUNDURUS_THERIAN] =
     {
-        .categoryName = _(""),
         .height = 30,
         .weight = 610,
         .description = gThundurusTherianPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_LANDORUS_THERIAN] =
     {
-        .categoryName = _(""),
         .height = 13,
         .weight = 680,
         .description = gLandorusTherianPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
-    // Kyurem
+    // Kyurem   
     [SPECIES_KYUREM_WHITE] =
     {
-        .categoryName = _(""),
         .height = 36,
         .weight = 3250,
         .description = gKyuremWhitePokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_KYUREM_BLACK] =
     {
-        .categoryName = _(""),
         .height = 33,
         .weight = 3250,
         .description = gKyuremBlackPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
-    // Keldeo
+    // Keldeo   
     [SPECIES_KELDEO_RESOLUTE] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gKeldeoResolutePokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Meowstic
+    // Meowstic   
     [SPECIES_MEOWSTIC_FEMALE] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gMeowsticFemalePokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Aegislash
+    // Aegislash   
     [SPECIES_AEGISLASH_BLADE] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gAegislashBladePokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Pumpkaboo
+    // Pumpkaboo   
     [SPECIES_PUMPKABOO_SMALL] =
     {
-        .categoryName = _(""),
         .height = 3,
         .weight = 35,
         .description = gPumpkabooSmallPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_PUMPKABOO_LARGE] =
     {
-        .categoryName = _(""),
         .height = 5,
         .weight = 75,
         .description = gPumpkabooLargePokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_PUMPKABOO_SUPER] =
     {
-        .categoryName = _(""),
         .height = 8,
         .weight = 150,
         .description = gPumpkabooSuperPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
-    // Gourgeist
+    // Gourgeist   
     [SPECIES_GOURGEIST_SMALL] =
     {
-        .categoryName = _(""),
         .height = 7,
         .weight = 95,
         .description = gGourgeistSmallPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_GOURGEIST_LARGE] =
     {
-        .categoryName = _(""),
         .height = 11,
         .weight = 140,
         .description = gGourgeistLargePokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_GOURGEIST_SUPER] =
     {
-        .categoryName = _(""),
         .height = 17,
         .weight = 390,
         .description = gGourgeistSuperPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
-    // Zygarde
+    // Zygarde   
     [SPECIES_ZYGARDE_10] =
     {
-        .categoryName = _(""),
         .height = 12,
         .weight = 335,
         .description = gZygarde10PokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_ZYGARDE_10_POWER_CONSTRUCT] =
     {
-        .categoryName = _(""),
         .height = 12,
         .weight = 335,
         .description = gZygarde10PowerConstructPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_ZYGARDE_50_POWER_CONSTRUCT] =
     {
-        .categoryName = _(""),
         .height = 50,
         .weight = 3050,
         .description = gZygarde50PowerConstructPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_ZYGARDE_COMPLETE] =
     {
-        .categoryName = _(""),
         .height = 45,
         .weight = 6100,
         .description = gZygardeCompletePokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
-    // Hoopa
+    // Hoopa   
     [SPECIES_HOOPA_UNBOUND] =
     {
         .categoryName = _("Djinn"),
         .height = 65,
         .weight = 4900,
         .description = gHoopaUnboundPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT | FLAG_FORM_CATEGORY,
     },
-    // Oricorio
+    // Oricorio   
     [SPECIES_ORICORIO_POM_POM] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gOricorioPomPomPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_ORICORIO_PAU] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gOricorioPauPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_ORICORIO_SENSU] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gOricorioSensuPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Rockruff
+    // Rockruff   
     [SPECIES_ROCKRUFF_OWN_TEMPO] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gRockruffOwnTempoPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Lycanroc
+    // Lycanroc   
     [SPECIES_LYCANROC_MIDNIGHT] =
     {
-        .categoryName = _(""),
         .height = 11,
         .weight = 250,
         .description = gLycanrocMidnightPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_LYCANROC_DUSK] =
     {
-        .categoryName = _(""),
         .height = 8,
         .weight = 250,
         .description = gLycanrocDuskPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
-    // Wishiwashi
+    // Wishiwashi   
     [SPECIES_WISHIWASHI_SCHOOL] =
     {
-        .categoryName = _(""),
         .height = 82,
         .weight = 786,
         .description = gWishiwashiSchoolPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
-    // Silvally
+    // Silvally   
     [SPECIES_SILVALLY_FIGHTING] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
-        .description = gSilvallyFightingPokedexText,
+    { 
+        .description = gSilvallyMemoryPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_SILVALLY_FLYING] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
-        .description = gSilvallyFlyingPokedexText,
+    { 
+        .description = gSilvallyMemoryPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_SILVALLY_POISON] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
-        .description = gSilvallyPoisonPokedexText,
+    { 
+        .description = gSilvallyMemoryPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_SILVALLY_GROUND] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
-        .description = gSilvallyGroundPokedexText,
+    { 
+        .description = gSilvallyMemoryPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_SILVALLY_ROCK] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
-        .description = gSilvallyRockPokedexText,
+    { 
+        .description = gSilvallyMemoryPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_SILVALLY_BUG] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
-        .description = gSilvallyBugPokedexText,
+    { 
+        .description = gSilvallyMemoryPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_SILVALLY_GHOST] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
-        .description = gSilvallyGhostPokedexText,
+    { 
+        .description = gSilvallyMemoryPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_SILVALLY_STEEL] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
-        .description = gSilvallySteelPokedexText,
+    { 
+        .description = gSilvallyMemoryPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_SILVALLY_FIRE] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
-        .description = gSilvallyFirePokedexText,
+    { 
+        .description = gSilvallyMemoryPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_SILVALLY_WATER] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
-        .description = gSilvallyWaterPokedexText,
+    { 
+        .description = gSilvallyMemoryPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_SILVALLY_GRASS] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
-        .description = gSilvallyGrassPokedexText,
+    { 
+        .description = gSilvallyMemoryPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_SILVALLY_ELECTRIC] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
-        .description = gSilvallyElectricPokedexText,
+    { 
+        .description = gSilvallyMemoryPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_SILVALLY_PSYCHIC] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
-        .description = gSilvallyPsychicPokedexText,
+    { 
+        .description = gSilvallyMemoryPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_SILVALLY_ICE] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
-        .description = gSilvallyIcePokedexText,
+    { 
+        .description = gSilvallyMemoryPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_SILVALLY_DRAGON] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
-        .description = gSilvallyDragonPokedexText,
+    { 
+        .description = gSilvallyMemoryPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_SILVALLY_DARK] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
-        .description = gSilvallyDarkPokedexText,
+    { 
+        .description = gSilvallyMemoryPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_SILVALLY_FAIRY] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
-        .description = gSilvallyFairyPokedexText,
+    { 
+        .description = gSilvallyMemoryPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Minior
+    // Minior   
     [SPECIES_MINIOR_METEOR_ORANGE] =
     {
-        .categoryName = _(""),
         .height = 3,
         .weight = 400,
-        .description = gMiniorMeteorOrangePokedexText,
+        .description = gMiniorMeteorPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_MINIOR_METEOR_YELLOW] =
     {
-        .categoryName = _(""),
         .height = 3,
         .weight = 400,
-        .description = gMiniorMeteorYellowPokedexText,
+        .description = gMiniorMeteorPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_MINIOR_METEOR_GREEN] =
     {
-        .categoryName = _(""),
         .height = 3,
         .weight = 400,
-        .description = gMiniorMeteorGreenPokedexText,
+        .description = gMiniorMeteorPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_MINIOR_METEOR_BLUE] =
     {
-        .categoryName = _(""),
         .height = 3,
         .weight = 400,
-        .description = gMiniorMeteorBluePokedexText,
+        .description = gMiniorMeteorPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_MINIOR_METEOR_INDIGO] =
     {
-        .categoryName = _(""),
         .height = 3,
         .weight = 400,
-        .description = gMiniorMeteorIndigoPokedexText,
+        .description = gMiniorMeteorPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_MINIOR_METEOR_VIOLET] =
     {
-        .categoryName = _(""),
         .height = 3,
         .weight = 400,
-        .description = gMiniorMeteorVioletPokedexText,
+        .description = gMiniorMeteorPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_MINIOR_CORE_RED] =
     {
-        .categoryName = _(""),
         .height = 3,
         .weight = 3,
-        .description = gMiniorCoreRedPokedexText,
+        .description = gMiniorCorePokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_MINIOR_CORE_ORANGE] =
     {
-        .categoryName = _(""),
         .height = 3,
         .weight = 3,
-        .description = gMiniorCoreOrangePokedexText,
+        .description = gMiniorCorePokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_MINIOR_CORE_YELLOW] =
     {
-        .categoryName = _(""),
         .height = 3,
         .weight = 3,
-        .description = gMiniorCoreYellowPokedexText,
+        .description = gMiniorCorePokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_MINIOR_CORE_GREEN] =
     {
-        .categoryName = _(""),
         .height = 3,
         .weight = 3,
-        .description = gMiniorCoreGreenPokedexText,
+        .description = gMiniorCorePokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_MINIOR_CORE_BLUE] =
     {
-        .categoryName = _(""),
         .height = 3,
         .weight = 3,
-        .description = gMiniorCoreBluePokedexText,
+        .description = gMiniorCorePokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_MINIOR_CORE_INDIGO] =
     {
-        .categoryName = _(""),
         .height = 3,
         .weight = 3,
-        .description = gMiniorCoreIndigoPokedexText,
+        .description = gMiniorCorePokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_MINIOR_CORE_VIOLET] =
     {
-        .categoryName = _(""),
         .height = 3,
         .weight = 3,
-        .description = gMiniorCoreVioletPokedexText,
+        .description = gMiniorCorePokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
-    // Mimikyu
+    // Mimikyu   
     [SPECIES_MIMIKYU_BUSTED] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gMimikyuBustedPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Necrozma
+    // Necrozma   
     [SPECIES_NECROZMA_DUSK_MANE] =
     {
-        .categoryName = _(""),
         .height = 38,
         .weight = 4600,
         .description = gNecrozmaDuskManePokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_NECROZMA_DAWN_WINGS] =
     {
-        .categoryName = _(""),
         .height = 42,
         .weight = 3500,
         .description = gNecrozmaDawnWingsPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_NECROZMA_ULTRA] =
     {
-        .categoryName = _(""),
         .height = 75,
         .weight = 2300,
         .description = gNecrozmaUltraPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
-    // Magearna
+    // Magearna   
     [SPECIES_MAGEARNA_ORIGINAL_COLOR] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gMagearnaOriginalColorPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Cramorant
+    // Cramorant   
     [SPECIES_CRAMORANT_GULPING] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gCramorantGulpingPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_CRAMORANT_GORGING] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gCramorantGorgingPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Toxtricity
+    // Toxtricity   
     [SPECIES_TOXTRICITY_LOW_KEY] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gToxtricityLowKeyPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Sinistea
+    // Sinistea   
     [SPECIES_SINISTEA_ANTIQUE] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gSinisteaAntiquePokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Polteageist
+    // Polteageist   
     [SPECIES_POLTEAGEIST_ANTIQUE] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gPolteageistAntiquePokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Alcremie
+    // Alcremie   
     [SPECIES_ALCREMIE_RUBY_CREAM] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gAlcremieRubyCreamPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_ALCREMIE_MATCHA_CREAM] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gAlcremieMatchaCreamPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_ALCREMIE_MINT_CREAM] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gAlcremieMintCreamPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_ALCREMIE_LEMON_CREAM] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gAlcremieLemonCreamPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_ALCREMIE_SALTED_CREAM] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gAlcremieSaltedCreamPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_ALCREMIE_RUBY_SWIRL] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gAlcremieRubySwirlPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_ALCREMIE_CARAMEL_SWIRL] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gAlcremieCaramelSwirlPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
     [SPECIES_ALCREMIE_RAINBOW_SWIRL] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gAlcremieRainbowSwirlPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Eiscue
+    // Eiscue   
     [SPECIES_EISCUE_NOICE_FACE] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gEiscueNoiceFacePokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Indeedee
+    // Indeedee   
     [SPECIES_INDEEDEE_FEMALE] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gIndeedeeFemalePokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Morpeko
+    // Morpeko   
     [SPECIES_MORPEKO_HANGRY] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gMorpekoHangryPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Zacian
+    // Zacian   
     [SPECIES_ZACIAN_CROWNED_SWORD] =
     {
-        .categoryName = _(""),
         .height = 28,
         .weight = 3550,
         .description = gZacianCrownedSwordPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
-    // Zamazenta
+    // Zamazenta   
     [SPECIES_ZAMAZENTA_CROWNED_SHIELD] =
     {
-        .categoryName = _(""),
         .height = 29,
         .weight = 7850,
         .description = gZamazentaCrownedShieldPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
-    // Eternatus
+    // Eternatus   
     [SPECIES_ETERNATUS_ETERNAMAX] =
     {
-        .categoryName = _(""),
         .height = 100,
         .weight = 10000,
         .description = gEternatusEternamaxPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
-    // Urshifu
+    // Urshifu   
     [SPECIES_URSHIFU_RAPID_STRIKE_STYLE] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gUrshifuRapidStrikeStylePokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Zarude
+    // Zarude   
     [SPECIES_ZARUDE_DADA] =
-    {
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
+    { 
         .description = gZarudeDadaPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION ,
     },
-    // Calyrex
+    // Calyrex   
     [SPECIES_CALYREX_ICE_RIDER] =
     {
         .categoryName = _("High King"),
         .height = 24,
         .weight = 8091,
         .description = gCalyrexIceRiderPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT | FLAG_FORM_CATEGORY,
     },
     [SPECIES_CALYREX_SHADOW_RIDER] =
     {
@@ -12206,141 +12082,6 @@ const struct PokedexEntryForms gPokedexEntriesForms[] = //returns 0 for forms wi
         .height = 24,
         .weight = 536,
         .description = gCalyrexShadowRiderPokedexText,
+        .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT | FLAG_FORM_CATEGORY,
     },
-};
-
-const bool8 PokedexEntryFormSkip[NUM_SPECIES] = 
-{
-
-    // Cosplay Pikachu
-    [SPECIES_PIKACHU_COSPLAY] = TRUE,
-    [SPECIES_PIKACHU_ROCK_STAR] = TRUE,
-    [SPECIES_PIKACHU_BELLE] = TRUE,
-    [SPECIES_PIKACHU_POP_STAR ] = TRUE,
-    [SPECIES_PIKACHU_PH_D] = TRUE,
-    [SPECIES_PIKACHU_LIBRE] = TRUE,
-    // Pichu
-    [SPECIES_PICHU_SPIKY_EARED] = TRUE,
-    // Unown
-    [SPECIES_UNOWN_B] = TRUE,
-    [SPECIES_UNOWN_C] = TRUE,
-    [SPECIES_UNOWN_D] = TRUE,
-    [SPECIES_UNOWN_E] = TRUE,
-    [SPECIES_UNOWN_F] = TRUE,
-    [SPECIES_UNOWN_G] = TRUE,
-    [SPECIES_UNOWN_H] = TRUE,
-    [SPECIES_UNOWN_I] = TRUE,
-    [SPECIES_UNOWN_J] = TRUE,
-    [SPECIES_UNOWN_K] = TRUE,
-    [SPECIES_UNOWN_L] = TRUE,
-    [SPECIES_UNOWN_M] = TRUE,
-    [SPECIES_UNOWN_N] = TRUE,
-    [SPECIES_UNOWN_O] = TRUE,
-    [SPECIES_UNOWN_P] = TRUE,
-    [SPECIES_UNOWN_Q] = TRUE,
-    [SPECIES_UNOWN_R] = TRUE,
-    [SPECIES_UNOWN_S] = TRUE,
-    [SPECIES_UNOWN_T] = TRUE,
-    [SPECIES_UNOWN_U] = TRUE,
-    [SPECIES_UNOWN_V] = TRUE,
-    [SPECIES_UNOWN_W] = TRUE,
-    [SPECIES_UNOWN_X] = TRUE,
-    [SPECIES_UNOWN_Y] = TRUE,
-    [SPECIES_UNOWN_Z] = TRUE,
-    [SPECIES_UNOWN_EMARK] = TRUE,
-    [SPECIES_UNOWN_QMARK] = TRUE,
-    // Deoxys
-    [SPECIES_DEOXYS_ATTACK] = TRUE,
-    [SPECIES_DEOXYS_DEFENSE] = TRUE,
-    [SPECIES_DEOXYS_SPEED] = TRUE,
-    // Burmy
-    [SPECIES_BURMY_SANDY_CLOAK] = TRUE,
-    [SPECIES_BURMY_TRASH_CLOAK] = TRUE,
-    // Wormadam
-    [SPECIES_WORMADAM_SANDY_CLOAK] = TRUE,
-    [SPECIES_WORMADAM_TRASH_CLOAK] = TRUE,
-    // Arceus
-    [SPECIES_ARCEUS_FIGHTING] = TRUE,
-    [SPECIES_ARCEUS_FLYING] = TRUE,
-    [SPECIES_ARCEUS_POISON] = TRUE,
-    [SPECIES_ARCEUS_GROUND] = TRUE,
-    [SPECIES_ARCEUS_ROCK] = TRUE,
-    [SPECIES_ARCEUS_BUG] = TRUE,
-    [SPECIES_ARCEUS_GHOST] = TRUE,
-    [SPECIES_ARCEUS_STEEL] = TRUE,
-    [SPECIES_ARCEUS_FIRE] = TRUE,
-    [SPECIES_ARCEUS_WATER] = TRUE,
-    [SPECIES_ARCEUS_GRASS] = TRUE,
-    [SPECIES_ARCEUS_ELECTRIC] = TRUE,
-    [SPECIES_ARCEUS_PSYCHIC] = TRUE,
-    [SPECIES_ARCEUS_ICE] = TRUE,
-    [SPECIES_ARCEUS_DRAGON] = TRUE,
-    [SPECIES_ARCEUS_DARK] = TRUE,
-    [SPECIES_ARCEUS_FAIRY] = TRUE,
-    // Deerling
-    [SPECIES_DEERLING_SUMMER] = TRUE,
-    [SPECIES_DEERLING_AUTUMN] = TRUE,
-    [SPECIES_DEERLING_WINTER] = TRUE,
-    // Sawsbuck
-    [SPECIES_SAWSBUCK_SUMMER] = TRUE,
-    [SPECIES_SAWSBUCK_AUTUMN] = TRUE,
-    [SPECIES_SAWSBUCK_WINTER] = TRUE,
-    // Meloetta
-    [SPECIES_MELOETTA_PIROUETTE] = TRUE,
-    // Genesect
-    [SPECIES_GENESECT_DOUSE_DRIVE] = TRUE,
-    [SPECIES_GENESECT_SHOCK_DRIVE] = TRUE,
-    [SPECIES_GENESECT_BURN_DRIVE] = TRUE,
-    [SPECIES_GENESECT_CHILL_DRIVE] = TRUE,
-    // Greninja
-    [SPECIES_GRENINJA_BATTLE_BOND] = TRUE,
-    [SPECIES_GRENINJA_ASH] = TRUE,
-    // Vivillon
-    [SPECIES_VIVILLON_POLAR] = TRUE,
-    [SPECIES_VIVILLON_TUNDRA] = TRUE,
-    [SPECIES_VIVILLON_CONTINENTAL] = TRUE,
-    [SPECIES_VIVILLON_GARDEN] = TRUE,
-    [SPECIES_VIVILLON_ELEGANT] = TRUE,
-    [SPECIES_VIVILLON_MEADOW] = TRUE,
-    [SPECIES_VIVILLON_MODERN] = TRUE,
-    [SPECIES_VIVILLON_MARINE] = TRUE,
-    [SPECIES_VIVILLON_ARCHIPELAGO] = TRUE,
-    [SPECIES_VIVILLON_HIGH_PLAINS] = TRUE,
-    [SPECIES_VIVILLON_SANDSTORM] = TRUE,
-    [SPECIES_VIVILLON_RIVER] = TRUE,
-    [SPECIES_VIVILLON_MONSOON] = TRUE,
-    [SPECIES_VIVILLON_SAVANNA] = TRUE,
-    [SPECIES_VIVILLON_SUN] = TRUE,
-    [SPECIES_VIVILLON_OCEAN] = TRUE,
-    [SPECIES_VIVILLON_JUNGLE] = TRUE,
-    [SPECIES_VIVILLON_FANCY] = TRUE,
-    [SPECIES_VIVILLON_POKE_BALL] = TRUE,
-    // Flabébé
-    [SPECIES_FLABEBE_YELLOW_FLOWER] = TRUE,
-    [SPECIES_FLABEBE_ORANGE_FLOWER] = TRUE,
-    [SPECIES_FLABEBE_BLUE_FLOWER] = TRUE,
-    [SPECIES_FLABEBE_WHITE_FLOWER] = TRUE,
-    // Floette
-    [SPECIES_FLOETTE_YELLOW_FLOWER] = TRUE,
-    [SPECIES_FLOETTE_ORANGE_FLOWER] = TRUE,
-    [SPECIES_FLOETTE_BLUE_FLOWER] = TRUE,
-    [SPECIES_FLOETTE_WHITE_FLOWER] = TRUE,
-    [SPECIES_FLOETTE_ETERNAL_FLOWER] = TRUE,
-    // Florges
-    [SPECIES_FLORGES_YELLOW_FLOWER] = TRUE,
-    [SPECIES_FLORGES_ORANGE_FLOWER] = TRUE,
-    [SPECIES_FLORGES_BLUE_FLOWER] = TRUE,
-    [SPECIES_FLORGES_WHITE_FLOWER] = TRUE,
-    // Furfrou
-    [SPECIES_FURFROU_HEART_TRIM] = TRUE,
-    [SPECIES_FURFROU_STAR_TRIM] = TRUE,
-    [SPECIES_FURFROU_DIAMOND_TRIM] = TRUE,
-    [SPECIES_FURFROU_DEBUTANTE_TRIM] = TRUE,
-    [SPECIES_FURFROU_MATRON_TRIM] = TRUE,
-    [SPECIES_FURFROU_DANDY_TRIM] = TRUE,
-    [SPECIES_FURFROU_LA_REINE_TRIM] = TRUE,
-    [SPECIES_FURFROU_KABUKI_TRIM] = TRUE,
-    [SPECIES_FURFROU_PHARAOH_TRIM] = TRUE,
-    // Xerneas
-    [SPECIES_XERNEAS_ACTIVE] = TRUE,
 };

@@ -4251,28 +4251,14 @@ u16 GetPokedexHeightWeight(u16 dexNum, u8 data)
 
 u16 GetSpeciesHeightWeight(u16 species, u8 data)
 {
-    if (PokedexEntryFormSkip[species])
+    if (species >= (FORMS_START + 1) && species < NUM_SPECIES && gPokedexEntriesForms[species].flags & FLAG_FORM_WEIGHT_HEIGHT)
     {
-        return GetPokedexHeightWeight(SpeciesToNationalPokedexNum(species), data);
-    }
-    else if (species >= (FORMS_START + 1) && species < NUM_SPECIES)
-    {
-        // if 0 is returned, use base form data
-        u16 weight, height;
         switch (data)
         {
         case 0:  // height
-            height = gPokedexEntriesForms[species].height;
-            if (height > 0)
-            {
-                return height;
-            }
+            return gPokedexEntriesForms[species].height;
         case 1:  // weight
-            weight = gPokedexEntriesForms[species].weight;
-            if (weight > 0)
-            {
-                return weight;
-            }
+            return gPokedexEntriesForms[species].weight;
         default:
             return 1;
         }

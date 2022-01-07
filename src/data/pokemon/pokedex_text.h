@@ -5521,37 +5521,10 @@ const u8 gLycanrocDuskPokedexText[] = _("");
 // Wishiwashi
 const u8 gWishiwashiSchoolPokedexText[] = _("");
 // Silvally
-const u8 gSilvallyFightingPokedexText[] = _("");
-const u8 gSilvallyFlyingPokedexText[] = _("");
-const u8 gSilvallyPoisonPokedexText[] = _("");
-const u8 gSilvallyGroundPokedexText[] = _("");
-const u8 gSilvallyRockPokedexText[] = _("");
-const u8 gSilvallyBugPokedexText[] = _("");
-const u8 gSilvallyGhostPokedexText[] = _("");
-const u8 gSilvallySteelPokedexText[] = _("");
-const u8 gSilvallyFirePokedexText[] = _("");
-const u8 gSilvallyWaterPokedexText[] = _("");
-const u8 gSilvallyGrassPokedexText[] = _("");
-const u8 gSilvallyElectricPokedexText[] = _("");
-const u8 gSilvallyPsychicPokedexText[] = _("");
-const u8 gSilvallyIcePokedexText[] = _("");
-const u8 gSilvallyDragonPokedexText[] = _("");
-const u8 gSilvallyDarkPokedexText[] = _("");
-const u8 gSilvallyFairyPokedexText[] = _("");
+const u8 gSilvallyMemoryPokedexText[] = _("");
 // Minior
-const u8 gMiniorMeteorOrangePokedexText[] = _("");
-const u8 gMiniorMeteorYellowPokedexText[] = _("");
-const u8 gMiniorMeteorGreenPokedexText[] = _("");
-const u8 gMiniorMeteorBluePokedexText[] = _("");
-const u8 gMiniorMeteorIndigoPokedexText[] = _("");
-const u8 gMiniorMeteorVioletPokedexText[] = _("");
-const u8 gMiniorCoreRedPokedexText[] = _("");
-const u8 gMiniorCoreOrangePokedexText[] = _("");
-const u8 gMiniorCoreYellowPokedexText[] = _("");
-const u8 gMiniorCoreGreenPokedexText[] = _("");
-const u8 gMiniorCoreBluePokedexText[] = _("");
-const u8 gMiniorCoreIndigoPokedexText[] = _("");
-const u8 gMiniorCoreVioletPokedexText[] = _("");
+const u8 gMiniorMeteorPokedexText[] = _("");
+const u8 gMiniorCorePokedexText[] = _("");
 // Mimikyu
 const u8 gMimikyuBustedPokedexText[] = _("");
 // Necrozma
