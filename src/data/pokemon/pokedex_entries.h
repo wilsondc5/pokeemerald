@@ -10909,7 +10909,7 @@ const struct PokedexEntryForms gPokedexEntriesForms[] =
     {
         .height = 105,
         .weight = 7400,
-        .description = gSteelixMegaPokedexText,
+        .description = gSteelixPokedexText, // No official dex entry
         .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_SCIZOR_MEGA] =
@@ -10944,28 +10944,28 @@ const struct PokedexEntryForms gPokedexEntriesForms[] =
     {
         .height = 19,
         .weight = 552,
-        .description = gSceptileMegaPokedexText,
+        .description = gSceptilePokedexText, // No official dex entry
         .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_BLAZIKEN_MEGA] =
     {
         .height = 19,
         .weight = 520,
-        .description = gBlazikenMegaPokedexText,
+        .description = gBlazikenPokedexText, // No official dex entry
         .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_SWAMPERT_MEGA] =
     {
         .height = 19,
         .weight = 1020,
-        .description = gSwampertMegaPokedexText,
+        .description = gSwampertPokedexText, // No official dex entry
         .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_GARDEVOIR_MEGA] =
     {
         .height = 16,
         .weight = 484,
-        .description = gGardevoirMegaPokedexText,
+        .description = gGardevoirPokedexText, // No official dex entry
         .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_SABLEYE_MEGA] =
@@ -10986,14 +10986,14 @@ const struct PokedexEntryForms gPokedexEntriesForms[] =
     {
         .height = 22,
         .weight = 3950,
-        .description = gAggronMegaPokedexText,
+        .description = gAggronPokedexText, // No official dex entry
         .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_MEDICHAM_MEGA] =
     {
         .height = 13,
         .weight = 315,
-        .description = gMedichamMegaPokedexText,
+        .description = gMedichamPokedexText, // No official dex entry
         .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_MANECTRIC_MEGA] =
@@ -11014,14 +11014,14 @@ const struct PokedexEntryForms gPokedexEntriesForms[] =
     {
         .height = 25,
         .weight = 3205,
-        .description = gCameruptMegaPokedexText,
+        .description = gCameruptPokedexText, // No official dex entry
         .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_ALTARIA_MEGA] =
     {
         .height = 15,
         .weight = 206,
-        .description = gAltariaMegaPokedexText,
+        .description = gAltariaPokedexText, // No official dex entry
         .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_BANETTE_MEGA] =
@@ -11063,14 +11063,14 @@ const struct PokedexEntryForms gPokedexEntriesForms[] =
     {
         .height = 18,
         .weight = 520,
-        .description = gLatiasMegaPokedexText,
+        .description = gLatiasPokedexText, // No official dex entry
         .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_LATIOS_MEGA] =
     {
         .height = 23,
         .weight = 700,
-        .description = gLatiosMegaPokedexText,
+        .description = gLatiosPokedexText, // No official dex entry
         .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_LOPUNNY_MEGA] =
@@ -11098,28 +11098,28 @@ const struct PokedexEntryForms gPokedexEntriesForms[] =
     {
         .height = 27,
         .weight = 1850,
-        .description = gAbomasnowMegaPokedexText,
+        .description = gAbomasnowPokedexText, // No official dex entry
         .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_GALLADE_MEGA] =
     {
         .height = 16,
         .weight = 564,
-        .description = gGalladeMegaPokedexText,
+        .description = gGalladePokedexText, // No official dex entry
         .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_AUDINO_MEGA] =
     {
         .height = 15,
         .weight = 320,
-        .description = gAudinoMegaPokedexText,
+        .description = gAudinoPokedexText, // No official dex entry
         .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_DIANCIE_MEGA] =
     {
         .height = 11,
         .weight = 278,
-        .description = gDiancieMegaPokedexText,
+        .description = gDianciePokedexText, // No official dex entry
         .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     // Special Mega + Primals   
@@ -11127,21 +11127,21 @@ const struct PokedexEntryForms gPokedexEntriesForms[] =
     {
         .height = 108,
         .weight = 3920,
-        .description = gRayquazaMegaPokedexText,
+        .description = gRayquazaPokedexText, // No official dex entry
         .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_KYOGRE_PRIMAL] =
     {
         .height = 98,
         .weight = 4300,
-        .description = gKyogrePrimalPokedexText,
+        .description = gKyogrePokedexText, // No official dex entry
         .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     [SPECIES_GROUDON_PRIMAL] =
     {
         .height = 50,
         .weight = 9997,
-        .description = gGroudonPrimalPokedexText,
+        .description = gGroudonPokedexText, // No official dex entry
         .flags = FLAG_FORM_DESCRIPTION | FLAG_FORM_WEIGHT_HEIGHT,
     },
     // Alolan Forms   
