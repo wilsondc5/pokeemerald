@@ -5351,58 +5351,212 @@ const u8 gCalyrexPokedexText[] = _(
 
 // Forms
 // Megas
-const u8 gVenusaurMegaPokedexText[] = _("");
-const u8 gCharizardMegaXPokedexText[] = _(""); 
-const u8 gCharizardMegaYPokedexText[] = _(""); 
-const u8 gBlastoiseMegaPokedexText[] = _("");
-const u8 gBeedrillMegaPokedexText[] = _("");
-const u8 gPidgeotMegaPokedexText[] = _("");
-const u8 gAlakazamMegaPokedexText[] = _("");
-const u8 gSlowbroMegaPokedexText[] = _("");
-const u8 gGengarMegaPokedexText[] = _("");
-const u8 gKangaskhanMegaPokedexText[] = _("");
-const u8 gPinsirMegaPokedexText[] = _("");
-const u8 gGyaradosMegaPokedexText[] = _("");
-const u8 gAerodactylMegaPokedexText[] = _("");
-const u8 gMewtwoMegaXPokedexText[] = _("");
-const u8 gMewtwoMegaYPokedexText[] = _("");
-const u8 gAmpharosMegaPokedexText[] = _("");
-const u8 gSteelixMegaPokedexText[] = _("");
-const u8 gScizorMegaPokedexText[] = _("");
-const u8 gHeracrossMegaPokedexText[] = _("");
-const u8 gHoundoomMegaPokedexText[] = _("");
-const u8 gTyranitarMegaPokedexText[] = _("");
-const u8 gSceptileMegaPokedexText[] = _("");
-const u8 gBlazikenMegaPokedexText[] = _("");
-const u8 gSwampertMegaPokedexText[] = _("");
-const u8 gGardevoirMegaPokedexText[] = _("");
-const u8 gSableyeMegaPokedexText[] = _("");
-const u8 gMawileMegaPokedexText[] = _("");
-const u8 gAggronMegaPokedexText[] = _("");
-const u8 gMedichamMegaPokedexText[] = _("");
-const u8 gManectricMegaPokedexText[] = _("");
-const u8 gSharpedoMegaPokedexText[] = _("");
-const u8 gCameruptMegaPokedexText[] = _("");
-const u8 gAltariaMegaPokedexText[] = _("");
-const u8 gBanetteMegaPokedexText[] = _("");
-const u8 gAbsolMegaPokedexText[] = _("");
-const u8 gGlalieMegaPokedexText[] = _("");
-const u8 gSalamenceMegaPokedexText[] = _("");
-const u8 gMetagrossMegaPokedexText[] = _("");
-const u8 gLatiasMegaPokedexText[] = _("");
-const u8 gLatiosMegaPokedexText[] = _("");
-const u8 gLopunnyMegaPokedexText[] = _("");
-const u8 gGarchompMegaPokedexText[] = _("");
-const u8 gLucarioMegaPokedexText[] = _("");
-const u8 gAbomasnowMegaPokedexText[] = _("");
-const u8 gGalladeMegaPokedexText[] = _("");
-const u8 gAudinoMegaPokedexText[] = _("");
-const u8 gDiancieMegaPokedexText[] = _("");
+const u8 gVenusaurMegaPokedexText[] = _(
+    "In order to support its flower, which\n"
+    "has grown larger due to Mega Evolution,\n"
+    "its back and legs have become stronger.");
+
+const u8 gCharizardMegaXPokedexText[] = _(
+    "The overwhelming power that fills its\n"
+    "entire body causes it to turn black\n"
+    "and creates intense blue flames.");
+
+const u8 gCharizardMegaYPokedexText[] = _(
+    "Its bond with its Trainer is the source\n"
+    "of its power. It boasts speed and\n"
+    "maneuverability greater than that of a\n"
+    "jet fighter.");
+
+const u8 gBlastoiseMegaPokedexText[] = _(
+    "The cannon on its back is as powerful\n"
+    "as a tank gun. Its tough legs and back\n"
+    "enable it to withstand the recoil from\n"
+    "firing the cannon.");
+
+const u8 gBeedrillMegaPokedexText[] = _(
+    "Its legs have become poison stingers.\n"
+    "It stabs its prey repeatedly with the\n"
+    "stingers on its limbs, dealing the final\n"
+    "blow with the stinger on its rear.");
+
+const u8 gPidgeotMegaPokedexText[] = _(
+    "With its muscular strength now greatly\n"
+    "increased, it can fly continuously\n"
+    "for two weeks without resting.");
+
+const u8 gAlakazamMegaPokedexText[] = _(
+    "Having traded away its muscles, Alakazam's\n"
+    "true power has been unleashed. With its\n"
+    "psychic powers, it can foresee all things.");
+
+const u8 gSlowbroMegaPokedexText[] = _(
+    "When bathed in the energy of Mega\n"
+    "Evolution, Shellder converts into\n"
+    "impregnable armor. There is virtually no\n"
+    "change in Slowpoke.");
+
+const u8 gGengarMegaPokedexText[] = _(
+    "Gengar's relationships are warped. It\n"
+    "tries to take the lives of anyone and\n"
+    "everyone. It will even try to curse the\n"
+    "Trainer who is its master!");
+
+const u8 gKangaskhanMegaPokedexText[] = _(
+    "When the mother sees the back of her\n"
+    "Mega-Evolved child, it makes her think\n"
+    "of the day when her child will inevitably\n"
+    "leave her.");
+
+const u8 gPinsirMegaPokedexText[] = _(
+    "The influence of Mega Evolution leaves it\n"
+    "in a state of constant excitement.\n"
+    "It pierces enemies with its two large\n"
+    "horns before shredding them.");
+
+const u8 gGyaradosMegaPokedexText[] = _(
+    "Although it obeys its instinctive drive to\n"
+    "destroy everything within its reach, it\n"
+    "will respond to orders from a Trainer it\n"
+    "truly trusts.");
+
+const u8 gAerodactylMegaPokedexText[] = _(
+    "The power of Mega Evolution has\n"
+    "completely restored its genes. The rocks\n"
+    "on its body are harder than diamond.");
+
+const u8 gMewtwoMegaXPokedexText[] = _(
+    "Psychic power has augmented its muscles.\n"
+    "It has a grip strength of one ton and can\n"
+    "sprint a hundred meters in two seconds\n"
+    "flat!");
+
+const u8 gMewtwoMegaYPokedexText[] = _(
+    "Despite its diminished size, its mental\n"
+    "power has grown phenomenally. With a mere\n"
+    "thought, it can smash a skyscraper to\n"
+    "smithereens.");
+
+const u8 gAmpharosMegaPokedexText[] = _(
+    "Massive amounts of energy intensely\n"
+    "stimulated Ampharos's cells, apparently\n"
+    "awakening its long-sleeping dragon's\n"
+    "blood.");
+
+//const u8 gSteelixMegaPokedexText[] = _(""); // No official dex entry
+
+const u8 gScizorMegaPokedexText[] = _(
+    "The excess energy that bathes this\n"
+    "Pokémon keeps it in constant danger of\n"
+    "overflow. It can't sustain a battle over\n"
+    "long periods of time.");
+
+const u8 gHeracrossMegaPokedexText[] = _(
+    "A tremendous influx of energy builds it up,\n"
+    "but when Mega Evolution ends, Heracross\n"
+    "is bothered by terrible soreness in its\n"
+    "muscles.");
+
+const u8 gHoundoomMegaPokedexText[] = _(
+    "Its red claws and the tips of its tail are\n"
+    "melting from high internal temperatures\n"
+    "that are painful to Houndoom itself.\n");
+
+const u8 gTyranitarMegaPokedexText[] = _(
+    "Due to the colossal power poured into it,\n"
+    "this Pokémon's back split right open. Its\n"
+    "destructive instincts are the only thing\n"
+    "keeping it moving.");
+
+//const u8 gSceptileMegaPokedexText[] = _(""); // No official dex entry
+//const u8 gBlazikenMegaPokedexText[] = _(""); // No official dex entry
+//const u8 gSwampertMegaPokedexText[] = _(""); // No official dex entry
+//const u8 gGardevoirMegaPokedexText[] = _(""); // No official dex entry
+
+const u8 gSableyeMegaPokedexText[] = _(
+    "Bathed in the energy of Mega Evolution,\n"
+    "the gemstone on its chest expands, rips\n"
+    "through its skin, and falls out.");
+
+const u8 gMawileMegaPokedexText[] = _(
+    "Its two sets of jaws thrash about\n"
+    "violently as if they each had a will of\n"
+    "their own. One gnash from them can turn a\n"
+    "boulder to dust.");
+
+//const u8 gAggronMegaPokedexText[] = _(""); // No official dex entry
+//const u8 gMedichamMegaPokedexText[] = _(""); // No official dex entry
+
+const u8 gManectricMegaPokedexText[] = _(
+    "Too much electricity has built up in its\n"
+    "body, irritating Manectric. Its explosive\n"
+    "speed is equal to that of a lightning bolt.");
+
+const u8 gSharpedoMegaPokedexText[] = _(
+    "The yellow patterns it bears are old scars.\n"
+    "The energy from Mega Evolution runs\n"
+    "through them, causing it sharp pain and\n"
+    "suffering.");
+
+//const u8 gCameruptMegaPokedexText[] = _(""); // No official dex entry
+//const u8 gAltariaMegaPokedexText[] = _(""); // No official dex entry
+
+const u8 gBanetteMegaPokedexText[] = _(
+    "Extraordinary energy amplifies its\n"
+    "cursing power to such an extent that it\n"
+    "can't help but curse its own Trainer.");
+
+const u8 gAbsolMegaPokedexText[] = _(
+    "As the energy of Mega Evolution fills it,\n"
+    "its fur bristles. What you see on its back\n"
+    "are not true wings, and this Pokémon isn't\n"
+    "able to fly.");
+
+const u8 gGlalieMegaPokedexText[] = _(
+    "The power of Mega Evolution was so strong\n"
+    "that it smashed Glalie's jaw. Its inability\n"
+    "to eat very well leaves Glalie irritated.");
+
+const u8 gSalamenceMegaPokedexText[] = _(
+    "Mega Evolution fuels its brutality, and it\n"
+    "may even turn on the Trainer who raised it.\n"
+    "It's been dubbed the blood-soaked.\n"
+    "crescent.");
+
+const u8 gMetagrossMegaPokedexText[] = _(
+    "When it knows it can't win, it digs the\n"
+    "claws on its legs into its opponent and\n"
+    "starts the countdown to a big explosion.");
+
+//const u8 gLatiasMegaPokedexText[] = _(""); // No official dex entry
+//const u8 gLatiosMegaPokedexText[] = _(""); // No official dex entry
+
+const u8 gLopunnyMegaPokedexText[] = _(
+    "Mega Evolution awakens its combative\n"
+    "instincts. It has shed any fur that got in\n"
+    "the way of its attacks.\n"
+    "crescent.");
+
+const u8 gGarchompMegaPokedexText[] = _(
+    "Excess energy melted its arms and wings\n"
+    "into giant scythes, sending it mad with\n"
+    "rage. It swings its scythes wildly and\n"
+    "slices the ground to pieces.");
+
+const u8 gLucarioMegaPokedexText[] = _(
+    "It readies itself to face its enemies by\n"
+    "focusing its mental energies. Its fighting\n"
+    "style can be summed up in a single word:\n"
+    "heartless.");
+
+//const u8 gAbomasnowMegaPokedexText[] = _(""); // No official dex entry
+//const u8 gGalladeMegaPokedexText[] = _(""); // No official dex entry
+//const u8 gAudinoMegaPokedexText[] = _(""); // No official dex entry
+//const u8 gDiancieMegaPokedexText[] = _(""); // No official dex entry
 
 // Special mega + primals
-const u8 gRayquazaMegaPokedexText[] = _(""); 
-const u8 gKyogrePrimalPokedexText[] = _("");
-const u8 gGroudonPrimalPokedexText[] = _("");
+//const u8 gRayquazaMegaPokedexText[] = _(""); // No official dex entry
+//const u8 gKyogrePrimalPokedexText[] = _(""); // No official dex entry
+//const u8 gGroudonPrimalPokedexText[] = _(""); // No official dex entry
 
 // Alolan forms
 const u8 gRattataAlolanPokedexText[] = _(
