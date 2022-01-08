@@ -5410,86 +5410,103 @@ const u8 gRattataAlolanPokedexText[] = _(
     "and infiltrates people's homes.\n"
     "Then, with a twitch of its whiskers,\n"
     "it steals whatever food it finds.");
+
 const u8 gRaticateAlolanPokedexText[] = _(
     "It forms a group of Rattata, which it \n"
     "assumes command of. Each group\n"
     "has its own territory, and disputes\n"
     "over food happen often.");
+
 const u8 gRaichuAlolanPokedexText[] = _(
     "It uses psychokinesis to control\n"
     "electricity. It focuses psychic energy\n"
     "into its tail and rides it like it's surfing.\n"
     "Another name for this Pokémon is 'hodad'.");
+
 const u8 gSandshrewAlolanPokedexText[] = _(
     "Life on mountains covered with deep snow\n"
     "has granted this Pokémon a body of ice\n"
     "that's as hard as steel.\n"
     "Predators go after its soft belly.");
+
 const u8 gSandslashAlolanPokedexText[] = _(
     "This Pokémon's steel spikes are\n"
     "sheathed in ice. Stabs from these\n"
     "spikes cause wounds and.\n"
     "severe frostbite as well.");
+
 const u8 gVulpixAlolanPokedexText[] = _(
     "They live together in a skulk, helping\n"
     "one another. In hot weather, this Pokémon\n"
     "makes ice shards with its six tails and\n"
     "sprays them around to cool itself off.");
+
 const u8 gNinetalesAlolanPokedexText[] = _(
     "While it will guide travelers who get lost\n"
     "on a snowy mountain down to the\n"
     "mountain's base, it won't forgive anyone\n"
     "who harms nature.");
+
 const u8 gDiglettAlolanPokedexText[] = _(
     "Its head sports an altered form of\n"
     "whiskers made of metal. When in\n"
     "communicationwith its comrades,\n"
     "its whiskers wobble to and fro.");
+
 const u8 gDugtrioAlolanPokedexText[] = _(
     "Their beautiful, metallic whiskers create\n"
     "a sort of protective helmet on\n"
     "heir heads, and they also function\n"
     "as highly precise sensors.");
+
 const u8 gMeowthAlolanPokedexText[] = _(
     "Deeply proud and keenly smart,\n"
     "this Pokémon moves with cunning\n"
     "during battle and relentlessly\n"
     "attacks enemies' weak points.");
+
 const u8 gPersianAlolanPokedexText[] = _(
     "It looks down on everyone other than\n"
     "itself. In contrast to its lovely face, it\n"
     "is so brutal that it tortures its weakened\n"
     "prey rather than finishing them off.");
+
 const u8 gGeodudeAlolanPokedexText[] = _(
     "Geodude compete against each other\n"
     "with headbutts. The iron sand on\n"
     "their heads will stick to whichever one\n"
     "has stronger magnetism.");
+
 const u8 gGravelerAlolanPokedexText[] = _(
     "They eat rocks and often get\n"
     "into a scrap over them. The shock of\n"
     "Graveler smashing together causes\n"
     "a flash of light and a booming noise.");
+
 const u8 gGolemAlolanPokedexText[] = _(
     "It fires rocks charged with electricity.\n"
     "Even if the rock isn't fired that\n"
     "accurately, just grazing an opponent\n"
     "will cause numbness and fainting.");
+
 const u8 gGrimerAlolanPokedexText[] = _(
     "There are a hundred or so of them living\n"
     "in Alola's waste-disposal site. They're all\n"
     "hard workers who eat a lot of trash. Grimer\n"
     "seems to relish any and all kinds of trash.");
+
 const u8 gMukAlolanPokedexText[] = _(
     "The garbage it eats causes\n"
     "continuous chemical changes in it's\n"
     "body, which produce it's\n"
     "exceedingly vivid coloration.");
+
 const u8 gExeggutorAlolanPokedexText[] = _(
     "Alola is the best environment for\n"
     "this Pokémon. Local people take pride\n"
     "in its appearance, saying this is how\n"
     "Exeggutor ought to look.");
+
 const u8 gMarowakAlolanPokedexText[] = _(
     "The cursed flames that light up the bone\n"
     "carried by this Pokémon are said\n"
