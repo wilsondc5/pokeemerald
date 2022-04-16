@@ -1051,5 +1051,6 @@ struct MapPosition
 };
 
 #define TX_RANDOMIZER_AND_CHALLENGES TRUE
+#define GBA_PRINTF TRUE
 
 #endif // GUARD_GLOBAL_H
