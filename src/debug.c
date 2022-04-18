@@ -1194,12 +1194,21 @@ static void DebugAction_Util_Trainer_Id(u8 taskId)
 }
 
 // *******************************
+#define TX_RANDOM_T_WILD_POKEMON    0
+#define TX_RANDOM_T_TRAINER         1
+#define TX_RANDOM_T_MOVES           2
+#define TX_RANDOM_T_ABILITY         3
+#define TX_RANDOM_T_EVO             4
+#define TX_RANDOM_T_EVO_METH        5
 // Actions Scripts
 static void DebugAction_Util_Script_1(u8 taskId)
 {
     Debug_DestroyMenu(taskId);
-    ScriptContext2_Enable();
-    ScriptContext1_SetupScript(Debug_Script_1);
+    EnableBothScriptContexts();
+    //ScriptContext2_Enable();
+    //ScriptContext1_SetupScript(Debug_Script_1);
+
+    TestRandomizerValues(TX_RANDOM_T_WILD_POKEMON);
 }
 static void DebugAction_Util_Script_2(u8 taskId)
 {
