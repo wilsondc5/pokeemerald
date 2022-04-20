@@ -14049,7 +14049,7 @@ void TestRandomizerValues(u8 type)
     gSaveBlock1Ptr->tx_Random_IncludeLegendaries    = FALSE;
 
 
-    for (i=0; i<10; i++)
+    for (i=0; i<1; i++)
     {
         for (j=0; j<NUM_SPECIES; j++)
         {
