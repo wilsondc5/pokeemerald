@@ -538,3 +538,4 @@ gSpecials::
 	def_special CloseDeptStoreElevatorWindow
 	def_special TrySetBattleTowerLinkType
 	def_special IsNuzlockeActivated
+	def_special BufferUnitSystemText
