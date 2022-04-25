@@ -6377,7 +6377,8 @@ static void SetPlacedMonData(u8 boxId, u8 position)
     }
     else
     {
-        BoxMonRestorePP(&sStorage->movingMon.box);
+        if (!gSaveBlock1Ptr->tx_Challenges_PkmnCenter)
+            BoxMonRestorePP(&sStorage->movingMon.box);
         SetBoxMonAt(boxId, position, &sStorage->movingMon.box);
     }
 }

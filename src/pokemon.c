@@ -9516,6 +9516,7 @@ void GiveBoxMonInitialMoveset(struct BoxPokemon *boxMon)
     u16 species = GetBoxMonData(boxMon, MON_DATA_SPECIES, NULL);
     s32 level = GetLevelFromBoxMonExp(boxMon);
     s32 i;
+    bool8 firstMoveGiven = FALSE;
 
     for (i = 0; gLevelUpLearnsets[species][i] != LEVEL_UP_END; i++)
     {
@@ -9530,10 +9531,26 @@ void GiveBoxMonInitialMoveset(struct BoxPokemon *boxMon)
         move = (gLevelUpLearnsets[species][i] & LEVEL_UP_MOVE_ID);
 
         if (gSaveBlock1Ptr->tx_Random_Moves) //tx_randomizer_and_challenges
+        {
             move = GetRandomMove(move, species);
+            if (!FlagGet(FLAG_ADVENTURE_STARTED) && !firstMoveGiven)
+            {
+                u8 j;
+                for (j=0; j<100; j++)
+                {
+                    if (gBattleMoves[move].power == 0)
+                        move = GetRandomMove(move, species);
+                    else
+                        break;
+                }
+            }
+        }
 
         if (GiveMoveToBoxMon(boxMon, move) == MON_HAS_MAX_MOVES)
             DeleteFirstMoveAndGiveMoveToBoxMon(boxMon, move);
+
+        if (!firstMoveGiven)
+            firstMoveGiven = TRUE;
     }
 }
 
@@ -14003,10 +14020,6 @@ u8 GetPartySize()
 {
     return (6 - gSaveBlock1Ptr->tx_Challenges_PartyLimit);
 }
-u8 GetPokemonCenterChallenge()
-{
-    return !gSaveBlock1Ptr->tx_Challenges_PkmnCenter;
-}
 u8 PickRandomOneTypeChallengeType()
 {
     u16 type = (RandomSeeded(1, TRUE) % (NUMBER_OF_MON_TYPES-1));
@@ -14045,6 +14058,8 @@ void PrintTXSaveData(void)
     mgba_printf(MGBA_LOG_DEBUG, "%d tx_Challenges_OneTypeChallenge" , gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge);
     mgba_printf(MGBA_LOG_DEBUG, "%d tx_Challenges_PartyLimit"       , gSaveBlock1Ptr->tx_Challenges_PartyLimit);
     mgba_printf(MGBA_LOG_DEBUG, "%d tx_Challenges_PkmnCenter"       , gSaveBlock1Ptr->tx_Challenges_PkmnCenter);
+    mgba_printf(MGBA_LOG_DEBUG, "%d tx_Random_OneForOne"            , gSaveBlock1Ptr->tx_Random_OneForOne);
+    mgba_printf(MGBA_LOG_DEBUG, "%d tx_Challenges_BaseStatEqualizer", gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer);
     #endif
 }
 
@@ -14055,7 +14070,7 @@ void TestRandomizerValues(u8 type)
     u8 real_j;
     u16 tmp;
     u16 array[10];
-    u8 save_values[21];
+    u8 save_values[22];
 
     //save saveblock values
     save_values[0]  = gSaveBlock1Ptr->tx_Random_Chaos;
@@ -14079,6 +14094,7 @@ void TestRandomizerValues(u8 type)
     save_values[18] = gSaveBlock1Ptr->tx_Challenges_NoItemTrainer;
     save_values[19] = gSaveBlock1Ptr->tx_Challenges_PkmnCenter;
     save_values[20] = gSaveBlock1Ptr->tx_Random_OneForOne;
+    save_values[21] = gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer;
 
     gSaveBlock1Ptr->tx_Random_WildPokemon           = TRUE;
     gSaveBlock1Ptr->tx_Random_Similar               = FALSE;
@@ -14125,5 +14141,6 @@ void TestRandomizerValues(u8 type)
     gSaveBlock1Ptr->tx_Challenges_NoItemTrainer     =   save_values[18];
     gSaveBlock1Ptr->tx_Challenges_PkmnCenter        =   save_values[19];
     gSaveBlock1Ptr->tx_Random_OneForOne             =   save_values[20];
+    gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer =   save_values[21];
     #endif
 }
