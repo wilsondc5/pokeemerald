@@ -1045,6 +1045,8 @@ struct SaveBlock1
         u8 tx_Random_OneForOne:1;
         u8 tx_Challenges_BaseStatEqualizer:2;
         u8 tx_Challenges_LevelCap:2;
+        u8 tx_Challenges_ExpMultiplier:2;
+        u8 tx_Random_Items:1;
     // sizeof: 0x3D94  // sizeof: 0x3D88
 };
 
