@@ -36,6 +36,7 @@
 #include "data.h"
 #include "battle.h" // to get rid of later
 #include "constants/rgb.h"
+#include "tx_randomizer_and_challenges.h"
 
 #define GFXTAG_EGG       12345
 #define GFXTAG_EGG_SHARD 23456
@@ -369,6 +370,10 @@ static void AddHatchedMonToParty(u8 id)
     SetMonData(mon, MON_DATA_IS_EGG, &isEgg);
 
     species = GetMonData(mon, MON_DATA_SPECIES);
+
+    if (gSaveBlock1Ptr->tx_Random_WildPokemon || gSaveBlock1Ptr->tx_Random_Evolutions) //tx_randomizer_and_challenges
+        species = GetSpeciesRandomSeeded(species, TX_RANDOM_T_WILD_POKEMON);
+
     GetSpeciesName(name, species);
     SetMonData(mon, MON_DATA_NICKNAME, name);
 
@@ -672,7 +677,7 @@ static void CB2_EggHatch(void)
     case 8:
         // Ready the nickname prompt
         GetMonNickname2(&gPlayerParty[sEggHatchData->eggPartyId], gStringVar1);
-        if (!gSaveBlock1Ptr->tx_Challenges_Nuzlocke) //tx_randomizer_and_challenges
+        if (!gSaveBlock1Ptr->tx_Challenges_Nuzlocke || !gSaveBlock1Ptr->tx_Nuzlocke_Nicknaming) //tx_randomizer_and_challenges
         {
             StringExpandPlaceholders(gStringVar4, gText_NicknameHatchPrompt);
             EggHatchPrintMessage(sEggHatchData->windowId, gStringVar4, 0, 2, 1);
@@ -684,13 +689,13 @@ static void CB2_EggHatch(void)
         if (!IsTextPrinterActive(sEggHatchData->windowId))
         {
             LoadUserWindowBorderGfx(sEggHatchData->windowId, 0x140, 0xE0);
-            if (!gSaveBlock1Ptr->tx_Challenges_Nuzlocke) //tx_randomizer_and_challenges
+            if (!gSaveBlock1Ptr->tx_Challenges_Nuzlocke || !gSaveBlock1Ptr->tx_Nuzlocke_Nicknaming) //tx_randomizer_and_challenges
                 CreateYesNoMenu(&sYesNoWinTemplate, 0x140, 0xE, 0);
             sEggHatchData->state++;
         }
         break;
     case 10:
-        if (gSaveBlock1Ptr->tx_Challenges_Nuzlocke) //tx_randomizer_and_challenges
+        if (gSaveBlock1Ptr->tx_Challenges_Nuzlocke && gSaveBlock1Ptr->tx_Nuzlocke_Nicknaming) //tx_randomizer_and_challenges
         {
             GetMonNickname2(&gPlayerParty[sEggHatchData->eggPartyId], gStringVar3);
             species = GetMonData(&gPlayerParty[sEggHatchData->eggPartyId], MON_DATA_SPECIES);
