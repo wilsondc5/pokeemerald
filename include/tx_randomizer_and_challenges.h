@@ -36,6 +36,8 @@
 #define TX_CHALLENGE_BASE_STAT_EQUALIZER 0 //0=off, 1=100, 2=255, 3=500
 #define TX_CHALLENGE_TYPE_OFF 31
 #define TX_CHALLENGE_TYPE TX_CHALLENGE_TYPE_OFF //TX_CHALLENGE_TYPE_OFF for off
+#define TX_CHALLENGE_MIRROR 0
+#define TX_CHALLENGE_MIRROR_THIEF 0
 
 // randomization types
 #define TX_RANDOM_T_WILD_POKEMON    0
@@ -46,12 +48,12 @@
 #define TX_RANDOM_T_EVO_METH        5
 
 void CB2_InitTxRandomizerChallengesMenu(void);
-void tx_randomizer_SaveData(void);
-void tx_challenges_SaveData(void);
+void SaveData_TxRandomizerAndChallenges(void);
 
 bool8 IsRandomizerActivated(void);
 bool8 IsChallengesActivated(void);
-bool8 IsNuzlockeNicknamingActivated(void);
+bool8 IsNuzlockeActive(void);
+bool8 IsNuzlockeNicknamingActive(void);
 bool8 IsPokecenterChallengeActivated(void);
 bool8 IsRandomItemsActivated(void);
 

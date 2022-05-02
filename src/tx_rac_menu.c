@@ -21,6 +21,11 @@
 #include "tx_randomizer_and_challenges.h"
 #include "pokemon.h"
 
+#ifdef GBA_PRINTF //tx_randomizer_and_challenges
+    #include "printf.h"
+    #include "mgba.h"
+#endif
+
 enum
 {
     MENU_RANDOMIZER,
@@ -77,7 +82,8 @@ enum
     MENUITEM_CHALLENGES_EVO_LIMIT,
     MENUITEM_CHALLENGES_ONE_TYPE_CHALLENGE,
     MENUITEM_CHALLENGES_BASE_STAT_EQUALIZER,
-    MENUITEM_CHALLENGES_DUMMY1,
+    MENUITEM_CHALLENGES_MIRROR,
+    MENUITEM_CHALLENGES_MIRROR_THIEF,
     MENUITEM_CHALLENGES_SAVE,
     MENUITEM_CHALLENGES_COUNT,
 };
@@ -188,6 +194,7 @@ static int ProcessInput_FrameType(int selection);
 static const u8 *const OptionTextDescription(void);
 static const u8 *const OptionTextRight(u8 menuItem);
 static u8 MenuItemCount(void);
+static u8 MenuItemCountFromIndex(u8 index);
 static u8 MenuItemCancel(void);
 static void DrawDescriptionText(void);
 static void DrawOptionMenuChoice(const u8 *text, u8 x, u8 y, u8 style, bool8 active);
@@ -228,7 +235,10 @@ static void DrawChoices_Challenges_Pokecenters(int selection, int y);
 static void DrawChoices_Challenges_EvoLimit(int selection, int y);
 static void DrawChoices_Challenges_OneTypeChallenge(int selection, int y);
 static void DrawChoices_Challenges_BaseStatEqualizer(int selection, int y);
-static void DrawChoices_Challenges_Dummy1(int selection, int y);
+static void DrawChoices_Challenges_Mirror(int selection, int y);
+static void DrawChoices_Challenges_Mirror_Thief(int selection, int y);
+
+static void PrintCurrentSelections(void);
 
 // EWRAM vars
 EWRAM_DATA static struct OptionMenu *sOptions = NULL;
@@ -313,7 +323,8 @@ struct // MENU_CHALLENGES
     [MENUITEM_CHALLENGES_EVO_LIMIT]             = {DrawChoices_Challenges_EvoLimit,             ProcessInput_Options_Three},
     [MENUITEM_CHALLENGES_ONE_TYPE_CHALLENGE]    = {DrawChoices_Challenges_OneTypeChallenge,     ProcessInput_Options_OneTypeChallenge},
     [MENUITEM_CHALLENGES_BASE_STAT_EQUALIZER]   = {DrawChoices_Challenges_BaseStatEqualizer,    ProcessInput_Options_Four},
-    [MENUITEM_CHALLENGES_DUMMY1]                = {DrawChoices_Challenges_Dummy1,               ProcessInput_Options_Two},
+    [MENUITEM_CHALLENGES_MIRROR]                = {DrawChoices_Challenges_Mirror,               ProcessInput_Options_Two},
+    [MENUITEM_CHALLENGES_MIRROR_THIEF]          = {DrawChoices_Challenges_Mirror_Thief,         ProcessInput_Options_Two},
     [MENUITEM_CHALLENGES_SAVE] = {NULL, NULL},
 };
 
@@ -387,13 +398,16 @@ static const u8 *const sOptionMenuItemsNamesDifficulty[MENUITEM_DIFFICULTY_COUNT
 static const u8 sText_EvoLimit[]            = _("EVO LIMIT");
 static const u8 sText_OneTypeChallenge[]    = _("ONE TYPE ONLY");
 static const u8 sText_BaseStatEqualizer[]   = _("STAT EQUALIZER");
-static const u8 sText_Save[] =                      _("SAVE");
+static const u8 sText_Mirror[]              = _("MIRROR MODE");
+static const u8 sText_MirrorThief[]         = _("MIRROR THIEF");
+static const u8 sText_Save[]                = _("SAVE");
 static const u8 *const sOptionMenuItemsNamesChallenges[MENUITEM_CHALLENGES_COUNT] =
 {
     [MENUITEM_CHALLENGES_EVO_LIMIT]             = sText_EvoLimit,
     [MENUITEM_CHALLENGES_ONE_TYPE_CHALLENGE]    = sText_OneTypeChallenge,
     [MENUITEM_CHALLENGES_BASE_STAT_EQUALIZER]   = sText_BaseStatEqualizer,
-    [MENUITEM_CHALLENGES_DUMMY1]                = sText_Dummy,
+    [MENUITEM_CHALLENGES_MIRROR]                = sText_Mirror,
+    [MENUITEM_CHALLENGES_MIRROR_THIEF]          = sText_MirrorThief,
     [MENUITEM_CHALLENGES_SAVE]                  = sText_Save,
 };
 
@@ -419,8 +433,10 @@ static bool8 CheckConditions(int selection)
             case MENUITEM_RANDOM_OFF_ON:                    return TRUE;
             case MENUITEM_RANDOM_WILD_PKMN:                 return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
             case MENUITEM_RANDOM_TRAINER:                   return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
-            case MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL:   return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
-            case MENUITEM_RANDOM_INCLUDE_LEGENDARIES:       return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
+            case MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL:   return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON] 
+                                                                && (sOptions->sel_randomizer[MENUITEM_RANDOM_WILD_PKMN] || sOptions->sel_randomizer[MENUITEM_RANDOM_TRAINER])
+                                                                && !sOptions->sel_randomizer[MENUITEM_RANDOM_CHAOS];
+            case MENUITEM_RANDOM_INCLUDE_LEGENDARIES:       return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON] && (sOptions->sel_randomizer[MENUITEM_RANDOM_WILD_PKMN] || sOptions->sel_randomizer[MENUITEM_RANDOM_TRAINER]);
             case MENUITEM_RANDOM_TYPE:                      return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
             case MENUITEM_RANDOM_MOVES:                     return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
             case MENUITEM_RANDOM_ABILITIES:                 return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
@@ -428,7 +444,14 @@ static bool8 CheckConditions(int selection)
             case MENUITEM_RANDOM_EVOLUTIONS_METHODS:        return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
             case MENUITEM_RANDOM_TYPE_EFFEC:                return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
             case MENUITEM_RANDOM_ITEMS:                     return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
-            case MENUITEM_RANDOM_CHAOS:                     return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
+            case MENUITEM_RANDOM_CHAOS:                     return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON] && (sOptions->sel_randomizer[MENUITEM_RANDOM_WILD_PKMN]
+                                                                || sOptions->sel_randomizer[MENUITEM_RANDOM_TRAINER]
+                                                                || sOptions->sel_randomizer[MENUITEM_RANDOM_TYPE]
+                                                                || sOptions->sel_randomizer[MENUITEM_RANDOM_MOVES]
+                                                                || sOptions->sel_randomizer[MENUITEM_RANDOM_ABILITIES]
+                                                                || sOptions->sel_randomizer[MENUITEM_RANDOM_EVOLUTIONS]
+                                                                || sOptions->sel_randomizer[MENUITEM_RANDOM_EVOLUTIONS_METHODS]
+                                                                || sOptions->sel_randomizer[MENUITEM_RANDOM_TYPE_EFFEC]);
             case MENUITEM_RANDOM_NEXT:                      return TRUE;
         }
     case MENU_NUZLOCKE:
@@ -457,7 +480,8 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_CHALLENGES_EVO_LIMIT:            return TRUE;
         case MENUITEM_CHALLENGES_ONE_TYPE_CHALLENGE:   return TRUE;
         case MENUITEM_CHALLENGES_BASE_STAT_EQUALIZER:  return TRUE;
-        case MENUITEM_CHALLENGES_DUMMY1:               return TRUE;
+        case MENUITEM_CHALLENGES_MIRROR:               return TRUE;
+        case MENUITEM_CHALLENGES_MIRROR_THIEF:         return sOptions->sel_challenges[MENUITEM_CHALLENGES_MIRROR];
         case MENUITEM_CHALLENGES_SAVE:                 return TRUE;
         }
     }
@@ -565,14 +589,18 @@ static const u8 sText_Description_TXC_BaseStatEqualizer_Base[]      = _("All POK
 static const u8 sText_Description_TXC_BaseStatEqualizer_100[]       = _("POKéMON stats are calculated with\n100 of each base stat.");
 static const u8 sText_Description_TXC_BaseStatEqualizer_255[]       = _("POKéMON stats are calculated with\n255 of each base stat.");
 static const u8 sText_Description_TXC_BaseStatEqualizer_500[]       = _("POKéMON stats are calculated with\n500 of each base stat.");
-static const u8 sText_Description_TXC_Dummy1_Off[]                  = _("");
-static const u8 sText_Description_TXC_Dummy1_On[]                   = _("");
+static const u8 sText_Description_TXC_Mirror_Off[]                  = _("The player uses their own party.");
+static const u8 sText_Description_TXC_Mirror_Trainer[]              = _("In Trainer battles the player gets\na copy of the enemies party!");
+static const u8 sText_Description_TXC_Mirror_All[]                  = _("The player gets a copy of the\nenemies party in {COLOR 7}{COLOR 8}ALL battles!");
+static const u8 sText_Description_TXC_MirrorThief_Off[]             = _("The player gets their own party back\nafter battles.");
+static const u8 sText_Description_TXC_MirrorThief_On[]              = _("The player keeps the enemies party\nafter battle!");
 static const u8 *const sOptionMenuItemDescriptionsChallenges[MENUITEM_CHALLENGES_COUNT][4] =
 {
     [MENUITEM_CHALLENGES_EVO_LIMIT]             = {sText_Description_TXC_EvoLimit_Base,             sText_Description_TXC_EvoLimit_First,           sText_Description_TXC_EvoLimit_All,         sText_Empty},
     [MENUITEM_CHALLENGES_ONE_TYPE_CHALLENGE]    = {sText_Description_TXC_OneTypeChallenge,          sText_Empty,                                    sText_Empty,                                sText_Empty},
     [MENUITEM_CHALLENGES_BASE_STAT_EQUALIZER]   = {sText_Description_TXC_BaseStatEqualizer_Base,    sText_Description_TXC_BaseStatEqualizer_100,    sText_Description_TXC_BaseStatEqualizer_255,sText_Description_TXC_BaseStatEqualizer_500},
-    [MENUITEM_CHALLENGES_DUMMY1]                = {sText_Description_TXC_Dummy1_Off,                sText_Description_TXC_Dummy1_On,                sText_Empty,                                sText_Empty},
+    [MENUITEM_CHALLENGES_MIRROR]                = {sText_Description_TXC_Mirror_Off,                sText_Description_TXC_Mirror_Trainer,           sText_Empty,                                sText_Empty},
+    [MENUITEM_CHALLENGES_MIRROR_THIEF]          = {sText_Description_TXC_MirrorThief_Off,           sText_Description_TXC_MirrorThief_On,           sText_Empty,                                sText_Empty},
     [MENUITEM_CHALLENGES_SAVE]                  = {sText_Description_Save,                          sText_Empty,                                    sText_Empty,                                sText_Empty},
 };
 
@@ -608,6 +636,17 @@ static const u8 *const OptionTextDescription(void)
 static u8 MenuItemCount(void)
 {
     switch (sOptions->submenu)
+    {
+    case MENU_RANDOMIZER:   return MENUITEM_RANDOM_COUNT;
+    case MENU_NUZLOCKE:     return MENUITEM_NUZLOCKE_COUNT;
+    case MENU_DIFFICULTY:   return MENUITEM_DIFFICULTY_COUNT;
+    case MENU_CHALLENGES:   return MENUITEM_CHALLENGES_COUNT;
+    }
+}
+
+static u8 MenuItemCountFromIndex(u8 index)
+{
+    switch (index)
     {
     case MENU_RANDOMIZER:   return MENUITEM_RANDOM_COUNT;
     case MENU_NUZLOCKE:     return MENUITEM_NUZLOCKE_COUNT;
@@ -863,6 +902,8 @@ void CB2_InitTxRandomizerChallengesMenu(void)
         gSaveBlock1Ptr->tx_Challenges_PkmnCenter            = TX_CHALLENGE_PKMN_CENTER;
         gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge      = TX_CHALLENGE_TYPE;
         gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer     = TX_CHALLENGE_BASE_STAT_EQUALIZER;
+        gSaveBlock1Ptr->tx_Challenges_Mirror                = TX_CHALLENGE_MIRROR;
+        gSaveBlock1Ptr->tx_Challenges_Mirror_Thief          = TX_CHALLENGE_MIRROR_THIEF;
 
         sOptions = AllocZeroed(sizeof(*sOptions));
         sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON]                     = FALSE;
@@ -901,6 +942,8 @@ void CB2_InitTxRandomizerChallengesMenu(void)
         sOptions->sel_challenges[MENUITEM_CHALLENGES_EVO_LIMIT]              = gSaveBlock1Ptr->tx_Challenges_EvoLimit;
         sOptions->sel_challenges[MENUITEM_CHALLENGES_ONE_TYPE_CHALLENGE]     = gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge;
         sOptions->sel_challenges[MENUITEM_CHALLENGES_BASE_STAT_EQUALIZER]    = gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer;
+        sOptions->sel_challenges[MENUITEM_CHALLENGES_MIRROR]                 = gSaveBlock1Ptr->tx_Challenges_Mirror;
+        sOptions->sel_challenges[MENUITEM_CHALLENGES_MIRROR_THIEF]           = gSaveBlock1Ptr->tx_Challenges_Mirror_Thief;
 
         sOptions->submenu = MENU_RANDOMIZER;
 
@@ -1118,6 +1161,23 @@ static void Task_OptionMenuProcessInput(u8 taskId)
 
 static void Task_RandomizerChallengesMenuSave(u8 taskId)
 {
+    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
+    gTasks[taskId].func = Task_RandomizerChallengesMenuFadeOut;
+}
+
+static void Task_RandomizerChallengesMenuFadeOut(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        DestroyTask(taskId);
+        FreeAllWindowBuffers();
+        SetMainCallback2(gMain.savedCallback);
+    }
+}
+
+void SaveData_TxRandomizerAndChallenges(void)
+{
+    PrintCurrentSelections();
     // MENU_RANDOMIZER
     if (sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON] == TRUE)
     {
@@ -1194,21 +1254,12 @@ static void Task_RandomizerChallengesMenuSave(u8 taskId)
     else
         gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge = sOptions->sel_challenges[MENUITEM_CHALLENGES_ONE_TYPE_CHALLENGE];
     gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer    = sOptions->sel_challenges[MENUITEM_CHALLENGES_BASE_STAT_EQUALIZER];
+    gSaveBlock1Ptr->tx_Challenges_Mirror               = sOptions->sel_challenges[MENUITEM_CHALLENGES_MIRROR]; 
+    gSaveBlock1Ptr->tx_Challenges_Mirror_Thief         = sOptions->sel_challenges[MENUITEM_CHALLENGES_MIRROR_THIEF]; 
 
+    PrintTXSaveData();
 
-    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
-    gTasks[taskId].func = Task_RandomizerChallengesMenuFadeOut;
-}
-
-static void Task_RandomizerChallengesMenuFadeOut(u8 taskId)
-{
-    if (!gPaletteFade.active)
-    {
-        DestroyTask(taskId);
-        FreeAllWindowBuffers();
-        FREE_AND_SET_NULL(sOptions);
-        SetMainCallback2(gMain.savedCallback);
-    }
+    FREE_AND_SET_NULL(sOptions);
 }
 
 static void ScrollMenu(int direction)
@@ -1521,6 +1572,9 @@ static void DrawChoices_Random_OffChaos(int selection, int y)
 
     DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_Random_Chaos, GetStringRightAlignXOffset(1, sText_Random_Chaos, 198), y, styles[1], active);
+
+    if (selection == 1)
+        sOptions->sel_randomizer[MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL] = 1;
 }
 
 // MENU_NUZLOCKE
@@ -1681,9 +1735,22 @@ static void DrawChoices_Challenges_BaseStatEqualizer(int selection, int y)
     DrawChoices_Options_Four(sText_Challenges_BaseStatEqualizer_Strings, selection, y, active);
 }
 
-static void DrawChoices_Challenges_Dummy1(int selection, int y)
+static const u8 sText_Challenges_Mirror_All[]   = _("ALL");
+static void DrawChoices_Challenges_Mirror(int selection, int y)
 {
-    bool8 active = CheckConditions(MENUITEM_CHALLENGES_DUMMY1);
+    bool8 active = CheckConditions(MENUITEM_CHALLENGES_MIRROR);
+    u8 styles[2] = {0};
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_On, GetStringRightAlignXOffset(1, sText_On, 198), y, styles[1], active);
+
+    if (selection == 0)
+        sOptions->sel_challenges[MENUITEM_CHALLENGES_MIRROR_THIEF] = 0;
+}
+static void DrawChoices_Challenges_Mirror_Thief(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_CHALLENGES_MIRROR_THIEF);
     u8 styles[2] = {0};
     styles[selection] = 1;
 
@@ -1726,4 +1793,28 @@ static void DrawBgWindowFrames(void)
     FillBgTilemapBufferRect(1, TILE_BOT_CORNER_R, 28, 19,  1,  1,  7);
 
     CopyBgTilemapBufferToVram(1);
+}
+
+
+// Debug
+static void PrintCurrentSelections(void)
+{
+    u8 i, j;
+    #ifdef GBA_PRINTF
+    for (i = 0; i < MENU_COUNT; i++)
+    {
+        mgba_printf(MGBA_LOG_DEBUG, "Menu = %d", i);
+        for (j = 0; j < MenuItemCountFromIndex(i); j++)
+        {
+            switch (i)
+            {
+            case MENU_RANDOMIZER:   mgba_printf(MGBA_LOG_DEBUG, "MENU_RANDOMIZER %d",   sOptions->sel_randomizer[j]); break;
+            case MENU_NUZLOCKE:     mgba_printf(MGBA_LOG_DEBUG, "MENU_NUZLOCKE %d",     sOptions->sel_nuzlocke[j]); break;
+            case MENU_DIFFICULTY:   mgba_printf(MGBA_LOG_DEBUG, "MENU_DIFFICULTY %d",   sOptions->sel_difficulty[j]); break;
+            case MENU_CHALLENGES:   mgba_printf(MGBA_LOG_DEBUG, "MENU_CHALLENGES %d",   sOptions->sel_challenges[j]); break;
+            }
+        }
+           
+    }
+    #endif
 }

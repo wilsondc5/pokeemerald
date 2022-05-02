@@ -611,7 +611,7 @@ void CB2_InitBattle(void)
 
 static void CB2_InitBattleInternal(void)
 {
-    s32 i;
+    s32 i,j;
 
     SetHBlankCallback(NULL);
     SetVBlankCallback(NULL);
@@ -694,6 +694,17 @@ static void CB2_InitBattleInternal(void)
         if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
             CreateNPCTrainerParty(&gEnemyParty[PARTY_SIZE / 2], gTrainerBattleOpponent_B, FALSE);
         SetWildMonHeldItem();
+
+        if (gSaveBlock1Ptr->tx_Challenges_Mirror && (gBattleTypeFlags & BATTLE_TYPE_TRAINER || gBattleTypeFlags & BATTLE_TYPE_DOUBLE))
+        {
+            if (!gSaveBlock1Ptr->tx_Challenges_Mirror_Thief)
+            {
+                for (j = 0; j < PARTY_SIZE; j++)
+                    gPlayerPartyBackup[j] = gPlayerParty[j];
+            }
+            for (j = 0; j < PARTY_SIZE; j++)
+                gPlayerParty[j] = gEnemyParty[j];
+        }
     }
 
     gMain.inBattle = TRUE;
@@ -5132,8 +5143,15 @@ static void HandleEndTurn_MonFled(void)
 
 static void HandleEndTurn_FinishBattle(void)
 {
+    u8 j;
     if (gCurrentActionFuncId == B_ACTION_TRY_FINISH || gCurrentActionFuncId == B_ACTION_FINISHED)
     {
+        if (gSaveBlock1Ptr->tx_Challenges_Mirror && !gSaveBlock1Ptr->tx_Challenges_Mirror_Thief && (gBattleTypeFlags & BATTLE_TYPE_TRAINER || gBattleTypeFlags & BATTLE_TYPE_DOUBLE))
+        {
+            for (j = 0; j < PARTY_SIZE; j++)
+                gPlayerParty[j] = gPlayerPartyBackup[j];
+        }
+
         if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK
                                   | BATTLE_TYPE_RECORDED_LINK
                                   | BATTLE_TYPE_FIRST_BATTLE
@@ -5175,7 +5193,7 @@ static void HandleEndTurn_FinishBattle(void)
         }
 
         //ty_difficulty_challenges
-        if (gSaveBlock1Ptr->tx_Challenges_Nuzlocke && FlagGet(FLAG_SYS_POKEMON_GET))
+        if (IsNuzlockeActive())
         {
             NuzlockeDeleteFaintedPartyPokemon();
             if (!(gBattleTypeFlags & (BATTLE_TYPE_DOUBLE
@@ -5193,7 +5211,7 @@ static void HandleEndTurn_FinishBattle(void)
                                         | BATTLE_TYPE_TOWER_LINK_MULTI
                                         | BATTLE_TYPE_RECORDED_LINK)))
             {
-                if (!NuzlockeIsSpeciesClauseActive && !OneTypeChallengeCaptureBlocked && FlagGet(FLAG_ADVENTURE_STARTED))
+                if (!NuzlockeIsSpeciesClauseActive && !OneTypeChallengeCaptureBlocked)
                     NuzlockeFlagSet(NuzlockeGetCurrentRegionMapSectionId());
             }
             NuzlockeIsCaptureBlocked = FALSE;

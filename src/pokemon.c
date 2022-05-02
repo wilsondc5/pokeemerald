@@ -78,6 +78,7 @@ EWRAM_DATA static u8 sLearningMoveTableID = 0;
 EWRAM_DATA u8 gPlayerPartyCount = 0;
 EWRAM_DATA u8 gEnemyPartyCount = 0;
 EWRAM_DATA struct Pokemon gPlayerParty[PARTY_SIZE] = {0};
+EWRAM_DATA struct Pokemon gPlayerPartyBackup[PARTY_SIZE] = {0}; //tx_randomizer_and_challenges
 EWRAM_DATA struct Pokemon gEnemyParty[PARTY_SIZE] = {0};
 EWRAM_DATA struct SpriteTemplate gMultiuseSpriteTemplate = {0};
 EWRAM_DATA static struct MonSpritesGfxManager *sMonSpritesGfxManagers[MON_SPR_GFX_MANAGERS_COUNT] = {NULL};
@@ -12770,7 +12771,7 @@ u32 CanMonLearnTMHM(struct Pokemon *mon, u8 tm)
     u16 species = GetMonData(mon, MON_DATA_SPECIES2, 0);
     
     //tx_randomizer_and_challenges
-    if (gSaveBlock1Ptr->tx_Challenges_Nuzlocke && (tm >= ITEM_HM01 - ITEM_TM01_FOCUS_PUNCH) )
+    if (IsNuzlockeActive() && (tm >= ITEM_HM01 - ITEM_TM01_FOCUS_PUNCH) )
         return TRUE;
     if (gSaveBlock1Ptr->tx_Random_Moves)
         species = GetSpeciesRandomSeeded(species, TX_RANDOM_T_MOVES);
@@ -12794,7 +12795,7 @@ u32 CanMonLearnTMHM(struct Pokemon *mon, u8 tm)
 u32 CanSpeciesLearnTMHM(u16 species, u8 tm)
 {
     //tx_randomizer_and_challenges
-    if (gSaveBlock1Ptr->tx_Challenges_Nuzlocke && (tm >= ITEM_HM01 - ITEM_TM01_FOCUS_PUNCH) )
+    if (IsNuzlockeActive() && (tm >= ITEM_HM01 - ITEM_TM01_FOCUS_PUNCH) )
         return TRUE;
     if (gSaveBlock1Ptr->tx_Random_Moves)
         species = GetSpeciesRandomSeeded(species, TX_RANDOM_T_MOVES);
