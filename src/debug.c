@@ -1201,6 +1201,7 @@ static void DebugAction_Util_Trainer_Id(u8 taskId)
 #define TX_RANDOM_T_ABILITY         3
 #define TX_RANDOM_T_EVO             4
 #define TX_RANDOM_T_EVO_METH        5
+#define TX_RANDOM_T_STATIC          6
 // Actions Scripts
 static void DebugAction_Util_Script_1(u8 taskId)
 {
