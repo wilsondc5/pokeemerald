@@ -19,19 +19,21 @@
 #define TX_RANDOM_CHAOS_MODE            FALSE
 #define TX_RANDOM_ONE_FOR_ONE           FALSE //not yet implemented in menu
 
-
-
-#define TX_CHALLENGE_PARTY_LIMIT 0
-#define TX_CHALLENGE_NUZLOCKE 0
-#define TX_CHALLENGE_NUZLOCKE_HARDCORE 0 //CAREFULL!!!!!
+#define TX_NUZLOCKE_NUZLOCKE 0
+#define TX_NUZLOCKE_NUZLOCKE_HARDCORE 0 //CAREFULL!!!!!
 #define TX_NUZLOCKE_SPECIES_CLAUSE 1
 #define TX_NUZLOCKE_SHINY_CLAUSE 1
 #define TX_NUZLOCKE_NICKNAMING 1
-#define TX_CHALLENGE_LEVEL_CAP 0
-#define TX_CHALLENGE_EXP_MULTIPLIER 0
-#define TX_CHALLENGE_NO_ITEM_PLAYER 0
-#define TX_CHALLENGE_NO_ITEM_TRAINER 0
-#define TX_CHALLENGE_PKMN_CENTER 0 //0 no limit, 1 none
+
+#define TX_DIFFICULTY_PARTY_LIMIT 0
+#define TX_DIFFICULTY_LEVEL_CAP 0
+#define TX_DIFFICULTY_EXP_MULTIPLIER 0
+#define TX_DIFFICULTY_NO_ITEM_PLAYER 0
+#define TX_DIFFICULTY_NO_ITEM_TRAINER 0
+#define TX_DIFFICULTY_NO_EVS 0
+#define TX_DIFFICULTY_SCALING_IVS 0
+#define TX_DIFFICULTY_SCALING_EVS 0
+#define TX_DIFFICULTY_PKMN_CENTER 0 //0 no limit, 1 none
 
 #define TX_CHALLENGE_EVO_LIMIT 0 //0 off, 1 first, 2 none
 #define TX_CHALLENGE_BASE_STAT_EQUALIZER 0 //0=off, 1=100, 2=255, 3=500
@@ -67,6 +69,8 @@ void NuzlockeDeletePartyMon(u8 position);
 void NuzlockeDeleteFaintedPartyPokemon(void);
 u8 GetPartySize(void);
 u8 GetCurrentPartyLevelCap(void);
+u8 GetCurrentTrainerIVs(void);
+u8 GetCurrentTrainerEVs(void);
 
 void PrintTXSaveData(void);
 void TestRandomizerValues(u8 type);

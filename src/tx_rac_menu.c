@@ -73,6 +73,9 @@ enum
     MENUITEM_DIFFICULTY_EXP_MULTIPLIER,
     MENUITEM_DIFFICULTY_ITEM_PLAYER,
     MENUITEM_DIFFICULTY_ITEM_TRAINER,
+    MENUITEM_DIFFICULTY_NO_EVS,
+    MENUITEM_DIFFICULTY_SCALING_IVS,
+    MENUITEM_DIFFICULTY_SCALING_EVS,
     MENUITEM_DIFFICULTY_POKECENTER,
     MENUITEM_DIFFICULTY_NEXT,
     MENUITEM_DIFFICULTY_COUNT,
@@ -232,6 +235,9 @@ static void DrawChoices_Challenges_ExpMultiplier(int selection, int y);
 static void DrawChoices_Challenges_YesNo(int selection, int y, bool8 active);
 static void DrawChoices_Challenges_ItemsPlayer(int selection, int y);
 static void DrawChoices_Challenges_ItemsTrainer(int selection, int y);
+static void DrawChoices_Challenges_NoEVs(int selection, int y);
+static void DrawChoices_Challenges_ScalingIVs(int selection, int y);
+static void DrawChoices_Challenges_ScalingEVs(int selection, int y);
 static void DrawChoices_Challenges_Pokecenters(int selection, int y);
 
 static void DrawChoices_Challenges_EvoLimit(int selection, int y);
@@ -308,12 +314,15 @@ struct // MENU_DIFFICULTY
     int (*processInput)(int selection);
 } static const sItemFunctionsDifficulty[MENUITEM_DIFFICULTY_COUNT] =
 {
-    [MENUITEM_DIFFICULTY_PARTY_LIMIT]         = {DrawChoices_Challenges_PartyLimit,         ProcessInput_Options_Six},
-    [MENUITEM_DIFFICULTY_LEVEL_CAP]           = {DrawChoices_Challenges_LevelCap,           ProcessInput_Options_Three},
-    [MENUITEM_DIFFICULTY_EXP_MULTIPLIER]      = {DrawChoices_Challenges_ExpMultiplier,      ProcessInput_Options_Four},
-    [MENUITEM_DIFFICULTY_ITEM_PLAYER]         = {DrawChoices_Challenges_ItemsPlayer,        ProcessInput_Options_Two},
-    [MENUITEM_DIFFICULTY_ITEM_TRAINER]        = {DrawChoices_Challenges_ItemsTrainer,       ProcessInput_Options_Two},
-    [MENUITEM_DIFFICULTY_POKECENTER]          = {DrawChoices_Challenges_Pokecenters,        ProcessInput_Options_Two},
+    [MENUITEM_DIFFICULTY_PARTY_LIMIT]           = {DrawChoices_Challenges_PartyLimit,       ProcessInput_Options_Six},
+    [MENUITEM_DIFFICULTY_LEVEL_CAP]             = {DrawChoices_Challenges_LevelCap,         ProcessInput_Options_Three},
+    [MENUITEM_DIFFICULTY_EXP_MULTIPLIER]        = {DrawChoices_Challenges_ExpMultiplier,    ProcessInput_Options_Four},
+    [MENUITEM_DIFFICULTY_ITEM_PLAYER]           = {DrawChoices_Challenges_ItemsPlayer,      ProcessInput_Options_Two},
+    [MENUITEM_DIFFICULTY_ITEM_TRAINER]          = {DrawChoices_Challenges_ItemsTrainer,     ProcessInput_Options_Two},
+    [MENUITEM_DIFFICULTY_NO_EVS]                = {DrawChoices_Challenges_NoEVs,            ProcessInput_Options_Two},
+    [MENUITEM_DIFFICULTY_SCALING_IVS]           = {DrawChoices_Challenges_ScalingIVs,       ProcessInput_Options_Three},
+    [MENUITEM_DIFFICULTY_SCALING_EVS]           = {DrawChoices_Challenges_ScalingEVs,       ProcessInput_Options_Four},
+    [MENUITEM_DIFFICULTY_POKECENTER]            = {DrawChoices_Challenges_Pokecenters,      ProcessInput_Options_Two},
     [MENUITEM_DIFFICULTY_NEXT] = {NULL, NULL},
 };
 
@@ -387,6 +396,9 @@ static const u8 sText_LevelCap[]            = _("LEVEL CAP");
 static const u8 sText_ExpMultiplier[]       = _("EXP MULTIPLIER");
 static const u8 sText_Items_Player[]        = _("PLAYER ITEMS");
 static const u8 sText_Items_Trainer[]       = _("TRAINER ITEMS");
+static const u8 sText_NoEVs[]               = _("PLAYER EVs");
+static const u8 sText_ScalingIVs[]          = _("TRAINER IVs");
+static const u8 sText_ScalingEVs[]          = _("TRAINER EVs");
 static const u8 sText_Pokecenter[]          = _("POKéCENTER");
 static const u8 *const sOptionMenuItemsNamesDifficulty[MENUITEM_DIFFICULTY_COUNT] =
 {
@@ -395,6 +407,9 @@ static const u8 *const sOptionMenuItemsNamesDifficulty[MENUITEM_DIFFICULTY_COUNT
     [MENUITEM_DIFFICULTY_EXP_MULTIPLIER]        = sText_ExpMultiplier,
     [MENUITEM_DIFFICULTY_ITEM_PLAYER]           = sText_Items_Player,
     [MENUITEM_DIFFICULTY_ITEM_TRAINER]          = sText_Items_Trainer,
+    [MENUITEM_DIFFICULTY_NO_EVS]                = sText_NoEVs,
+    [MENUITEM_DIFFICULTY_SCALING_IVS]           = sText_ScalingIVs,
+    [MENUITEM_DIFFICULTY_SCALING_EVS]           = sText_ScalingEVs,
     [MENUITEM_DIFFICULTY_POKECENTER]            = sText_Pokecenter,
     [MENUITEM_DIFFICULTY_NEXT]                  = sText_Next,
 };
@@ -435,7 +450,6 @@ static bool8 CheckConditions(int selection)
     case MENU_RANDOMIZER:
         switch(selection)
         {
-            case MENUITEM_RANDOM_OFF_ON:                    return TRUE;
             case MENUITEM_RANDOM_WILD_PKMN:                 return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
             case MENUITEM_RANDOM_TRAINER:                   return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
             case MENUITEM_RANDOM_STATIC:                    return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
@@ -464,37 +478,26 @@ static bool8 CheckConditions(int selection)
                                                                 || sOptions->sel_randomizer[MENUITEM_RANDOM_EVOLUTIONS]
                                                                 || sOptions->sel_randomizer[MENUITEM_RANDOM_EVOLUTIONS_METHODS]
                                                                 || sOptions->sel_randomizer[MENUITEM_RANDOM_TYPE_EFFEC]);
-            case MENUITEM_RANDOM_NEXT:                      return TRUE;
+            default:                                        return TRUE;
         }
     case MENU_NUZLOCKE:
         switch(selection)
         {
-        case MENUITEM_NUZLOCKE_NUZLOCKE:        return TRUE;
         case MENUITEM_NUZLOCKE_SPECIES_CLAUSE:  return sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE];
         case MENUITEM_NUZLOCKE_SHINY_CLAUSE:    return sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE];
         case MENUITEM_NUZLOCKE_NICKNAMING:      return sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE];
-        case MENUITEM_NUZLOCKE_NEXT:            return TRUE;
+        default:                                return TRUE;
         }
     case MENU_DIFFICULTY:
         switch(selection)
         {
-        case MENUITEM_DIFFICULTY_PARTY_LIMIT:       return TRUE;
-        case MENUITEM_DIFFICULTY_LEVEL_CAP:         return TRUE;
-        case MENUITEM_DIFFICULTY_EXP_MULTIPLIER:    return TRUE;
-        case MENUITEM_DIFFICULTY_ITEM_PLAYER:       return TRUE;
-        case MENUITEM_DIFFICULTY_ITEM_TRAINER:      return TRUE;
-        case MENUITEM_DIFFICULTY_POKECENTER:        return TRUE;
-        case MENUITEM_DIFFICULTY_NEXT:              return TRUE;
+        default:       return TRUE;;
         }
     case MENU_CHALLENGES:
         switch(selection)
         {
-        case MENUITEM_CHALLENGES_EVO_LIMIT:            return TRUE;
-        case MENUITEM_CHALLENGES_ONE_TYPE_CHALLENGE:   return TRUE;
-        case MENUITEM_CHALLENGES_BASE_STAT_EQUALIZER:  return TRUE;
-        case MENUITEM_CHALLENGES_MIRROR:               return TRUE;
-        case MENUITEM_CHALLENGES_MIRROR_THIEF:         return sOptions->sel_challenges[MENUITEM_CHALLENGES_MIRROR];
-        case MENUITEM_CHALLENGES_SAVE:                 return TRUE;
+        case MENUITEM_CHALLENGES_MIRROR_THIEF:  return sOptions->sel_challenges[MENUITEM_CHALLENGES_MIRROR];
+        default:                                return TRUE;
         }
     }
 }
@@ -584,6 +587,15 @@ static const u8 sText_Description_TXC_Items_Trainer_Yes[]        = _("Enemy trai
 static const u8 sText_Description_TXC_Items_Trainer_No[]         = _("Enemy trainer can {COLOR 7}{COLOR 8}NOT use battle\nitems.");
 static const u8 sText_Description_TXC_Pokecenter_Yes[]           = _("The player can visit Pokécenters and\nother locations to heal their party.");
 static const u8 sText_Description_TXC_Pokecenter_No[]            = _("The player {COLOR 7}{COLOR 8}CAN'T visit Pokécenters or\nother locations to heal their party.");
+static const u8 sText_Description_TXC_NoEVs_Off[]                = _("The players POKéMON gain effort\nvalues as expected.");
+static const u8 sText_Description_TXC_NoEVs_On[]                 = _("The players POKéMON do {COLOR 7}{COLOR 8}NOT{COLOR 1}{COLOR 2} gain\nany effort values!");
+static const u8 sText_Description_TXC_ScalingIVs_Off[]           = _("The POKéMON of enemy Trainer have\nthe expected IVs.");
+static const u8 sText_Description_TXC_ScalingIVs_Scaling[]       = _("The IVs of Trainer POKéMON increase\nwith gym badges!");
+static const u8 sText_Description_TXC_ScalingIVs_Hard[]          = _("All Trainer POKéMON have perfect\nIVs!");
+static const u8 sText_Description_TXC_ScalingEVs_Off[]           = _("The POKéMON of enemy Trainer have\nthe expected EVs.");
+static const u8 sText_Description_TXC_ScalingEVs_Scaling[]       = _("The EVs of Trainer POKéMON increase\nwith gym badges!");
+static const u8 sText_Description_TXC_ScalingEVs_Hard[]          = _("All Trainer POKéMON have high EVs!");
+static const u8 sText_Description_TXC_ScalingEVs_Extreme[]       = _("All Trainer POKéMON have {COLOR 7}{COLOR 8}252 EVs!\nVery Hard!");
 static const u8 sText_Description_Difficulty_Next[]              = _("Continue to challenge options.");
 static const u8 *const sOptionMenuItemDescriptionsDifficulty[MENUITEM_DIFFICULTY_COUNT][4] =
 {
@@ -592,6 +604,9 @@ static const u8 *const sOptionMenuItemDescriptionsDifficulty[MENUITEM_DIFFICULTY
     [MENUITEM_DIFFICULTY_EXP_MULTIPLIER]        = {sText_Description_TXC_ExpMultiplier_1_0,         sText_Description_TXC_ExpMultiplier_1_5,        sText_Description_TXC_ExpMultiplier_2_0,    sText_Description_TXC_ExpMultiplier_0_0},
     [MENUITEM_DIFFICULTY_ITEM_PLAYER]           = {sText_Description_TXC_Items_Player_Yes,          sText_Description_TXC_Items_Player_No,          sText_Empty,                                sText_Empty},
     [MENUITEM_DIFFICULTY_ITEM_TRAINER]          = {sText_Description_TXC_Items_Trainer_Yes,         sText_Description_TXC_Items_Trainer_No,         sText_Empty,                                sText_Empty},
+    [MENUITEM_DIFFICULTY_NO_EVS]                = {sText_Description_TXC_NoEVs_Off,                 sText_Description_TXC_NoEVs_On,                 sText_Empty,                                sText_Empty},
+    [MENUITEM_DIFFICULTY_SCALING_IVS]           = {sText_Description_TXC_ScalingIVs_Off,            sText_Description_TXC_ScalingIVs_Scaling,       sText_Description_TXC_ScalingIVs_Hard,      sText_Empty},
+    [MENUITEM_DIFFICULTY_SCALING_EVS]           = {sText_Description_TXC_ScalingEVs_Off,            sText_Description_TXC_ScalingEVs_Scaling,       sText_Description_TXC_ScalingEVs_Hard,      sText_Description_TXC_ScalingEVs_Extreme},
     [MENUITEM_DIFFICULTY_POKECENTER]            = {sText_Description_TXC_Pokecenter_Yes,            sText_Description_TXC_Pokecenter_No,            sText_Empty,                                sText_Empty},
     [MENUITEM_DIFFICULTY_NEXT]                  = {sText_Description_Difficulty_Next,               sText_Empty,                                    sText_Empty,                                sText_Empty},
 };  
@@ -904,22 +919,29 @@ void CB2_InitTxRandomizerChallengesMenu(void)
         gSaveBlock1Ptr->tx_Random_Items                     = TX_RANDOM_ITEMS;
         gSaveBlock1Ptr->tx_Random_Chaos                     = TX_RANDOM_CHAOS_MODE;
         gSaveBlock1Ptr->tx_Random_OneForOne                 = TX_RANDOM_ONE_FOR_ONE;
-        gSaveBlock1Ptr->tx_Challenges_EvoLimit              = TX_CHALLENGE_EVO_LIMIT;
-        gSaveBlock1Ptr->tx_Challenges_PartyLimit            = TX_CHALLENGE_PARTY_LIMIT;
-        gSaveBlock1Ptr->tx_Challenges_Nuzlocke              = TX_CHALLENGE_NUZLOCKE;
-        gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore      = TX_CHALLENGE_NUZLOCKE_HARDCORE;
+
+        gSaveBlock1Ptr->tx_Challenges_Nuzlocke              = TX_NUZLOCKE_NUZLOCKE;
+        gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore      = TX_NUZLOCKE_NUZLOCKE_HARDCORE;
         gSaveBlock1Ptr->tx_Nuzlocke_SpeciesClause           = TX_NUZLOCKE_SPECIES_CLAUSE;
         gSaveBlock1Ptr->tx_Nuzlocke_ShinyClause             = TX_NUZLOCKE_SHINY_CLAUSE;
         gSaveBlock1Ptr->tx_Nuzlocke_Nicknaming              = TX_NUZLOCKE_NICKNAMING;
-        gSaveBlock1Ptr->tx_Challenges_LevelCap              = TX_CHALLENGE_LEVEL_CAP;
-        gSaveBlock1Ptr->tx_Challenges_ExpMultiplier         = TX_CHALLENGE_EXP_MULTIPLIER;
-        gSaveBlock1Ptr->tx_Challenges_NoItemPlayer          = TX_CHALLENGE_NO_ITEM_PLAYER;
-        gSaveBlock1Ptr->tx_Challenges_NoItemTrainer         = TX_CHALLENGE_NO_ITEM_TRAINER;
-        gSaveBlock1Ptr->tx_Challenges_PkmnCenter            = TX_CHALLENGE_PKMN_CENTER;
+    
+        gSaveBlock1Ptr->tx_Challenges_PartyLimit            = TX_DIFFICULTY_PARTY_LIMIT;
+        gSaveBlock1Ptr->tx_Challenges_LevelCap              = TX_DIFFICULTY_LEVEL_CAP;
+        gSaveBlock1Ptr->tx_Challenges_ExpMultiplier         = TX_DIFFICULTY_EXP_MULTIPLIER;
+        gSaveBlock1Ptr->tx_Challenges_NoItemPlayer          = TX_DIFFICULTY_NO_ITEM_PLAYER;
+        gSaveBlock1Ptr->tx_Challenges_NoItemTrainer         = TX_DIFFICULTY_NO_ITEM_TRAINER;
+        gSaveBlock1Ptr->tx_Challenges_NoEVs                 = TX_DIFFICULTY_NO_EVS;
+        gSaveBlock1Ptr->tx_Challenges_TrainerScalingIVs     = TX_DIFFICULTY_SCALING_IVS;
+        gSaveBlock1Ptr->tx_Challenges_TrainerScalingEVs     = TX_DIFFICULTY_SCALING_EVS;
+        gSaveBlock1Ptr->tx_Challenges_PkmnCenter            = TX_DIFFICULTY_PKMN_CENTER;
+
+        gSaveBlock1Ptr->tx_Challenges_EvoLimit              = TX_CHALLENGE_EVO_LIMIT;
         gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge      = TX_CHALLENGE_TYPE;
         gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer     = TX_CHALLENGE_BASE_STAT_EQUALIZER;
         gSaveBlock1Ptr->tx_Challenges_Mirror                = TX_CHALLENGE_MIRROR;
         gSaveBlock1Ptr->tx_Challenges_Mirror_Thief          = TX_CHALLENGE_MIRROR_THIEF;
+               
 
         sOptions = AllocZeroed(sizeof(*sOptions));
         sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON]                     = FALSE;
@@ -953,7 +975,10 @@ void CB2_InitTxRandomizerChallengesMenu(void)
         sOptions->sel_difficulty[MENUITEM_DIFFICULTY_LEVEL_CAP]      = gSaveBlock1Ptr->tx_Challenges_LevelCap;
         sOptions->sel_difficulty[MENUITEM_DIFFICULTY_EXP_MULTIPLIER] = gSaveBlock1Ptr->tx_Challenges_ExpMultiplier;
         sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ITEM_PLAYER]    = gSaveBlock1Ptr->tx_Challenges_NoItemPlayer;
-        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ITEM_TRAINER]   = gSaveBlock1Ptr->tx_Challenges_NoItemTrainer;        
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ITEM_TRAINER]   = gSaveBlock1Ptr->tx_Challenges_NoItemTrainer;
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_NO_EVS]         = gSaveBlock1Ptr->tx_Challenges_NoEVs;
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_SCALING_IVS]    = gSaveBlock1Ptr->tx_Challenges_TrainerScalingIVs;
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_SCALING_EVS]    = gSaveBlock1Ptr->tx_Challenges_TrainerScalingEVs;
         sOptions->sel_difficulty[MENUITEM_DIFFICULTY_POKECENTER]     = gSaveBlock1Ptr->tx_Challenges_PkmnCenter;
         // MENU_CHALLENGES
         sOptions->sel_challenges[MENUITEM_CHALLENGES_EVO_LIMIT]              = gSaveBlock1Ptr->tx_Challenges_EvoLimit;
@@ -1263,7 +1288,10 @@ void SaveData_TxRandomizerAndChallenges(void)
     gSaveBlock1Ptr->tx_Challenges_ExpMultiplier = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_EXP_MULTIPLIER];
     gSaveBlock1Ptr->tx_Challenges_NoItemPlayer  = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ITEM_PLAYER];
     gSaveBlock1Ptr->tx_Challenges_NoItemTrainer = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ITEM_TRAINER];
-    gSaveBlock1Ptr->tx_Challenges_PkmnCenter    = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_POKECENTER];
+    gSaveBlock1Ptr->tx_Challenges_NoEVs                 = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_NO_EVS];
+    gSaveBlock1Ptr->tx_Challenges_TrainerScalingIVs     = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_SCALING_IVS];
+    gSaveBlock1Ptr->tx_Challenges_TrainerScalingEVs     = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_SCALING_EVS];
+    gSaveBlock1Ptr->tx_Challenges_PkmnCenter            = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_POKECENTER];
     // MENU_CHALLENGES
     gSaveBlock1Ptr->tx_Challenges_EvoLimit             = sOptions->sel_challenges[MENUITEM_CHALLENGES_EVO_LIMIT];
     if (sOptions->sel_challenges[MENUITEM_CHALLENGES_ONE_TYPE_CHALLENGE] >= NUMBER_OF_MON_TYPES-1)
@@ -1668,6 +1696,32 @@ static void DrawChoices_Challenges_ItemsTrainer(int selection, int y)
     bool8 active = CheckConditions(MENUITEM_DIFFICULTY_ITEM_TRAINER);
     DrawChoices_Challenges_YesNo(selection, y, active);
 }
+static void DrawChoices_Challenges_NoEVs(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_DIFFICULTY_NO_EVS);
+    DrawChoices_Challenges_YesNo(selection, y, active);
+}
+static const u8 sText_ScalingIVsEVs_Scaling[]   = _("SCALE");
+static const u8 sText_ScalingIVsEVs_Hard[]      = _("HARD");
+static void DrawChoices_Challenges_ScalingIVs(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_DIFFICULTY_SCALING_IVS);
+    u8 styles[3] = {0};
+    int xMid = GetMiddleX(sText_Off, sText_ScalingIVsEVs_Scaling, sText_ScalingIVsEVs_Hard);
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_ScalingIVsEVs_Scaling, xMid, y, styles[1], active);
+    DrawOptionMenuChoice(sText_ScalingIVsEVs_Hard, GetStringRightAlignXOffset(1, sText_ScalingIVsEVs_Hard, 198), y, styles[2], active);
+}
+static const u8 sText_ScalingIVsEVs_Extrem[]    = _("EXTREM");
+static const u8 *const sText_ScalingEVs_Strings[] = {sText_Off, sText_ScalingIVsEVs_Scaling, sText_ScalingIVsEVs_Hard, sText_ScalingIVsEVs_Extrem};
+static void DrawChoices_Challenges_ScalingEVs(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_DIFFICULTY_SCALING_EVS);
+    DrawChoices_Options_Four(sText_ScalingEVs_Strings, selection, y, active);
+}
+
 
 static void DrawChoices_Challenges_PartyLimit(int selection, int y)
 {

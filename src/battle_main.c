@@ -67,8 +67,6 @@
 #ifdef GBA_PRINTF
     #include "printf.h"
     #include "mgba.h"
-    #include "data.h"                 // for gSpeciesNames, which maps species number to species name.
-    #include "../gflib/string_util.h" // for ConvertToAscii()
 #endif
 
 extern const struct BgTemplate gBattleBgTemplates[];
@@ -2130,6 +2128,44 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
         }
 
         gBattleTypeFlags |= gTrainers[trainerNum].doubleBattle;
+
+        //tx_randomizer_and_challenges
+        if (gSaveBlock1Ptr->tx_Challenges_TrainerScalingIVs && !FlagGet(FLAG_IS_CHAMPION))
+        {
+            u8 iv = GetCurrentTrainerIVs();
+
+            for (i = 0; i < monsCount; i++)
+            {
+                for (j = 0; j < 6; j++)
+                {
+                    SetMonData(&party[i], MON_DATA_HP_IV + j, &iv);
+                }
+
+                CalculateMonStats(&party[i]);
+            }
+        }
+        if (gSaveBlock1Ptr->tx_Challenges_TrainerScalingEVs && !FlagGet(FLAG_IS_CHAMPION))
+        {
+            u8 ev = GetCurrentTrainerEVs();
+
+            for (i = 0; i < monsCount; i++)
+            {
+                // set EVs for HP, speed and the higher of either attack and defense stat
+                SetMonData(&party[i], MON_DATA_HP_EV, &ev);
+                SetMonData(&party[i], MON_DATA_SPEED_EV, &ev);
+                if (GetMonData(&party[i], MON_DATA_ATK) > GetMonData(&party[i], MON_DATA_SPATK))
+                    SetMonData(&party[i], MON_DATA_ATK_EV, &ev);
+                else
+                    SetMonData(&party[i], MON_DATA_SPATK_EV, &ev);
+                if (GetMonData(&party[i], MON_DATA_DEF) > GetMonData(&party[i], MON_DATA_SPDEF))
+                    SetMonData(&party[i], MON_DATA_DEF_EV, &ev);
+                else
+                    SetMonData(&party[i], MON_DATA_SPDEF_EV, &ev);
+
+                CalculateMonStats(&party[i]);
+            }
+        }
+
     }
 
     return gTrainers[trainerNum].partySize;
