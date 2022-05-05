@@ -52,8 +52,8 @@
 #include "tx_randomizer_and_challenges.h"
 
 #ifdef GBA_PRINTF
-    //#include "printf.h"
-    //#include "mgba.h"
+    #include "printf.h"
+    #include "mgba.h"
 #endif
 
 typedef u16 (*SpecialFunc)(void);
