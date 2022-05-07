@@ -800,3 +800,8 @@ DewfordTown_Text_YeahDefinitionOfInRightNow:
 	.string "Yeah, absolutely right!\p"
 	.string "“{STR_VAR_1}” is the\n"
 	.string "definition of “in” right now.$"
+
+DewfordTown_EventScript_SetPlayerHomeWarp::
+	setvar VAR_PLAYERHOME_RETURN_LOC, 5
+	release
+	end

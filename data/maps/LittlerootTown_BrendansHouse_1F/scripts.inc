@@ -438,3 +438,15 @@ PlayersHouse_1F_Text_WhatColorDidTheySay:
 PlayersHouse_1F_Text_StillUnknownPokemon:
 	.string "MOM: Well, isn't that something!\n"
 	.string "There are still unknown POKéMON.$"
+
+Littleroot_Town_BrendanHouse_Mom::
+	lockall
+	msgbox Littleroot_Town_BrenadanHouse_Mom_text, MSGBOX_DEFAULT
+	release
+	end
+
+Littleroot_Town_BrenadanHouse_Mom_text:
+	.string "Hi. I see you are\n"
+	.string "a trainer, my son\n"
+	.string "Brendan is one too!$"
+

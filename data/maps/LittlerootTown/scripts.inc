@@ -1019,3 +1019,8 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "I have something to show you.\n"
 	.string "Let's go to my LAB.$"
 
+
+LittlerootTown_EventScript_SetPlayerHomeWarp::
+	setvar VAR_PLAYERHOME_RETURN_LOC, 0
+	release
+	end

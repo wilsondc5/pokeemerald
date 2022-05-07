@@ -399,3 +399,9 @@ OldaleTown_Text_CitySign:
 	.string "OLDALE TOWN\n"
 	.string "“Where things start off scarce.”$"
 
+OldaleTown_EventScript_SetPlayerHomeWarp::
+	setvar VAR_PLAYERHOME_RETURN_LOC, 1
+	release
+	end
+
+

@@ -665,3 +665,9 @@ MauvilleCity_Text_ExplainTV:
 
 MauvilleCity_Text_BeenCheckingOutTV:
 	.string "Hi, have you been checking out TVs?$"
+
+
+MauvilleCity_EventScript_SetPlayerHomeWarp::
+	setvar VAR_PLAYERHOME_RETURN_LOC, 4
+	release
+	end

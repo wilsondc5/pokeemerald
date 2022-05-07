@@ -1055,3 +1055,10 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/text/frontier_brain.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
+
+	.include "data/maps/DewfordTown_Beach/scripts.inc"
+	.include "data/maps/LittlerootTown_newHouse_FatMan/scripts.inc"
+	.include "data/maps/LittlerootTown_newHouse_Assistant/scripts.inc"
+	.include "data/maps/PlayerHome/scripts.inc"
+	.include "data/maps/OldaleTown_newHouse_double/scripts.inc"
+	.include "data/maps/OldaleTown_newHouse_double_2F/scripts.inc"

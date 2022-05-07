@@ -70,13 +70,17 @@
 #define MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F        (2 | (1 << 8))
 #define MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F        (3 | (1 << 8))
 #define MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB (4 | (1 << 8))
+#define MAP_LITTLEROOT_TOWN_NEW_HOUSE_FAT_MAN    (5 | (1 << 8))
+#define MAP_LITTLEROOT_TOWN_NEW_HOUSE_ASSISTANT  (6 | (1 << 8))
 
 // gMapGroup_IndoorOldale
-#define MAP_OLDALE_TOWN_HOUSE1            (0 | (2 << 8))
-#define MAP_OLDALE_TOWN_HOUSE2            (1 | (2 << 8))
-#define MAP_OLDALE_TOWN_POKEMON_CENTER_1F (2 | (2 << 8))
-#define MAP_OLDALE_TOWN_POKEMON_CENTER_2F (3 | (2 << 8))
-#define MAP_OLDALE_TOWN_MART              (4 | (2 << 8))
+#define MAP_OLDALE_TOWN_HOUSE1              (0 | (2 << 8))
+#define MAP_OLDALE_TOWN_HOUSE2              (1 | (2 << 8))
+#define MAP_OLDALE_TOWN_POKEMON_CENTER_1F   (2 | (2 << 8))
+#define MAP_OLDALE_TOWN_POKEMON_CENTER_2F   (3 | (2 << 8))
+#define MAP_OLDALE_TOWN_MART                (4 | (2 << 8))
+#define MAP_OLDALE_TOWN_NEW_HOUSE_DOUBLE    (5 | (2 << 8))
+#define MAP_OLDALE_TOWN_NEW_HOUSE_DOUBLE_2F (6 | (2 << 8))
 
 // gMapGroup_IndoorDewford
 #define MAP_DEWFORD_TOWN_HOUSE1            (0 | (3 << 8))
@@ -85,6 +89,7 @@
 #define MAP_DEWFORD_TOWN_GYM               (3 | (3 << 8))
 #define MAP_DEWFORD_TOWN_HALL              (4 | (3 << 8))
 #define MAP_DEWFORD_TOWN_HOUSE2            (5 | (3 << 8))
+#define MAP_DEWFORD_TOWN_BEACH             (6 | (3 << 8))
 
 // gMapGroup_IndoorLavaridge
 #define MAP_LAVARIDGE_TOWN_HERB_SHOP         (0 | (4 << 8))
@@ -590,6 +595,7 @@
 
 // gMapGroup_IndoorRoute124
 #define MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE (0 | (33 << 8))
+#define MAP_PLAYER_HOME                            (1 | (33 << 8))
 
 #define MAP_GROUPS_COUNT 34
 

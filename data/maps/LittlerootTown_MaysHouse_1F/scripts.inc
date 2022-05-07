@@ -407,3 +407,16 @@ RivalsHouse_1F_Text_DoYouHavePokemon:
 	.string "Hi, neighbor!\p"
 	.string "Do you already have your\n"
 	.string "own POKéMON?$"
+
+
+Littleroot_Town_MayHouse_Mom::
+	lockall
+	msgbox Littleroot_Town_MayHouse_Mom_text, MSGBOX_DEFAULT
+	release
+	end
+
+
+Littleroot_Town_MayHouse_Mom_text:
+	.string "Hi. I see you are\n"
+	.string "a trainer, my daughter\n"
+	.string "May is one too!$"
