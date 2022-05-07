@@ -230,6 +230,14 @@ u8 NuzlockeFlagGet(u16 mapsec) // @Kurausukun
 
 void NuzlockeDeletePartyMon(u8 position)
 {
+    if (!gSaveBlock1Ptr->tx_Nuzlocke_Deletion)
+    {
+        struct Pokemon *pokemon = &gPlayerParty[position];
+        u8 val[1] = {TRUE};
+        
+        SetMonData(pokemon, MON_DATA_NUZLOCKE_RIBBON, val);
+        SendMonToPC(&gPlayerParty[position]);
+    }
     PurgeMonOrBoxMon(TOTAL_BOXES_COUNT, position);
 }
 void NuzlockeDeleteFaintedPartyPokemon(void) // @Kurausukun

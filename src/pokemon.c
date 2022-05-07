@@ -10516,6 +10516,9 @@ u32 GetBoxMonData(struct BoxPokemon *boxMon, s32 field, u8 *data)
     case MON_DATA_UNUSED_RIBBONS:
         retVal = substruct3->unusedRibbons;
         break;
+    case MON_DATA_NUZLOCKE_RIBBON:
+        retVal = substruct3->nuzlockeRibbon;
+        break;
     case MON_DATA_EVENT_LEGAL:
         retVal = substruct3->eventLegal;
         break;
@@ -10899,6 +10902,9 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         break;
     case MON_DATA_UNUSED_RIBBONS:
         SET8(substruct3->unusedRibbons);
+        break;
+    case MON_DATA_NUZLOCKE_RIBBON:
+        SET8(substruct3->nuzlockeRibbon);
         break;
     case MON_DATA_EVENT_LEGAL:
         SET8(substruct3->eventLegal);
@@ -13895,7 +13901,7 @@ u16 PickRandomStarter(u16 species)
 
 u8 GetTypeBySpecies(u16 species, u8 typeNum)
 {
-    u8 result, type;
+    u8 type;
 
     if (typeNum == 1)
         type = gBaseStats[species].type1;
@@ -13905,8 +13911,7 @@ u8 GetTypeBySpecies(u16 species, u8 typeNum)
     if (!gSaveBlock1Ptr->tx_Random_Type)
         return type;
 
-    result = sRandomSpecies[RandomSeededModulo(type*12289 + typeNum*species*24593, NUMBER_OF_MON_TYPES-1)];
-    type = sOneTypeChallengeValidTypes[result];
+    type = sOneTypeChallengeValidTypes[RandomSeededModulo(type*12289 + typeNum*species*24593, NUMBER_OF_MON_TYPES-1)];
 
     #ifdef GBA_PRINTF
     if (gSaveBlock1Ptr->tx_Random_Type)
@@ -14046,6 +14051,11 @@ u16 GetRandomMove(u16 move, u16 species)
     #endif
 
     return final;
+}
+
+u8 GetRandomType(void)
+{
+    return sOneTypeChallengeValidTypes[RandomSeededModulo(12289, NUMBER_OF_MON_TYPES-1)];
 }
 
 // Challenges

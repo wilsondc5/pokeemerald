@@ -72,7 +72,8 @@ struct PokemonSubstruct3
  /* 0x0B */ u32 nationalRibbon:1;
  /* 0x0B */ u32 earthRibbon:1;
  /* 0x0B */ u32 worldRibbon:1; // distributed during Pokémon Festa '04 and '05 to tournament winners
- /* 0x0B */ u32 unusedRibbons:4; // discarded in Gen 4
+ /* 0x0B */ u32 unusedRibbons:3; // discarded in Gen 4
+ /* 0x0B */ u32 nuzlockeRibbon:1;
  /* 0x0B */ u32 eventLegal:1; // controls Mew & Deoxys obedience; if set, Pokémon is a fateful encounter in Gen 4+; set for in-game event island legendaries, some distributed events, and Pokémon from XD: Gale of Darkness.
 };
 
@@ -352,6 +353,7 @@ u32 GetBoxMonData();
 void SetMonData(struct Pokemon *mon, s32 field, const void *dataArg);
 void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg);
 void CopyMon(void *dest, void *src, size_t size);
+u8 SendMonToPC(struct Pokemon* mon);
 u8 GiveMonToPlayer(struct Pokemon *mon);
 u8 SendMonToPC(struct Pokemon* mon);
 u8 CalculatePlayerPartyCount(void);
@@ -454,6 +456,7 @@ u16 PickRandomStarter(u16 species);
 u8 GetTypeBySpecies(u16 species, u8 typeNum);
 u16 GetSpeciesRandomSeeded(u16 species, u8 offset);
 u16 GetRandomMove(u16 input_move, u16 species);
+u8 GetRandomType(void);
 u8 EvolutionBlockedByEvoLimit(u16 species);
 
 #endif // GUARD_POKEMON_H
