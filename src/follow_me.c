@@ -285,7 +285,7 @@ void FollowMe(struct ObjectEvent* npc, u8 state, bool8 ignoreScriptActive)
 
     if (dir == DIR_NONE)
         goto RESET;
-	
+        
     newState = DetermineFollowerState(follower, state, dir);
     if (newState == MOVEMENT_INVALID)
         goto RESET;

@@ -191,7 +191,10 @@ EventScript_UseWaterfall::
 	msgbox Text_WantToWaterfall, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, EventScript_EndWaterfall
 	msgbox Text_MonUsedWaterfall, MSGBOX_DEFAULT
+    call FollowerIntoPlayerScript
+    callnative HideFollower
 	dofieldeffect FLDEFF_USE_WATERFALL
+    callnative FollowMe_WarpSetEnd
 	goto EventScript_EndWaterfall
 
 EventScript_CannotUseWaterfall::
@@ -219,12 +222,17 @@ EventScript_UseDive::
 	lockall
 	checkpartymove MOVE_DIVE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantDive
+    copyvar 0x8004 VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
 	setfieldeffectargument 1, 1
 	msgbox Text_WantToDive, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, EventScript_EndDive
 	msgbox Text_MonUsedDive, MSGBOX_DEFAULT
+	call FollowerIntoPlayerScript
+	callnative HideFollower
+	setfieldeffectargument 0, VAR_0x8004
+	setfieldeffectargument 1, 1
 	dofieldeffect FLDEFF_USE_DIVE
 	goto EventScript_EndDive
 	end
