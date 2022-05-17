@@ -29,6 +29,7 @@
 #include "task.h"
 #include "follow_me.h"
 #include "text.h"
+#include "follow_me.h"
 #include "constants/event_object_movement.h"
 #include "constants/event_objects.h"
 #include "constants/songs.h"
@@ -274,7 +275,9 @@ void FieldCB_DefaultWarpExit(void)
     Overworld_PlaySpecialMapMusic();
     WarpFadeInScreen();
     SetUpWarpExitTask();
+    
     FollowMe_WarpSetEnd();
+    
     ScriptContext2_Enable();
 }
 
@@ -396,6 +399,7 @@ static void Task_ExitNonAnimDoor(u8 taskId)
         {
             FollowMe_SetIndicatorToComeOutDoor();
             FollowMe_WarpSetEnd();
+            
             UnfreezeObjectEvents();
             task->tState = 3;
         }
@@ -965,6 +969,7 @@ static void Task_SpinEnterWarp(u8 taskId)
         if (WaitForWeatherFadeIn() && IsPlayerSpinEntranceActive() != TRUE)
         {
             FollowMe_WarpSetEnd();
+            
             UnfreezeObjectEvents();
             ScriptContext2_Disable();
             DestroyTask(taskId);

@@ -20,32 +20,29 @@ enum {
     ITEMMENULOCATION_LAST,
 };
 
-// Window IDs for the item menu
-enum {
-    ITEMWIN_1x1,
-    ITEMWIN_1x2,
-    ITEMWIN_2x2,
-    ITEMWIN_2x3,
-    ITEMWIN_MESSAGE,
-    ITEMWIN_YESNO_LOW,
-    ITEMWIN_YESNO_HIGH,
-    ITEMWIN_QUANTITY,
-    ITEMWIN_QUANTITY_WIDE,
-    ITEMWIN_MONEY,
-    ITEMWIN_COUNT
-};
+#define ITEMMENUACTION_USE           0
+#define ITEMMENUACTION_TOSS          1
+#define ITEMMENUACTION_REGISTER      2
+#define ITEMMENUACTION_GIVE          3
+#define ITEMMENUACTION_CANCEL        4
+#define ITEMMENUACTION_BATTLE_USE    5
+#define ITEMMENUACTION_CHECK         6
+#define ITEMMENUACTION_WALK          7
+#define ITEMMENUACTION_DESELECT      8
+#define ITEMMENUACTION_CHECK_TAG     9
+#define ITEMMENUACTION_CONFIRM      10
+#define ITEMMENUACTION_SHOW         11
+#define ITEMMENUACTION_GIVE_2       12
+#define ITEMMENUACTION_CONFIRM_2    13
+#define ITEMMENUACTION_BY_NAME      14
+#define ITEMMENUACTION_BY_TYPE      15
+#define ITEMMENUACTION_BY_AMOUNT    16
+#define ITEMMENUACTION_DUMMY        17
 
-#define ITEMMENU_SWAP_LINE_LENGTH 8  // Swap line is 8 sprites long
-enum {
-    ITEMMENUSPRITE_BAG,
-    ITEMMENUSPRITE_BALL,
-    ITEMMENUSPRITE_ITEM,
-    ITEMMENUSPRITE_ITEM_ALT, // Need two when selecting new item
-    ITEMMENUSPRITE_SWAP_LINE,
-    ITEMMENUSPRITE_COUNT = ITEMMENUSPRITE_SWAP_LINE + ITEMMENU_SWAP_LINE_LENGTH,
-};
+#define ITEMMENUACTION_COUNT        ITEMMENUACTION_DUMMY
 
-struct BagPosition
+// Exported type declarations
+struct BagStruct
 {
     void (*exitCallback)(void);
     u8 location;

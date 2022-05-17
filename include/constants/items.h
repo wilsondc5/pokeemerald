@@ -476,7 +476,10 @@
 #define ITEM_MAGMA_EMBLEM 375
 #define ITEM_OLD_SEA_MAP 376
 
-#define ITEMS_COUNT 377
+// Surfboard
+#define ITEM_SURFBOARD 377
+
+#define ITEMS_COUNT 378
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // Range of berries given out by various NPCS

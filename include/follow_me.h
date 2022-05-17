@@ -55,4 +55,4 @@ bool8 PlayerHasFollower(void);
 void Task_DoDoorWarp(u8 taskId);
 bool8 IsPlayerOnFoot(void);
 
-#endif //GUARD_FOLLOW_ME_H 
+#endif //GUARD_FOLLOW_ME_H
